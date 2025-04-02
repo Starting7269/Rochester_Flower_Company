@@ -5,44 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Rochester Flower Company</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1.2s ease-out both;
+    }
+
+    .animate-slide-up {
+      animation: slideUp 1s ease-out both;
+    }
+  </style>
 </head>
 <body class="bg-cover bg-center bg-no-repeat bg-fixed text-green-900 font-serif" style="background-image: url('background.jpg');">
   <div class="flex flex-col min-h-screen bg-[#f7f3eb]/80">
 
     <!-- Header -->
-    <header class="py-6 text-center">
-      <img src="logo.png" alt="Rochester Flower Company logo" class="w-24 h-24 mx-auto mb-2" />
+    <header class="py-6 text-center animate-fade-in">
+      <img src="logo.png" alt="Rochester Flower Company logo" class="w-24 h-24 mx-auto mb-2 rounded-lg transition-transform duration-500 hover:scale-105" />
       <h1 class="text-3xl font-bold">About Us</h1>
     </header>
 
     <!-- Main content -->
-    <main class="flex-grow px-6 max-w-3xl mx-auto text-center">
+    <main class="flex-grow px-6 max-w-3xl mx-auto text-center animate-fade-in">
       <p class="text-lg mb-6">
         Rochester Flower Company is a small batch cannabis grower based in Rochester, New York. Our passion lies in cultivating artisan strains with care and precision, prioritizing quality, sustainability, and the local community. Each plant is grown with attention to detail and a deep respect for the craft.
       </p>
       <p class="text-lg mb-6">
         We're not just growers — we're stewards of a mindful, plant-based lifestyle. While we don’t sell products directly through our website, we hope our story inspires a deeper appreciation for the artistry behind cannabis cultivation.
       </p>
-  <h2 class="text-2xl font-bold mt-10 mb-4">Why Cannabis?</h2>
-  <p class="text-lg mb-4">
-    When I was much younger, I was diagnosed with a chronic neurological condition. For years, I was stuck in a cycle of prescription medications—some prescribed just to manage the side effects of others. It felt like a never-ending nesting doll of drugs. Even at a young age, I could sense that this approach was deeply flawed.
-  </p>
-  <p class="text-lg mb-4">
-    At the time, cannabis was still classified as a Schedule I drug by the DEA, and states like California were only beginning to explore its potential for medicinal use. Meanwhile, other countries outside the U.S. were seeing real success treating my condition with THC and CBD. That led to a very honest conversation with my neurologist. To paraphrase his words: “I can't tell you to break federal law, but if we were in a country where cannabis was legal, I would absolutely recommend it for you.”
-  </p>
-  <p class="text-lg mb-4">
-    So we started the process of tapering off the prescription drugs. I transitioned to using cannabis as my primary treatment—and I felt better than I ever had. That experience changed everything for me. It opened my eyes to the reality that the government wasn’t prioritizing my well-being; they were protecting pharmaceutical interests.
-  </p>
-  <p class="text-lg mb-8">
-    That realization lit a fire in me—a lifelong mission to cultivate and share the best medicine the world is still waking up to: cannabis.
-  </p>
+      <h2 class="text-2xl font-bold mt-10 mb-4">Why Cannabis?</h2>
+      <p class="text-lg mb-4">
+        When I was much younger, I was diagnosed with a chronic neurological condition. For years, I was stuck in a cycle of prescription medications—some prescribed just to manage the side effects of others. It felt like a never-ending nesting doll of drugs. Even at a young age, I could sense that this approach was deeply flawed.
+      </p>
+      <p class="text-lg mb-4">
+        At the time, cannabis was still classified as a Schedule I drug by the DEA, and states like California were only beginning to explore its potential for medicinal use. Meanwhile, other countries outside the U.S. were seeing real success treating my condition with THC and CBD. That led to a very honest conversation with my neurologist. To paraphrase his words: “I can't tell you to break federal law, but if we were in a country where cannabis was legal, I would absolutely recommend it for you.”
+      </p>
+      <p class="text-lg mb-4">
+        So we started the process of tapering off the prescription drugs. I transitioned to using cannabis as my primary treatment—and I felt better than I ever had. That experience changed everything for me. It opened my eyes to the reality that the government wasn’t prioritizing my well-being; they were protecting pharmaceutical interests.
+      </p>
+      <p class="text-lg mb-8">
+        That realization lit a fire in me—a lifelong mission to cultivate and share the best medicine the world is still waking up to: cannabis.
+      </p>
       <a href="index.html" class="inline-block bg-green-900 text-white px-5 py-2 rounded hover:bg-green-800 transition">Back to Home</a>
     </main>
 
     <!-- Footer -->
-    <footer class="w-full py-6 border-t border-green-900 bg-[#f0ede4] text-green-900 mt-12">
+    <footer class="w-full py-6 border-t border-green-900 bg-[#f0ede4]/90 text-green-900 mt-12 animate-slide-up">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <a href="mailto:contact@rochesterflowercompany.com" class="inline-block bg-green-900 text-white px-4 py-2 rounded hover:bg-green-800 transition">Contact</a>
       </div>

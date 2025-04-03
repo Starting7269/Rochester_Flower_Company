@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why We Grow Small-Batch | Rochester Flower Company</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 1.2s ease-out both;
+    }
+    .bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: white;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+    }
+    .open .bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .open .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .open .bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  </style>
+</head>
+<body class="bg-cover bg-center bg-no-repeat bg-fixed text-green-900 font-serif" style="background-image: url('background.jpg');">
+  <div class="flex flex-col min-h-screen bg-[#f7f3eb]/80">
+    <!-- Navigation Drawer Button -->
+    <button id="menuButton" class="fixed top-4 left-4 z-50 bg-green-900 text-white p-2 rounded-md focus:outline-none transition-transform">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Navigation Drawer -->
+    <div id="drawer" class="fixed top-0 left-0 h-full w-64 bg-[#f6ebd4] text-green-900 shadow-md transform -translate-x-full transition-transform duration-300 z-40">
+      <div class="p-4 border-b border-green-900 text-xl font-bold">Menu</div>
+      <ul class="p-4 space-y-4">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="about.html" class="hover:underline">About Us</a></li>
+        <li><a href="blog.html" class="hover:underline">Blog</a></li>
+        <li><a href="contact.html" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Backdrop -->
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30"></div>
+
+    <!-- Header -->
+    <header class="py-6 text-center animate-fade-in">
+      <img src="logo.png" alt="Rochester Flower Company logo" class="w-24 h-24 mx-auto mb-2 rounded-full transition-transform duration-500 hover:scale-105" />
+      <h1 class="text-3xl font-bold">Why We Grow Small-Batch</h1>
+      <p class="text-green-800 text-sm mt-2">March 2025</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow px-6 max-w-3xl mx-auto py-8 text-left animate-fade-in">
+      <p class="text-lg mb-6">
+        Small-batch growing isn't just a trendy label for us—it’s the foundation of our entire approach. We believe that great cannabis comes from care, and care takes time, attention, and intention.
+      </p>
+      <p class="text-lg mb-6">
+        By focusing on smaller grows, we can give each plant the hands-on treatment it deserves. We're able to fine-tune environmental conditions, closely monitor growth, and spot issues early—ensuring each crop gets exactly what it needs to thrive.
+      </p>
+      <p class="text-lg mb-6">
+        This also allows us to experiment, iterate, and improve constantly. We're not bound by mass-production rules or rushing plants to market. We grow at the plant’s pace—not the industry's.
+      </p>
+      <p class="text-lg mb-6">
+        When you consume something we've grown, you can trust it was made with purpose. It's better for the environment, better for the consumer, and honestly, better for our souls. That’s why small-batch isn’t a limitation—it’s our superpower.
+      </p>
+      <a href="blog.html" class="inline-block mt-6 bg-green-900 text-white px-5 py-2 rounded hover:bg-green-800 transition">← Back to Blog</a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-6 border-t border-green-900 bg-[#f6ebd4]/90 text-green-900 mt-12">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <p>&copy; 2025 Rochester Flower Company. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Drawer Script -->
+  <script>
+    const drawer = document.getElementById('drawer');
+    const backdrop = document.getElementById('backdrop');
+    const menuButton = document.getElementById('menuButton');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('-translate-x-full') === false;
+      backdrop.classList.toggle('hidden');
+      menuButton.classList.toggle('open', isOpen);
+      menuButton.classList.toggle('-translate-x-20', isOpen);
+    });
+
+    backdrop.addEventListener('click', () => {
+      drawer.classList.add('-translate-x-full');
+      backdrop.classList.add('hidden');
+      menuButton.classList.remove('open');
+      menuButton.classList.remove('-translate-x-20');
+    });
+  </script>
+</body>
+</html>

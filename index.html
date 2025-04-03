@@ -23,6 +23,27 @@
     .animate-slide-up {
       animation: slideUp 1s ease-out both;
     }
+
+    .bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: white;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .open .bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .open .bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
   </style>
 </head>
 <body class="bg-cover bg-center bg-no-repeat bg-fixed text-green-900 font-serif" style="background-image: url('background.jpg');">
@@ -30,7 +51,9 @@
 
     <!-- Navigation Drawer Button -->
     <button id="menuButton" class="fixed top-4 left-4 z-50 bg-green-900 text-white p-2 rounded-md focus:outline-none">
-      &#9776;
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </button>
 
     <!-- Navigation Drawer -->
@@ -77,13 +100,15 @@
     const menuButton = document.getElementById('menuButton');
 
     menuButton.addEventListener('click', () => {
-      drawer.classList.toggle('-translate-x-full');
+      const isOpen = drawer.classList.toggle('-translate-x-full') === false;
       backdrop.classList.toggle('hidden');
+      menuButton.classList.toggle('open', isOpen);
     });
 
     backdrop.addEventListener('click', () => {
       drawer.classList.add('-translate-x-full');
       backdrop.classList.add('hidden');
+      menuButton.classList.remove('open');
     });
   </script>
 </body>

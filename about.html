@@ -28,6 +28,25 @@
 <body class="bg-cover bg-center bg-no-repeat bg-fixed text-green-900 font-serif" style="background-image: url('background.jpg');">
   <div class="flex flex-col min-h-screen bg-[#f7f3eb]/80">
 
+    <!-- Navigation Drawer Button -->
+    <button id="menuButton" class="fixed top-4 left-4 z-50 bg-green-900 text-white p-2 rounded-md focus:outline-none">
+      &#9776;
+    </button>
+
+    <!-- Navigation Drawer -->
+    <div id="drawer" class="fixed top-0 left-0 h-full w-64 bg-[#f6ebd4] text-green-900 shadow-md transform -translate-x-full transition-transform duration-300 z-40">
+      <div class="p-4 border-b border-green-900 text-xl font-bold">Menu</div>
+      <ul class="p-4 space-y-4">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="about.html" class="hover:underline">About Us</a></li>
+        <li><a href="products.html" class="hover:underline">Products</a></li>
+        <li><a href="contact.html" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Backdrop -->
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden z-30"></div>
+
     <!-- Header -->
     <header class="py-6 text-center animate-fade-in">
       <img src="logo.png" alt="Rochester Flower Company logo" class="w-24 h-24 mx-auto mb-2 rounded-full transition-transform duration-500 hover:scale-105" />
@@ -51,7 +70,23 @@
         <a href="mailto:contact@rochesterflowercompany.com" class="inline-block bg-green-900 text-white px-4 py-2 rounded hover:bg-green-800 transition">Contact</a>
       </div>
     </footer>
-
   </div>
+
+  <!-- Drawer Script -->
+  <script>
+    const drawer = document.getElementById('drawer');
+    const backdrop = document.getElementById('backdrop');
+    const menuButton = document.getElementById('menuButton');
+
+    menuButton.addEventListener('click', () => {
+      drawer.classList.toggle('-translate-x-full');
+      backdrop.classList.toggle('hidden');
+    });
+
+    backdrop.addEventListener('click', () => {
+      drawer.classList.add('-translate-x-full');
+      backdrop.classList.add('hidden');
+    });
+  </script>
 </body>
 </html>

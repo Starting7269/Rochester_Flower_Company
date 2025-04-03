@@ -34,6 +34,7 @@
 </head>
 <body class="bg-cover bg-center bg-no-repeat bg-fixed text-green-900 font-serif" style="background-image: url('background.jpg');">
   <div class="flex flex-col min-h-screen bg-[#f7f3eb]/80">
+
     <!-- Navigation Drawer Button -->
     <button id="menuButton" class="fixed top-4 left-4 z-50 bg-green-900 text-white p-2 rounded-md focus:outline-none transition-transform">
       <span class="bar"></span>
@@ -64,6 +65,12 @@
 
     <!-- Main Content -->
     <main class="flex-grow px-6 max-w-3xl mx-auto py-8 text-left animate-fade-in">
+      <!-- Podcast Audio Embed -->
+      <audio controls class="w-full my-6">
+        <source src="Rochester Cannabis_ From Seed to Small Batch.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio>
+
       <p class="text-lg mb-6">
         Our journey started with a single seed and a vision: to grow cannabis that not only healed, but inspired. We knew from the start that we wanted to focus on small-batch, artisan-quality flower grown right here in Rochester.
       </p>

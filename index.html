@@ -48,15 +48,6 @@
       border-radius: 1rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(8px);
-      transition: transform 0.3s ease, padding 0.3s ease;
-      will-change: transform, padding;
-      transform-style: flat;
-      backface-visibility: hidden;
-    }
-
-    .hero-content:hover {
-      transform: scale(1.07);
-      padding: 3rem;
     }
 
     .logo {
@@ -65,7 +56,7 @@
     }
 
     .logo img {
-      height: 160px;
+      height: 140px;
       border-radius: 50%;
     }
 
@@ -87,7 +78,7 @@
 
     @media (max-width: 600px) {
       .logo img {
-        height: 120px;
+        height: 100px;
       }
       .company-name {
         font-size: 1.5rem;
@@ -106,23 +97,7 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-  
-    .contact-button {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      color: #fff;
-      background-color: #3a4d3f;
-      border: none;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .contact-button:hover {
-      background-color: #2e3d32;
-    }</style>
+  </style>
 </head>
 <body>
   <section class="hero">
@@ -130,10 +105,9 @@
       <div class="logo">
         <img src="logo.png" alt="Rochester Flower Company Logo" />
       </div>
-      $1
-      <a href="mailto:info@rochesterflowercompany.com" class="contact-button">Contact Us</a>
-      </div>
-    $1
+      <div class="company-name">Rochester Flower Company</div>
+      <h2>Artisan Cannabis Grown in Rochester, NY</h2>
+    </div>
   </section>
 </body>
 </html>

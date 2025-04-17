@@ -2,27 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rochester Flower Company</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Playfair Display', serif;
+      background: url('hero-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      backdrop-filter: blur(6px);
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .logo {
+      margin-bottom: 1rem;
+      animation: fadeInTop 1.5s ease-in forwards;
+    }
+
+    .logo img {
+      height: 100px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: #1e1e1e;
+      line-height: 1.4;
+      animation: fadeInUp 2s ease-in forwards;
+    }
+
+    @media (max-width: 600px) {
+      .logo img {
+        height: 70px;
+      }
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @keyframes fadeInTop {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-  <div class="parallax-container">
-    <div class="parallax-bg"></div>
-
-    <div class="hero">
-      <div class="tilt-wrapper">
-        <div class="logo fade-in-on-load">
-          <img src="logo.png" alt="Rochester Flower Company Logo"/>
-          <h1>Rochester Flower Company</h1>
-        </div>
-        <div class="hero-text fade-in-on-scroll">
-          <h2>Artisan Cannabis<br>Grown in Rochester, NY</h2>
-        </div>
-      </div>
+  <section class="hero">
+    <div class="logo">
+      <img src="logo.png" alt="Rochester Flower Company Logo" />
     </div>
-  </div>
-
-  <script src="scroll-fade.js"></script>
+    <h2>Artisan Cannabis Grown in Rochester, NY</h2>
+  </section>
 </body>
 </html>

@@ -30,6 +30,7 @@
       text-align: center;
       backdrop-filter: blur(6px);
       background-color: rgba(255, 255, 255, 0.3);
+      padding: 0 1rem;
     }
 
     .logo {
@@ -38,19 +39,31 @@
     }
 
     .logo img {
-      height: 100px;
+      height: 140px;
+    }
+
+    .company-name {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e1e1e;
+      margin-top: 1rem;
+      animation: fadeInTop 1.5s ease-in forwards;
     }
 
     .hero h2 {
       font-size: 2.5rem;
       color: #1e1e1e;
       line-height: 1.4;
+      margin-top: 1rem;
       animation: fadeInUp 2s ease-in forwards;
     }
 
     @media (max-width: 600px) {
       .logo img {
-        height: 70px;
+        height: 100px;
+      }
+      .company-name {
+        font-size: 1.5rem;
       }
       .hero h2 {
         font-size: 1.8rem;
@@ -71,8 +84,9 @@
 <body>
   <section class="hero">
     <div class="logo">
-      <img src="logo.png" alt="Rochester Flower Company Logo" />
+      <img src="logo1.png" alt="Rochester Flower Company Logo" />
     </div>
+    <div class="company-name">Rochester Flower Company</div>
     <h2>Artisan Cannabis Grown in Rochester, NY</h2>
   </section>
 </body>

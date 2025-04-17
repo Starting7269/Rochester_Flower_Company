@@ -106,7 +106,24 @@
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-  </style>
+  
+    .contact-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #3a4d3f;
+      border: none;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-button:hover {
+      background-color: #2e3d32;
+    }
+$1
 </head>
 <body>
   <section class="hero">
@@ -116,7 +133,7 @@
       </div>
       <div class="company-name">Rochester Flower Company</div>
       <h2>Artisan Cannabis Grown in Rochester, NY</h2>
-    </div>
-  </section>
+      <a href="mailto:info@rochesterflowercompany.com" class="contact-button">Contact Us</a>
+$1
 </body>
 </html>

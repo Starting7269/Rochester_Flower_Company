@@ -48,6 +48,11 @@
       border-radius: 1rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(8px);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-content:hover {
+      transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
     }
 
     .logo {

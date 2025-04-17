@@ -49,6 +49,9 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(8px);
       transition: transform 0.4s ease, padding 0.4s ease;
+      will-change: transform, padding;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
     }
 
     .hero-content:hover {

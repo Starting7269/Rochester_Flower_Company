@@ -2,119 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rochester Flower Company</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enjoy Cannabis</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      height: 100%;
-      font-family: 'Playfair Display', serif;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('hero-background.jpg') no-repeat center center fixed;
+      background-image: url('hero-background.jpg');
       background-size: cover;
-      opacity: 0.6;
-      z-index: -1;
-    }
-
-    .hero {
+      background-position: center;
       height: 100vh;
+      font-family: Arial, sans-serif;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+    }
+
+    .text-box {
+      background-color: #f5f5dc; /* Cream */
+      padding: 40px 60px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-box h1 {
+      color: green;
+      font-size: 2.5em;
+      margin: 0;
       text-align: center;
-      padding: 0 1rem;
-    }
-
-    .hero-content {
-      background-color: #f1e1bd;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(8px);
-      transition: transform 0.3s ease, padding 0.3s ease;
-      will-change: transform, padding;
-    }
-
-    .hero-content:hover {
-      transform: scale(1.07);
-      padding: 3rem;
-    }
-
-    .logo {
-      margin-bottom: 1rem;
-      animation: fadeInTop 1.5s ease-in forwards;
-    }
-
-    .logo img {
-      height: 140px;
-      border-radius: 50%;
-    }
-
-    .company-name {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #3a4d3f;
-      margin-top: 1rem;
-      animation: fadeInTop 1.5s ease-in forwards;
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      color: #3a4d3f;
-      line-height: 1.4;
-      margin-top: 1rem;
-      animation: fadeInUp 2s ease-in forwards;
-    }
-
-    @media (max-width: 600px) {
-      .logo img {
-        height: 100px;
-      }
-      .company-name {
-        font-size: 1.5rem;
-      }
-      .hero h2 {
-        font-size: 1.8rem;
-      }
-    }
-
-    @keyframes fadeInTop {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="hero-content">
-      <div class="logo">
-        <img src="logo.png" alt="Rochester Flower Company Logo" />
-      </div>
-      <div class="company-name">Rochester Flower Company</div>
-      <h2>Artisan Cannabis Grown in Rochester, NY</h2>
-    </div>
-  </section>
+  <div class="text-box">
+    <h1>enjoy cannabis</h1>
+  </div>
 </body>
 </html>

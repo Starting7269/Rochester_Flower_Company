@@ -5,11 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rochester Flower Company</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom foggy background */
+    .foggy-bg {
+      background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+      animation: fogPulse 6s infinite alternate;
+    }
+
+    @keyframes fogPulse {
+      from { opacity: 0.05; }
+      to   { opacity: 0.15; }
+    }
+  </style>
 </head>
 <body class="bg-black text-red-600 min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
   <!-- Background fog effect -->
   <div class="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black opacity-80"></div>
-  <div class="absolute inset-0 animate-pulse bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] opacity-10"></div>
+  <div class="absolute inset-0 foggy-bg"></div>
   
   <!-- Header -->
   <header class="z-10 text-center p-6">
@@ -61,3 +73,4 @@
   </script>
 </body>
 </html>
+

@@ -19,12 +19,29 @@
       from { opacity: 0.9; }
       to   { opacity: 1; }
     }
+
+    /* Blood drip overlay */
+    .blood-drip {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: url('blood-drip.png') repeat-x;
+      background-size: contain;
+      pointer-events: none;
+      z-index: 50;
+      transform: translateY(-100px);
+    }
   </style>
 </head>
 <body class="bg-black text-red-600 min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
   <!-- Background image -->
   <div class="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black opacity-80"></div>
   <div class="absolute inset-0 foggy-bg"></div>
+
+  <!-- Blood drip overlay -->
+  <div class="blood-drip" id="blood"></div>
   
   <!-- Header -->
   <header class="z-10 text-center p-6">
@@ -64,15 +81,16 @@
     © <span id="year"></span> Rochester Flower Company — Beware the Bloom.
   </footer>
 
-  <!-- Creepy Overlay -->
-  <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
-    <!-- Blood drip effect -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-24 bg-red-700 blur-sm animate-pulse"></div>
-  </div>
-
   <script>
     // Auto-update the year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll-based dripping effect
+    const blood = document.getElementById('blood');
+    window.addEventListener('scroll', () => {
+      const offset = window.scrollY * 0.5; // adjust speed
+      blood.style.transform = `translateY(${offset}px)`;
+    });
   </script>
 </body>
 </html>

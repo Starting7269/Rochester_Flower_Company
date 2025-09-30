@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rochester Flower Company</title>
+  <style>
+    /* --- GLOBAL --- */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: #000;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* --- BACKGROUND --- */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("surreal-bg.png") no-repeat center center fixed;
+      background-size: cover;
+      z-index: -2;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55); /* dark overlay for readability */
+      z-index: -1;
+    }
+
+    /* --- HEADER --- */
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 100;
+    }
+    header nav a { margin-left: 1.5rem; font-size: 0.9rem; opacity: 0.8; }
+    header nav a:hover { opacity: 1; }
+
+    /* --- HERO --- */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero-box {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 700px;
+      backdrop-filter: blur(8px);
+    }
+    .hero h1 { font-size: 3rem; margin: 0; }
+    .hero p { margin-top: 1rem; font-size: 1.2rem; color: rgba(255,255,255,0.8); }
+
+    /* --- SECTIONS --- */
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    section h2, section h3 {
+      margin-bottom: 1rem;
+    }
+    .about p {
+      max-width: 600px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* --- GALLERY --- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      overflow: hidden;
+      padding: 1rem;
+      backdrop-filter: blur(6px);
+    }
+    .card .img {
+      background: rgba(255,255,255,0.15);
+      height: 200px;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #ccc;
+    }
+
+    /* --- CONTACT --- */
+    form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem;
+      max-width: 500px;
+    }
+    input, button {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    input {
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    button {
+      background: linear-gradient(90deg, #ec4899, #9333ea, #3b82f6);
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    button:hover { transform: scale(1.05); }
+
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>Rochester Flower Company</strong></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-box">
+      <h1>Rochester Flower Company</h1>
+      <p>Cultivating visions between dream and soil.<br> Quietly crafted in Rochester, NY.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>A surreal craft</h2>
+    <p>Our brand is rooted in cultivating strange beauty. From cocoons glowing in fields to dreamlike pods, Rochester Flower Company embraces the uncanny as part of its boutique ethos.</p>
+  </section>
+
+  <section id="gallery">
+    <h3>Gallery (visions)</h3>
+    <p>A sampling of surreal motifs: cocoons, pods, and impossible growths.</p>
+    <div class="gallery-grid">
+      <div class="card"><div class="img">Cocoon Nursery</div></div>
+      <div class="card"><div class="img">Dream Pods</div></div>
+      <div class="card"><div class="img">Unreal Harvest</div></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Get in touch</h3>
+    <p>Leave your email to get updates on our surreal journey.</p>
+    <form>
+      <input type="email" placeholder="your email" required>
+      <button type="submit">Join list</button>
+    </form>
+  </section>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear());</script> Rochester Flower Company — crafted in Rochester, NY
+  </footer>
+
+</body>
+</html>

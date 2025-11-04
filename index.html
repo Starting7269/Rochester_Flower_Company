@@ -4,202 +4,146 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rochester Flower Company</title>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
-  
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Trebuchet MS', Arial, sans-serif;
-      background: radial-gradient(circle at top, #f8e7a1, #e9b945);
-      color: #222;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
+    :root{
+      --color-1:#f8e7a1; /* start */
+      --color-2:#e9b945;
+      --color-3:#8ecae6;
+      --color-4:#b7e4c7; /* end */
     }
 
-    /* Fade-in animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Reset + base */
+    *{ box-sizing:border-box; }
+    html, body { height:100%; margin:0; }
+    body{
+      background: var(--color-1);
+      color:#222;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      transition: background 0.1s linear;
+      overflow-y: scroll; /* always show scrollbar for stability */
     }
 
-    header img {
-      max-width: 300px; /* cap the logo size on desktop */
+    /* ===== FIXED CONTENT LAYER =====
+       Stays pinned; only the background color underneath changes. */
+    .fixed-content{
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      pointer-events: auto; /* allow clicks on buttons/links */
+    }
+    .card{
+      text-align:center;
+      max-width: 720px;
+      width: min(92vw, 720px);
+    }
+    .logo{
+      max-width: 300px;
       width: 100%;
       height: auto;
-      border-radius: 20px; /* rounded corners for logo */
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards;
-      animation-delay: 0.2s;
+      border-radius: 20px;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35));
+      margin: 0 auto 16px;
+      display:block;
+    }
+    h1{
+      margin: 8px 0 4px;
+      font-size: clamp(28px, 4.5vw, 44px);
+    }
+    .slogan{
+      margin: 0 0 24px;
+      opacity: 0.9;
+      font-size: clamp(16px, 2.8vw, 20px);
+    }
+    .button{
+      display:inline-block;
+      background:#2c7a2c;
+      color:#fff;
+      text-decoration:none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: 3px solid rgba(0,0,0,0.15);
+      font-weight: 700;
+      letter-spacing: .3px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .button:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 16px rgba(0,0,0,0.3);
     }
 
-    h1 {
-      font-size: 2.8rem;
-      margin: 20px 0 10px;
-      color: #222;
-      text-shadow: 2px 2px 0 #f2c94c, -2px -2px 0 #f2c94c;
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards;
-      animation-delay: 0.5s;
+    /* ===== INVISIBLE SCROLL SPACE =====
+       Exists only to provide scroll distance.
+       It's behind the fixed content, so the content never moves. */
+    #scrollspace{
+      height: 400vh; /* adjust to control how long the color journey is */
+      visibility: hidden; /* keep it non-visible for a clean page */
     }
 
-    p.slogan {
-      font-size: 1.4rem;
-      font-style: italic;
-      margin-bottom: 40px;
-      color: #333;
-      text-shadow: 1px 1px 0 #fff;
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards;
-      animation-delay: 0.8s;
-    }
-
-    .button {
-      display: inline-block;
-      background: #2c7a2c;
-      color: white;
-      text-decoration: none;
-      padding: 15px 40px;
-      border-radius: 50px;
-      font-size: 1.3rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-      border: 3px solid #f2c94c;
-      transition: all 0.3s ease;
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards;
-      animation-delay: 1.1s;
-    }
-
-    .button:hover {
-      background: #256225;
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-    }
-
-    footer {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #444;
-      text-shadow: 1px 1px 0 #fff;
-    }
-
-    @media (max-width: 600px) {
-      header img {
-        max-width: 200px; /* cap the logo size on mobile */
-        margin-bottom: 15px;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      p.slogan {
-        font-size: 1.1rem;
-      }
-      .button {
-        font-size: 1rem;
-        padding: 12px 28px;
-      }
+    /* Optional: ensure mobile browser UI changes don't cause layout jumps */
+    @supports (height: 100svh){
+      .fixed-content{ height: 100svh; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="RFCLogo.png" alt="Rochester Flower Company Logo">
-  </header>
 
-  <main>
-    <h1>Rochester Flower Company</h1>
-    <p class="slogan">We're Different, By Design</p>
-    <a href="mailto:info@rochesterflowercompany.com?subject=Rochester%20Flower%20Company%20Website%20Inquiry" class="button">Contact Me</a>
-  </main>
+  <!-- The fixed/pinned content -->
+  <div class="fixed-content">
+    <div class="card">
+      <img class="logo" src="RFCLogo.png" alt="Rochester Flower Company Logo">
+      <h1>Rochester Flower Company</h1>
+      <p class="slogan">We're Different, By Design</p>
+      <a class="button" href="mailto:info@rochesterflowercompany.com?subject=Rochester%20Flower%20Company%20Website%20Inquiry">
+        Contact Me
+      </a>
+    </div>
+  </div>
 
-  <footer>
-    &copy; 2025 Rochester Flower Company. All rights reserved.
-  </footer>
+  <!-- Invisible scroll area to drive the background color change -->
+  <div id="scrollspace" aria-hidden="true"></div>
 
   <script>
-    // Scroll-driven background color changes (only background updates)
-    (function() {
-      // Define your four colors here (hex or rgb)
-      const COLORS = ['#f8e7a1', '#e9b945', '#8ecae6', '#b7e4c7'];
+    // Four colors to blend between. Change these to customize.
+    const COLORS = ['#f8e7a1','#e9b945','#8ecae6','#b7e4c7'];
 
-      function toRGB(c) {
-        if (c.startsWith('#')) {
-          const h = c.slice(1);
-          const n = parseInt(h.length === 3
-            ? h.split('').map(ch => ch + ch).join('')
-            : h, 16);
-          return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
-        }
-        const m = c.match(/rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/i);
-        return m ? { r: +m[1], g: +m[2], b: +m[3] } : { r: 0, g: 0, b: 0 };
+    const toRgb = (hex) => {
+      const h = hex.replace('#','').trim();
+      const n = parseInt(h, 16);
+      return { r: (n>>16)&255, g: (n>>8)&255, b: n&255 };
+    };
+    const lerp = (a,b,t) => a+(b-a)*t;
+    const COLORS_RGB = COLORS.map(toRgb);
+
+    let ticking = false;
+    function setBgFromScroll(){
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const t = max > 0 ? window.scrollY / max : 0;
+      const segs = COLORS_RGB.length - 1;
+      const pos = t * segs;
+      const i = Math.floor(pos);
+      const localT = pos - i;
+      const a = COLORS_RGB[Math.max(0, Math.min(i, segs))];
+      const b = COLORS_RGB[Math.max(0, Math.min(i+1, segs))];
+      const r = Math.round(lerp(a.r, b.r, localT));
+      const g = Math.round(lerp(a.g, b.g, localT));
+      const bch= Math.round(lerp(a.b, b.b, localT));
+      document.body.style.background = `rgb(${r}, ${g}, ${bch})`;
+      ticking = false;
+    }
+    function onScroll(){
+      if(!ticking){
+        requestAnimationFrame(setBgFromScroll);
+        ticking = true;
       }
-
-      function lerp(a, b, t) { return a + (b - a) * t; }
-
-      const RGB = COLORS.map(toRGB);
-
-      // Ensure there is room to scroll even on short pages
-      let spacer = null;
-      function ensureScrollSpace() {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        if (max < 50) {
-          if (!spacer) {
-            spacer = document.createElement('div');
-            spacer.style.height = '300vh';
-            spacer.style.pointerEvents = 'none';
-            spacer.setAttribute('aria-hidden', 'true');
-            document.body.appendChild(spacer);
-          }
-        } else if (spacer) {
-          spacer.remove();
-          spacer = null;
-        }
-      }
-
-      let ticking = false;
-      function updateBackground() {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        const t = max > 0 ? (window.scrollY / max) : 0;
-        const segments = RGB.length - 1;
-        const pos = Math.min(Math.max(t * segments, 0), segments);
-        const i = Math.floor(pos);
-        const localT = pos - i;
-        const c1 = RGB[i], c2 = RGB[Math.min(i + 1, segments)];
-        const r = Math.round(lerp(c1.r, c2.r, localT));
-        const g = Math.round(lerp(c1.g, c2.g, localT));
-        const b = Math.round(lerp(c1.b, c2.b, localT));
-        // Override full background to avoid conflicts with gradients/images
-        document.body.style.background = `rgb(${r}, ${g}, ${b})`;
-        ticking = false;
-      }
-
-      function onScroll() {
-        if (!ticking) {
-          requestAnimationFrame(updateBackground);
-          ticking = true;
-        }
-      }
-
-      window.addEventListener('load', function() {
-        ensureScrollSpace();
-        updateBackground();
-      });
-      window.addEventListener('resize', function() {
-        ensureScrollSpace();
-        updateBackground();
-      });
-      window.addEventListener('scroll', onScroll, { passive: true });
-    })();
+    }
+    addEventListener('scroll', onScroll, {passive:true});
+    addEventListener('resize', setBgFromScroll);
+    addEventListener('load', setBgFromScroll);
   </script>
-
 </body>
 </html>

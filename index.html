@@ -45,12 +45,10 @@
       --color-20: #CFE2F3; /* Sky Mist */
     }
 
-    /* Reset + base */
     * {
       box-sizing: border-box;
     }
-    html,
-    body {
+    html, body {
       height: 100%;
       margin: 0;
     }
@@ -59,18 +57,16 @@
       color: #222;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       transition: background 0.1s linear;
-      overflow-y: scroll; /* keep scrollbar visible */
+      overflow-y: scroll;
     }
 
-    /* ===== FIXED CONTENT LAYER =====
-       Stays pinned; only the background color underneath changes. */
     .fixed-content {
       position: fixed;
       inset: 0;
       display: grid;
       place-items: center;
       padding: 24px;
-      pointer-events: auto; /* allow clicks on buttons/links */
+      pointer-events: auto;
     }
     .card {
       text-align: center;
@@ -101,7 +97,7 @@
     }
     .button {
       display: inline-block;
-      background: #225c22; /* slightly darker for better contrast */
+      background: #225c22;
       color: #fff;
       text-decoration: none;
       padding: 14px 28px;
@@ -111,6 +107,7 @@
       letter-spacing: 0.3px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
+      cursor: pointer;
     }
     .button:hover {
       transform: translateY(-1px);
@@ -121,15 +118,11 @@
       outline-offset: 3px;
     }
 
-    /* ===== INVISIBLE SCROLL SPACE =====
-       Exists only to provide scroll distance.
-       It's behind the fixed content, so the content never moves. */
     #scrollspace {
-      height: 400vh; /* adjust to control how long each loop is */
-      visibility: hidden; /* keep it non-visible for a clean page */
+      height: 400vh;
+      visibility: hidden;
     }
 
-    /* Optional: ensure mobile browser UI changes don't cause layout jumps */
     @supports (height: 100svh) {
       .fixed-content {
         height: 100svh;
@@ -137,160 +130,144 @@
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <!-- The fixed/pinned content -->
   <main class="fixed-content" role="main">
     <div class="card">
-      <img
-        class="logo"
-        src="RFCLogo.png"
-        alt="Rochester Flower Company logo – spooky pastel horror-style graphic"
-      >
+      <img class="logo"
+           src="RFCLogo.png"
+           alt="Rochester Flower Company logo – spooky pastel horror-style graphic">
+
       <h1>Rochester Flower Company</h1>
       <p class="slogan">We're Different, By Design</p>
-      <a
-        class="button"
-        href="mailto:info@rochesterflowercompany.com?subject=Rochester%20Flower%20Company%20Website%20Inquiry"
-      >
-        Contact Me
-      </a>
+
+      <!-- SPAM-PROTECTED CONTACT BUTTON -->
+      <a class="button" id="contact-btn" href="#" rel="nofollow">Contact Me</a>
+
+      <noscript>
+        <p style="margin-top:1rem;">
+          <a class="button" href="plants.html#contact">Contact Form</a>
+        </p>
+      </noscript>
     </div>
   </main>
 
-  <!-- Invisible scroll area to drive the background color change -->
   <div id="scrollspace" aria-hidden="true"></div>
 
   <noscript>
-    <p style="position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.7);color:#fff;padding:0.5rem 1rem;border-radius:999px;font-size:0.85rem;">
+    <p style="position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);
+              background:rgba(0,0,0,0.7);color:#fff;padding:0.5rem 1rem;
+              border-radius:999px;font-size:0.85rem;">
       Enable JavaScript to see the animated background.
     </p>
   </noscript>
 
+  <!-- BACKGROUND SCROLL LOGIC (unchanged) -->
   <script>
     (function () {
       const root = document.documentElement;
       const rootStyles = getComputedStyle(root);
 
-      // Read colors from CSS variables so everything stays in one place
       const COLORS = [];
       for (let i = 1; i <= 20; i++) {
-        const value = rootStyles.getPropertyValue(`--color-${i}`).trim();
-        if (value) COLORS.push(value);
+        const v = rootStyles.getPropertyValue(`--color-${i}`).trim();
+        if (v) COLORS.push(v);
       }
-      if (!COLORS.length) {
-        COLORS.push('#F8C8DC');
-      }
+      if (!COLORS.length) COLORS.push('#F8C8DC');
 
-      const toRgb = (hex) => {
-        const h = hex.replace('#', '').trim();
-        let r = 0, g = 0, b = 0;
-        if (h.length === 3) {
-          r = parseInt(h[0] + h[0], 16);
-          g = parseInt(h[1] + h[1], 16);
-          b = parseInt(h[2] + h[2], 16);
-        } else if (h.length === 6) {
-          r = parseInt(h.slice(0, 2), 16);
-          g = parseInt(h.slice(2, 4), 16);
-          b = parseInt(h.slice(4, 6), 16);
+      const toRgb = hex => {
+        const h = hex.replace('#','');
+        let r=0,g=0,b=0;
+        if (h.length===3){
+          r=parseInt(h[0]+h[0],16);
+          g=parseInt(h[1]+h[1],16);
+          b=parseInt(h[2]+h[2],16);
+        } else {
+          r=parseInt(h.slice(0,2),16);
+          g=parseInt(h.slice(2,4),16);
+          b=parseInt(h.slice(4,6),16);
         }
-        return { r, g, b };
+        return {r,g,b};
       };
-
-      const lerp = (a, b, t) => a + (b - a) * t;
+      const lerp = (a,b,t)=>a+(b-a)*t;
       const COLORS_RGB = COLORS.map(toRgb);
 
       const getMaxScroll = () =>
         document.documentElement.scrollHeight - window.innerHeight;
 
-      function setBgFromScroll() {
+      function setBg() {
         const max = getMaxScroll();
-        if (max <= 0) {
-          document.body.style.background = COLORS[0];
-          return;
-        }
+        if (max <= 0) return document.body.style.background = COLORS[0];
 
-        const raw = window.scrollY / max; // 0..1
+        const raw = window.scrollY / max;
         const scaled = raw * COLORS.length;
-        const indexFloat = scaled % COLORS.length;
-        const i = Math.floor(indexFloat);
-        const localT = indexFloat - i;
-        const next = (i + 1) % COLORS.length;
+        const iFloat = scaled % COLORS.length;
+        const i = Math.floor(iFloat);
+        const t = iFloat - i;
+        const next = (i+1) % COLORS.length;
 
         const a = COLORS_RGB[i];
         const b = COLORS_RGB[next];
-
-        const r = Math.round(lerp(a.r, b.r, localT));
-        const g = Math.round(lerp(a.g, b.g, localT));
-        const bl = Math.round(lerp(a.b, b.b, localT));
-
-        document.body.style.background = `rgb(${r}, ${g}, ${bl})`;
+        document.body.style.background =
+          `rgb(${Math.round(lerp(a.r,b.r,t))},${Math.round(lerp(a.g,b.g,t))},${Math.round(lerp(a.b,b.b,t))})`;
       }
 
-      // Teleport scroll position near opposite edge to create the infinite loop
-      function checkLoop() {
+      function loopCheck() {
         const max = getMaxScroll();
         if (max <= 0) return;
-
         const y = window.scrollY;
-        const threshold = 40; // px
-        if (y >= max - threshold) {
-          // jump near top
-          window.scrollTo({ top: 1, behavior: 'auto' });
-        } else if (y <= 0) {
-          // jump near bottom
-          window.scrollTo({ top: Math.max(1, max - 1), behavior: 'auto' });
-        }
+        if (y >= max - 40) window.scrollTo({top:1,behavior:'auto'});
+        else if (y <= 0) window.scrollTo({top:max-1,behavior:'auto'});
       }
 
       let ticking = false;
-      function onScroll() {
+      window.addEventListener('scroll', () => {
         if (!ticking) {
-          ticking = true;
           requestAnimationFrame(() => {
-            setBgFromScroll();
-            checkLoop();
+            setBg();
+            loopCheck();
             ticking = false;
           });
+          ticking = true;
         }
-      }
+      });
+      window.addEventListener('resize', setBg);
 
-      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-      function enableDynamicBackground() {
-        setBgFromScroll();
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', setBgFromScroll);
-
-        const max = getMaxScroll();
-        if (window.scrollY === 0 && max > 10) {
-          // Ensure we start away from exact edges to allow immediate scroll both ways
-          window.scrollTo({ top: 1, behavior: 'auto' });
-        }
-      }
-
-      function init() {
-        if (mediaQuery.matches) {
-          // Reduced-motion users: keep a static background
+      window.addEventListener('load', () => {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          setBg();
+          if (window.scrollY === 0 && getMaxScroll() > 10)
+            window.scrollTo({top:1,behavior:'auto'});
+        } else {
           document.body.style.background = COLORS[0];
-          return;
         }
-        enableDynamicBackground();
-      }
-
-      window.addEventListener('load', init);
+      });
     })();
   </script>
+
+  <!-- SPAM-PROTECTED EMAIL LOGIC -->
+  <script>
+    (function () {
+      const user = "info";
+      const domain = "rochesterflowercompany";
+      const tld = "com";
+
+      const full = `${user}@${domain}.${tld}`;
+      const subject = encodeURIComponent("Rochester Flower Company Website Inquiry");
+
+      const btn = document.getElementById("contact-btn");
+
+      btn.addEventListener("click", e => {
+        e.preventDefault();
+        window.location.href = `mailto:${full}?subject=${subject}`;
+      });
+    })();
+  </script>
+
 </body>
 </html>

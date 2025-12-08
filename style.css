@@ -467,6 +467,23 @@ ul {
 
   .split {
     grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  /* Stack hero earlier on tablets so text isn't cramped */
+  .hero-inner.hero-with-logo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .hero-logo-wrap {
+    margin-top: 1.75rem;
+  }
+
+  .hero-logo-big {
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -520,9 +537,15 @@ ul {
     padding: 3.2rem 0 2.5rem;
   }
 
-  /* Stack hero logo under the text on phones */
+  /* Tighten hero layout slightly on phones */
+  .hero-inner {
+    gap: 1.8rem;
+  }
+
+  /* Stack hero logo under the text on phones (keeps tablet behavior) */
   .hero-inner.hero-with-logo {
     grid-template-columns: 1fr;
+    gap: 1.8rem;
   }
 
   .hero-logo-wrap {
@@ -541,7 +564,33 @@ ul {
     font-size: 0.95rem;
   }
 
+  .hero-actions {
+    gap: 0.6rem;
+    margin-top: 1.3rem;
+  }
+
+  .hero-note {
+    margin-top: 0.9rem;
+  }
+
+  .page-hero {
+    padding: 2.6rem 0 1.6rem;
+  }
+
   .section {
-    padding: 2.4rem 0;
+    padding: 2.3rem 0;
+  }
+
+  .split {
+    gap: 1.6rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .card {
+    padding: 1.4rem;
   }
 }

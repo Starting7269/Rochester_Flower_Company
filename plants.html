@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plants – Rochester Flower Company</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse current and past plants from Rochester Flower Company's small-batch craft cannabis grow.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-animation"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="RFCLogo.png" alt="Rochester Flower Company logo" class="brand-logo">
+        <span class="brand-text">
+          <span class="brand-title">Rochester Flower Company</span>
+          <span class="brand-tagline">We're Different, By Design</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="craft.html">Craft Process</a></li>
+          <li><a href="plants.html" class="active">Plants</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Plants & Harvests</h1>
+        <p>
+          A peek into the grow room—past and present. Small batches, big love.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <h2>Current Grow</h2>
+        <p>
+          This section is a living diary. As new runs begin, they’ll appear here
+          with a few photos and notes about how they’re doing.
+        </p>
+      </div>
+
+      <!-- Gallery grid -->
+      <div class="container gallery">
+        <!-- Example card – duplicate and replace with your own images/notes -->
+        <article class="gallery-item">
+          <div class="gallery-image-wrap">
+            <!-- Replace src with your own file when ready -->
+            <img src="https://via.placeholder.com/600x400?text=Plant+Photo" alt="Example plant" class="gallery-image">
+          </div>
+          <div class="gallery-body">
+            <h3>Example Run – Winter 2025</h3>
+            <p class="gallery-meta">Indoor • Small-batch • Personal grow</p>
+            <p>
+              Replace this card with your own grow: notes about the strain, how it liked the
+              environment, and anything interesting you learned along the way.
+            </p>
+          </div>
+        </article>
+
+        <!-- Add more .gallery-item blocks as you have more plants -->
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container narrow">
+        <h2>Past Harvests</h2>
+        <p>
+          Over time, this space can turn into a visual history of your work:
+          a place to remember favorite runs, unusual phenos, and lessons learned.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Rochester Flower Company</p>
+      <p class="footer-small">
+        Personal small-scale grow. All cannabis is gifted, not sold, to adults 21+ only.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

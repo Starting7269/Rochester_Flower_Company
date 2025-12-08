@@ -201,6 +201,44 @@ img {
   gap: 2rem;
 }
 
+/* Two-column hero when the logo is present */
+.hero-inner.hero-with-logo {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(220px, 260px);
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* Right-side hero logo */
+.hero-logo-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo-big {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4px rgba(15, 23, 42, 0.9),
+    0 0 50px rgba(244, 114, 182, 0.6),
+    0 20px 40px rgba(0, 0, 0, 0.7);
+  animation: heroLogoFloat 16s ease-in-out infinite;
+}
+
+/* Subtle float / pulse animation for the hero logo */
+@keyframes heroLogoFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.04);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
 .hero h1 {
   font-size: clamp(2.3rem, 4vw, 3.1rem);
   line-height: 1.08;
@@ -480,6 +518,19 @@ ul {
 
   .hero {
     padding: 3.2rem 0 2.5rem;
+  }
+
+  /* Stack hero logo under the text on phones */
+  .hero-inner.hero-with-logo {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-logo-wrap {
+    margin-top: 1.5rem;
+  }
+
+  .hero-logo-big {
+    max-width: 200px;
   }
 
   .hero h1 {

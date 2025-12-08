@@ -22,8 +22,7 @@
   var button = document.getElementById("emailButton");
   if (!button) return;
 
-  // Change these to your actual email pieces
-  var user = "info";                   // before the @
+  var user = "info";                     // before the @
   var domain = "rochesterflowercompany"; // without TLD
   var tld = "com";
 
@@ -39,5 +38,3 @@
     window.location.href = "mailto:" + address + "?subject=" + subject + "&body=" + body;
   });
 })();
-
-

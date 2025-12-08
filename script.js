@@ -23,21 +23,21 @@
   if (!button) return;
 
   // Change these to your actual email pieces
-  var user = "info";         // before the @
+  var user = "info";                   // before the @
   var domain = "rochesterflowercompany"; // without TLD
   var tld = "com";
 
   button.addEventListener("click", function () {
     var address = user + "@" + domain + "." + tld;
-    var subject = encodeURIComponent("Rochester Flower Company – Request / Question");
+    var subject = encodeURIComponent("Rochester Flower Company – Reaching Out");
     var body = encodeURIComponent(
       "Hi,\n\n" +
-      "I'm reaching out because I rely on cannabis for relief but struggle to afford it.\n\n" +
+      "I saw your site and wanted to reach out.\n\n" +
       "Age (must be 21+):\n" +
-      "General location:\n" +
+      "General area (city/region):\n" +
       "How cannabis helps me:\n\n" +
-      "Anything else you'd like to know:\n\n" +
-      "Thanks for your time.\n"
+      "Anything else you should know:\n\n" +
+      "Thanks for doing what you do.\n"
     );
 
     window.location.href = "mailto:" + address + "?subject=" + subject + "&body=" + body;

@@ -4,8 +4,18 @@
   <meta charset="UTF-8">
   <title>About – Rochester Flower Company</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The story behind Rochester Flower Company: a tiny, obsessive, soft-hearted home grow giving craft cannabis to people who actually need it.">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Center the top section header and intro paragraph */
+    .about-top {
+      text-align: center;
+    }
+    .about-top p {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 720px;
+    }
+  </style>
 </head>
 <body>
   <div class="bg-animation"></div>
@@ -13,10 +23,10 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand">
-        <img src="RFCLogo.png" alt="Rochester Flower Company logo" class="brand-logo">
+        <img src="RFCLogo.png" alt="Logo" class="brand-logo">
         <span class="brand-text">
           <span class="brand-title">Rochester Flower Company</span>
-          <span class="brand-tagline">We're Different, By Design.</span>
+          <span class="brand-tagline">Tiny weird craft grow. Big feelings.</span>
         </span>
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation">
@@ -36,38 +46,47 @@
   </header>
 
   <main class="page-main">
-    <section class="page-hero">
+
+    <!-- Centered top section -->
+    <section class="about-top page-hero">
       <div class="container">
         <h1>About Rochester Flower Company</h1>
         <p>
-          This isn’t a brand launch. It’s just my home grow, a lot of love,
-          and some flower that keeps finding its way into the hands of people who need it.
+          This isn’t a brand launch. It’s just my home grow, a lot of love, and some flower
+          that keeps landing in the hands of people who need it.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container narrow">
-        <h2>Hi. I’m the grower.</h2>
+        <h2>Hi — I’m the grower</h2>
         <p>
-          Rochester Flower Company is basically the fancy name I gave to my deeply overbuilt
-          home grow in Rochester, NY. It’s small, personal, and very much powered by spreadsheets,
-          timers, and a slightly ridiculous amount of care. I always say my shadow touches more than my hand.  
-          This is because I'm always attentive to the plant. Listening, watching, observing and only 
-          reacting when necessary.
+          Rochester Flower Company is the fancy name I gave to my overbuilt home grow in  
+          Rochester, NY. It’s small, personal, and run with a mix of spreadsheets, timers,  
+          and a slightly ridiculous amount of care.
         </p>
         <p>
-          I started RFC because I kept meeting people who used cannabis as medicine—sleep,
-          pain, anxiety, appetite—and then had to play “which bill do I not pay this month”
-          to afford it. That didn’t sit right with me. On top of the price, some of the inputs
-          being used were disgusting. If you know some of the chemicals and heavy metals being
-          put into commercial crops, you wouldnt touch them.
+          I like to say: my shadow touches more than my hand. I notice everything — leaf curl,  
+          air flow, plant posture — and only intervene when the plants actually need something.
+        </p>
+
+        <p>
+          I started RFC because I kept running into people using cannabis as medicine — for  
+          sleep, pain, anxiety, appetite — but often having to choose between bills or buds.  
+          That didn’t feel right.
+        </p>
+        <p>
+          On top of cost, lots of commercial grows use inputs that felt… grim. Chemicals,  
+          questionable pesticides, possible heavy-metal residue. Once you start paying  
+          attention, it gets harder to feel good about that ending up in someone’s jar.
         </p>
 
         <h2>What I actually do</h2>
         <p>
-          A few times a year, I run small, carefully dialed-in grows. When a harvest is ready,
-          the flower gets trimmed, cured, and then quietly gifted to adults who genuinely need it.
+          A few times a year I run a small, carefully dialed-in grow. When it's harvest time,  
+          the flower gets trimmed, cured, and quietly gifted to adults who genuinely need  
+          medicine — no fanfare, no menu, no markup.
         </p>
         <ul>
           <li>No online store.</li>
@@ -78,32 +97,33 @@
           Just plants, people, and a little bit of mutual aid.
         </p>
 
-        <h2>Things I care about</h2>
+        <h2>What matters to me</h2>
         <ul>
-          <li><strong>People first</strong> – The whole point is to make someone’s day/life a bit easier.</li>
-          <li><strong>Craft over hype</strong> – Clean inputs, consistent process, no “mystery bag” energy.</li>
-          <li><strong>Honesty</strong> – Clear about what this is and what it isn’t. No pretending to be a dispensary.</li>
-          <li><strong>Respect</strong> – For the law, for the plant, and for the folks who trust me with their medicine.</li>
+          <li><strong>People first</strong> — The point is to help someone get through a rough night or a rough day.</li>
+          <li><strong>Craft over hype</strong> — Clean inputs, consistent process, and trust over trends.</li>
+          <li><strong>Honesty</strong> — Clear about what this is and what it isn’t. No pretending to be a dispensary.</li>
+          <li><strong>Respect</strong> — For the plant, for the law, and for the folks who trust me with their medicine.</li>
         </ul>
 
-        <h2>Important notes (the non-fun but necessary part)</h2>
+        <h2>Important note (the non-fun but necessary part)</h2>
         <p class="notice">
-          Rochester Flower Company is a personal, small-scale home grow in New York.
-          I do not sell cannabis products. Any cannabis shared through this project is
-          gifted free of charge and only to adults 21+.
+          Rochester Flower Company is a personal, small-scale home grow in New York.  
+          I do not sell cannabis. Any cannabis shared through this project is gifted — free  
+          of charge — to adults 21+ only.  
           <br><br>
-          I’m not a doctor, pharmacist, or therapist. Nothing on this site is medical
-          advice—please talk to a licensed professional about your health and treatment options.
+          I’m not a doctor, pharmacist, or therapist. Nothing here is medical advice. Consult  
+          a licensed professional about any health or treatment questions.
         </p>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> Rochester Flower Company</p>
       <p class="footer-small">
-        Small, personal home grow. Cannabis is gifted, not sold, to adults 21+ only.
+        Personal home grow. Cannabis is gifted, not sold, to adults 21+ only.
       </p>
     </div>
   </footer>
@@ -111,4 +131,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-

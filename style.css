@@ -28,9 +28,24 @@ body {
   padding: 0;
 }
 
+/* Solid fallback for iOS / any case where gradients fail */
+html {
+  background-color: #020617;
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #111827, #020617 55%, #020617 100%);
+
+  /* Make background more robust on iOS:
+     - explicit solid color
+     - gradient as background-image
+     - no-repeat + cover to ensure full paint */
+  background-color: #020617;
+  background-image: radial-gradient(circle at top, #111827, #020617 55%, #020617 100%);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+
   color: var(--color-text);
   min-height: 100vh;
   position: relative;

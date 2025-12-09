@@ -30,7 +30,7 @@
     var address = user + "@" + domain + "." + tld;
     var subject = encodeURIComponent("Rochester Flower Company – Reaching Out");
     var body = encodeURIComponent(
-      "What can i help you with?:\n\n" +
+      "What can I help you with?:\n\n" +
       "Age (must be 21+):\n" +
       "General area (city/region):\n"
     );
@@ -38,3 +38,4 @@
     window.location.href = "mailto:" + address + "?subject=" + subject + "&body=" + body;
   });
 })();
+

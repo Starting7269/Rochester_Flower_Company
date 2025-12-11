@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block sensitive files/directories
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+
+# Sitemap (create this file later if you add one)
+# Sitemap: https://rochesterflowercompany.com/sitemap.xml
+
+# Crawl delay to be respectful
+Crawl-delay: 1

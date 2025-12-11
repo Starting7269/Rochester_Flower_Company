@@ -1,0 +1,20 @@
+Contact: mailto:info@rochesterflowercompany.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://rochesterflowercompany.com/.well-known/security.txt
+Policy: https://rochesterflowercompany.com/security-policy.html
+
+# Security Disclosure
+# If you discover a security vulnerability, please report it responsibly.
+# We appreciate your help in keeping Rochester Flower Company secure.
+
+# Scope
+# This site is a static website hosted on GitHub Pages
+# In scope: XSS, injection attacks, authentication bypass
+# Out of scope: DoS attacks, social engineering
+
+# Response Time
+# We will acknowledge receipt within 48 hours
+# We aim to resolve critical issues within 7 days
+
+Acknowledgments: https://rochesterflowercompany.com/security-acknowledgments.html

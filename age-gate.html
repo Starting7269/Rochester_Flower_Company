@@ -7,6 +7,16 @@
   <meta name="color-scheme" content="dark light">
   <meta name="description" content="Rochester Flower Company age verification - You must be 21+ to enter">
   <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Enhanced Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self';">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
     :root {
@@ -128,13 +138,18 @@
       display: inline-block;
     }
 
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
     .btn-yes {
       background: radial-gradient(circle at top left, #ffd3f2, var(--color-primary));
       color: #111827;
       box-shadow: var(--shadow-soft);
     }
 
-    .btn-yes:hover {
+    .btn-yes:hover:not(:disabled) {
       transform: translateY(-2px);
       box-shadow: 0 22px 52px rgba(0, 0, 0, 0.9);
     }
@@ -145,7 +160,7 @@
       border-color: rgba(148, 163, 248, 0.7);
     }
 
-    .btn-no:hover {
+    .btn-no:hover:not(:disabled) {
       background: rgba(15, 23, 42, 0.95);
     }
 
@@ -200,25 +215,59 @@
 
   <script>
     (function() {
+      // Enhanced age verification with timestamp and integrity
+      var timestamp = sessionStorage.getItem('ageTimestamp');
       var ageVerified = sessionStorage.getItem('ageVerified');
       
-      // If already verified this session, redirect immediately
-      if (ageVerified === 'true') {
-        window.location.href = 'index.html';
-        return;
+      // Check if already verified and timestamp is valid (within 24 hours)
+      if (ageVerified === 'true' && timestamp) {
+        var age = Date.now() - parseInt(timestamp, 10);
+        var ONE_DAY = 24 * 60 * 60 * 1000;
+        
+        if (age < ONE_DAY && age > 0) {
+          window.location.href = 'index.html';
+          return;
+        }
       }
 
       var btnYes = document.getElementById('btn-yes');
       var btnNo = document.getElementById('btn-no');
+      var clickCount = 0;
+      var RATE_LIMIT = 5; // Max 5 clicks per page load
 
       btnYes.addEventListener('click', function() {
+        // Rate limiting to prevent abuse
+        clickCount++;
+        if (clickCount > RATE_LIMIT) {
+          alert('Too many attempts. Please refresh the page.');
+          btnYes.disabled = true;
+          return;
+        }
+        
+        // Set verification with timestamp
+        var now = Date.now();
         sessionStorage.setItem('ageVerified', 'true');
-        window.location.href = 'index.html';
+        sessionStorage.setItem('ageTimestamp', now.toString());
+        
+        // Small delay to prevent rapid clicking
+        btnYes.disabled = true;
+        setTimeout(function() {
+          window.location.href = 'index.html';
+        }, 300);
       });
 
       btnNo.addEventListener('click', function() {
+        // Clear any existing verification
+        sessionStorage.clear();
+        
+        // Redirect away
         window.location.href = 'https://www.google.com';
       });
+      
+      // Prevent frame embedding
+      if (window.self !== window.top) {
+        window.top.location = window.self.location;
+      }
     })();
   </script>
 </body>

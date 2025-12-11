@@ -2,11 +2,11 @@
   --color-bg: #050414;
   --color-bg-alt: #0b1023;
   --color-card: rgba(15, 23, 42, 0.95);
-  --color-primary: #ff7ac4;       /* punchy pink */
-  --color-primary-soft: #ffd3f2;  /* soft pink highlight */
-  --color-accent: #4fd1c5;        /* teal accent */
-  --color-text: #fdf4ff;          /* warm off-white */
-  --color-muted: #c7d2fe;         /* soft indigo */
+  --color-primary: #ff7ac4;
+  --color-primary-soft: #ffd3f2;
+  --color-accent: #4fd1c5;
+  --color-text: #fdf4ff;
+  --color-muted: #c7d2fe;
   --color-border: rgba(129, 140, 248, 0.7);
 
   --radius-lg: 1.5rem;
@@ -15,7 +15,7 @@
   --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
 }
 
-/* Reset-ish */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -28,28 +28,42 @@ body {
   padding: 0;
 }
 
-/* Solid fallback for iOS / any case where gradients fail */
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: #111827;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 100;
+  border-radius: 0 0 0.5rem 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Base styles */
 html {
   background-color: #020617;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-  /* Make background more robust on iOS:
-     - explicit solid color
-     - gradient as background-image
-     - no-repeat + cover to ensure full paint */
   background-color: #020617;
   background-image: radial-gradient(circle at top, #111827, #020617 55%, #020617 100%);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-
   color: var(--color-text);
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden; /* kill sideways scroll on mobile */
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
 /* Make all images responsive by default */
@@ -57,6 +71,12 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Focus visible for better keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 /* Animated background layer */
@@ -121,6 +141,11 @@ img {
   min-width: 0;
 }
 
+.brand:focus-visible {
+  outline-offset: 4px;
+  border-radius: 0.5rem;
+}
+
 .brand-logo {
   width: 56px;
   height: 56px;
@@ -182,9 +207,14 @@ img {
   transform: translateY(-1px);
 }
 
+.site-nav a:focus-visible {
+  outline-offset: 2px;
+}
+
 .site-nav a.active {
   background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
   color: #020617;
+  font-weight: 600;
 }
 
 /* Mobile nav toggle */
@@ -196,6 +226,12 @@ img {
   cursor: pointer;
 }
 
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
 .nav-toggle-bar {
   display: block;
   width: 22px;
@@ -203,6 +239,7 @@ img {
   background: #e5e7eb;
   border-radius: 999px;
   margin: 4px 0;
+  transition: transform 0.2s ease;
 }
 
 /* Hero */
@@ -216,7 +253,6 @@ img {
   gap: 2rem;
 }
 
-/* Two-column hero when the logo is present */
 .hero-inner.hero-with-logo {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(220px, 260px);
@@ -224,7 +260,6 @@ img {
   gap: 2.5rem;
 }
 
-/* Right-side hero logo */
 .hero-logo-wrap {
   display: flex;
   justify-content: center;
@@ -241,7 +276,6 @@ img {
   animation: heroLogoFloat 16s ease-in-out infinite;
 }
 
-/* Subtle float / pulse animation for the hero logo */
 @keyframes heroLogoFloat {
   0% {
     transform: translateY(0) scale(1);
@@ -296,6 +330,11 @@ img {
     box-shadow 0.15s ease,
     background 0.15s ease,
     border-color 0.15s ease;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .btn-primary {
@@ -363,10 +402,17 @@ img {
   font-size: 0.85rem;
   color: var(--color-accent);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .card-link:hover {
   text-decoration: underline;
+  color: var(--color-primary-soft);
+}
+
+.card-link:focus-visible {
+  outline-offset: 2px;
+  border-radius: 0.25rem;
 }
 
 /* Page layout */
@@ -388,7 +434,7 @@ img {
   max-width: 40rem;
 }
 
-/* Narrow */
+/* Narrow container */
 .narrow {
   max-width: 720px;
 }
@@ -400,6 +446,10 @@ p {
 
 ul {
   padding-left: 1.25rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
 }
 
 .notice {
@@ -472,9 +522,9 @@ ul {
   margin-top: 0.4rem;
 }
 
-/* Breakpoints */
+/* Responsive breakpoints */
 
-/* Tablet-ish */
+/* Tablet */
 @media (max-width: 900px) {
   .cards {
     grid-template-columns: minmax(0, 1fr);
@@ -485,7 +535,6 @@ ul {
     gap: 1.75rem;
   }
 
-  /* Stack hero earlier on tablets so text isn't cramped */
   .hero-inner.hero-with-logo {
     grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
@@ -519,7 +568,7 @@ ul {
   }
 
   .brand-tagline {
-    display: none; /* free up horizontal space on tiny screens */
+    display: none;
   }
 
   .site-nav {
@@ -552,12 +601,10 @@ ul {
     padding: 3.2rem 0 2.5rem;
   }
 
-  /* Tighten hero layout slightly on phones */
   .hero-inner {
     gap: 1.8rem;
   }
 
-  /* Stack hero logo under the text on phones (keeps tablet behavior) */
   .hero-inner.hero-with-logo {
     grid-template-columns: 1fr;
     gap: 1.8rem;
@@ -607,5 +654,21 @@ ul {
 
   .card {
     padding: 1.4rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .site-header,
+  .site-footer,
+  .btn,
+  .nav-toggle,
+  .bg-animation {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
   }
 }

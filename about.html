@@ -6,19 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
   <meta name="description" content="About Rochester Flower Company, a small-batch personal home cannabis grow in Rochester, NY focused on gifting clean craft flower to adults who truly benefit from it.">
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://rochesterflowercompany.com/about.html">
+  
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* Center only the page title */
     .about-top h1 {
       text-align: center;
       margin-bottom: 0.6rem;
     }
 
-    /* Intro paragraph stays left-aligned but visually grouped under the heading */
     .about-top p {
       text-align: left;
       margin-left: auto;
@@ -28,44 +37,43 @@
   </style>
 </head>
 <body>
-  <div class="bg-animation"></div>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="bg-animation" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <img src="RFCLogo.png" alt="Rochester Flower Company logo" class="brand-logo">
+      <a href="index.html" class="brand" aria-label="Rochester Flower Company Home">
+        <img src="RFCLogo.png" alt="Rochester Flower Company logo featuring cannabis leaf design" class="brand-logo" width="56" height="56" loading="eager">
         <span class="brand-text">
           <span class="brand-title">Rochester Flower Company</span>
           <span class="brand-tagline">We're Different, By Design.</span>
         </span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
       </button>
       <nav class="site-nav" aria-label="Primary navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="about.html" class="active" aria-current="page">About</a></li>
           <li><a href="craft.html">Craft Process</a></li>
-          <!-- <li><a href="support.html" class="active">Support</a></li> -->
           <li><a href="plants.html">Plants</a></li>
-          <!-- <li><a href="contact.html" class="active">Contact</a></li> -->
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="page-main">
+  <main class="page-main" id="main-content">
 
   <!-- Hero -->
-  <section class="page-hero">
+  <section class="page-hero" aria-labelledby="page-title">
     <div class="container narrow">
-      <h1>Craft cannabis for real people.</h1>
+      <h1 id="page-title">Craft cannabis for real people.</h1>
       <p>
-        Rochester Flower Company isn’t a brand or a business. It’s just one grower in Rochester, NY 
+        Rochester Flower Company isn't a brand or a business. It's just one grower in Rochester, NY 
         working in small batches to make good flower accessible to people who genuinely rely on it. 
-        No storefront, no hype — just plants, craft, and community.
+        No storefront, no hype – just plants, craft, and community.
       </p>
     </div>
   </section>
@@ -75,17 +83,18 @@
     <div class="container">
       <h2>How this all started</h2>
       <p>
-        This didn’t begin as a “project.” It started because I saw people in my life struggling to afford 
+        This didn't begin as a "project." It started because I saw people in my life struggling to afford 
         the thing that helped them function, sleep, heal, or feel like themselves. Meanwhile, the legal market 
-        flooded with corporate branding, high prices, and flower that didn’t feel like medicine.
+        flooded with corporate branding, high prices, and flower that didn't feel like medicine.
       </p>
       <p>
-        Here's a fun fact:  Did you know that commercial growers who didnt dry, cure, and store their bud properly, 
+        Here's a fun fact: Did you know that commercial growers who didn't dry, cure, and store their bud properly, 
         allowing the terpenes off-gas, they have a synthetic spray they put on the flower to fool the buyer into thinking the 
         plant is higher quality than it actually is. Not cool, not cool at all.
+      </p>
       <p>
         So I decided to grow the way I wish the world grew: small batches, clean inputs, honest curing, 
-        no shortcuts, and no sales — just trustworthy flower, shared responsibly with adults who need it.
+        no shortcuts, and no sales – just trustworthy flower, shared responsibly with adults who need it.
       </p>
     </div>
   </section>
@@ -95,10 +104,10 @@
     <div class="container">
       <h2>What I believe in</h2>
       <ul>
-        <li><strong>Small batch:</strong> Good cannabis isn’t made at scale. It comes from attention, the kind you only get when the entire grow is in the hands of one person.</li>
+        <li><strong>Small batch:</strong> Good cannabis isn't made at scale. It comes from attention, the kind you only get when the entire grow is in the hands of one person.</li>
         <li><strong>Clean environments:</strong> Indoor tents, coco/perlite, tuned LEDs, and obsessive environmental management. Temp, humidity, VPD, DLI. Everything is intentional.</li>
         <li><strong>Slow dry, real cure:</strong> Fast drying ruins good work. Every harvest gets the time it deserves so the terpene profile actually survives long enough to be appreciated.</li>
-        <li><strong>No ego, no hype:</strong> I don’t compete, I don’t chase trends, and I don’t pretend this is a business. I just grow because it helps people and because I love it.</li>
+        <li><strong>No ego, no hype:</strong> I don't compete, I don't chase trends, and I don't pretend this is a business. I just grow because it helps people and because I love it.</li>
       </ul>
     </div>
   </section>
@@ -106,15 +115,15 @@
   <!-- What this is -->
   <section class="section">
     <div class="container">
-      <h2>What this is (and isn’t)</h2>
+      <h2>What this is (and isn't)</h2>
       <p>
         Everything I grow is <strong>gifted</strong>, not sold. New York law allows adults 21+ to gift cannabis 
-        to other adults — without payment, trades, services, or anything of value involved. I follow that fully.
+        to other adults – without payment, trades, services, or anything of value involved. I follow that fully.
       </p>
       <p>
-        I don’t sell cannabis.  
-        I don’t run a commercial operation.  
-        I don’t offer medical advice.  
+        I don't sell cannabis.<br>
+        I don't run a commercial operation.<br>
+        I don't offer medical advice.
       </p>
       <p>
         This is a home garden, one I take seriously, work hard on, and am proud to share with people who truly benefit from it.
@@ -130,7 +139,7 @@
         <li>People who use cannabis as real medicine</li>
         <li>People who appreciate well-grown flower</li>
         <li>People who value honesty and transparency</li>
-        <li>People who can’t always afford dispensary prices</li>
+        <li>People who can't always afford dispensary prices</li>
         <li>People who believe craft matters</li>
       </ul>
     </div>
@@ -141,7 +150,7 @@
     <div class="container">
       <h2>The human behind the plants</h2>
       <p>
-        It’s just me: a husband, a pet dad, a spreadsheet addict, and a slightly obsessive plant nerd. What started as a hobby became a personal mission: grow the best flower I can, 
+        It's just me: a husband, a pet dad, a spreadsheet addict, and a slightly obsessive plant nerd. What started as a hobby became a personal mission: grow the best flower I can, 
         share it responsibly, and make the whole thing feel human again.
       </p>
       <p>
@@ -155,7 +164,7 @@
     <div class="container">
       <h2>Where to go next</h2>
       <p>
-        I don’t have big plans to scale or turn this into something commercial. The goal is simple: keep the garden healthy, keep learning, keep helping, and keep sharing. If I were allowed to 
+        I don't have big plans to scale or turn this into something commercial. The goal is simple: keep the garden healthy, keep learning, keep helping, and keep sharing. If I were allowed to 
         dream for a moment, I'd love to see my passion for helping animals and providing medicinal plants to people collide. Imagine craft flower grown using composted "output" 💩 from 
         rescued animals, and the profit from the flower pays to feed and care for those animals. That seems like a rad world that I want to live in.
       </p>
@@ -171,7 +180,7 @@
           <p>
             If you want to see how I grow, check out the craft process page.
           </p>
-          <a href="craft.html" class="card-link">Read the story →</a>
+          <a href="craft.html" class="card-link" aria-label="Learn about the detailed craft growing process">Read about the process →</a>
         </article>
 
         <article class="card">
@@ -179,7 +188,7 @@
           <p>
             If you want to follow the plants themselves, the Plants page is updated regularly.
           </p>
-          <a href="plants.html" class="card-link">See the process →</a>
+          <a href="plants.html" class="card-link" aria-label="View current and past cannabis plant grows">View the plants →</a>
         </article>
 
         <article class="card">
@@ -187,7 +196,7 @@
           <p>
             Clicking the link below takes you back to RochesterFlowerCompany.com
           </p>
-          <a href="index.html" class="card-link">The way back home →</a>
+          <a href="index.html" class="card-link" aria-label="Return to Rochester Flower Company homepage">Back to home →</a>
         </article>
       </div>
     </section>    
@@ -196,7 +205,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Rochester Flower Company</p>
+      <p>&copy; <span id="year">2025</span> Rochester Flower Company</p>
       <p class="footer-small">
         Rochester Flower Company is a personal, small-scale home grow. All cannabis is gifted
         at no cost and only to adults 21+, consistent with New York personal cultivation laws.
@@ -209,12 +218,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

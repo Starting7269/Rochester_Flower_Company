@@ -6,25 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
   <meta name="description" content="A loose grow diary: current runs, past harvests, and the plants that kept me up at night (in a good way).">
-    <!-- Favicon -->
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://rochesterflowercompany.com/plants.html">
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
   
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="bg-animation"></div>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="bg-animation" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <img src="RFCLogo.png" alt="Rochester Flower Company logo" class="brand-logo">
+      <a href="index.html" class="brand" aria-label="Rochester Flower Company Home">
+        <img src="RFCLogo.png" alt="Rochester Flower Company logo featuring cannabis leaf design" class="brand-logo" width="56" height="56" loading="eager">
         <span class="brand-text">
           <span class="brand-title">Rochester Flower Company</span>
           <span class="brand-tagline">We're Different, By Design.</span>
         </span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
       </button>
@@ -33,21 +44,19 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="craft.html">Craft Process</a></li>
-          <!-- <li><a href="support.html" class="active">Support</a></li> -->
-          <li><a href="plants.html" class="active">Plants</a></li>
-          <!-- <li><a href="contact.html" class="active">Contact</a></li> -->
+          <li><a href="plants.html" class="active" aria-current="page">Plants</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="page-main">
-    <section class="page-hero">
+  <main class="page-main" id="main-content">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
-        <h1>Plants & Harvests</h1>
+        <h1 id="page-title">Plants &amp; Harvests</h1>
         <p>
           Think of this page as a casual grow diary: snapshots, little notes,
-          and the occasional “look at this pheno!” moment. Right now it's empty but I'm working
+          and the occasional "look at this pheno!" moment. Right now it's empty but I'm working
           on it. More to come soon.
         </p>
       </div>
@@ -57,18 +66,16 @@
       <div class="container narrow">
         <h2>Current grow</h2>
         <p>
-          When there’s a run in progress, you’ll see it show up here—usually with a few photos,
-          some nerd notes, and at least one “I didn’t expect it to do <em>that</em>” comment.
+          When there's a run in progress, you'll see it show up here—usually with a few photos,
+          some nerd notes, and at least one "I didn't expect it to do <em>that</em>" comment.
         </p>
       </div>
 
       <!-- Gallery grid -->
       <div class="container gallery">
-        <!-- Example card – replace with your own as you go -->
         <article class="gallery-item">
           <div class="gallery-image-wrap">
-            <!-- Replace src with your own file when ready -->
-            <img src="https://via.placeholder.com/600x400?text=Plant+Photo" alt="Example plant" class="gallery-image">
+            <img src="https://via.placeholder.com/600x400?text=Plant+Photo" alt="Placeholder for upcoming Winter 2025 cannabis grow" class="gallery-image" width="600" height="400" loading="lazy">
           </div>
           <div class="gallery-body">
             <h3>Winter 2025 (COMING SOON)</h3>
@@ -96,7 +103,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Rochester Flower Company</p>
+      <p>&copy; <span id="year">2025</span> Rochester Flower Company</p>
       <p class="footer-small">
         Rochester Flower Company is a personal, small-scale home grow. All cannabis is gifted 
         at no cost and only to adults 21+, consistent with New York personal cultivation laws. 
@@ -109,11 +116,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-

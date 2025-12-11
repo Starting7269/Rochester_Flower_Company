@@ -2,18 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact – Rochester Flower Company</title>
+  <title>Page Not Found – Rochester Flower Company</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
-  <meta name="description" content="Reach out if you rely on cannabis as medicine. This is a small social experiment project, but I do my best.">
-  
-  <!-- Security Headers -->
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://rochesterflowercompany.com/contact.html">
+  <meta name="description" content="Page not found on Rochester Flower Company">
+  <meta name="robots" content="noindex, nofollow">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
@@ -21,6 +14,43 @@
   <link rel="apple-touch-icon" href="favicon.png">
   
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .error-container {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    
+    .error-content {
+      max-width: 500px;
+    }
+    
+    .error-code {
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    
+    .error-message {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--color-text);
+    }
+    
+    .error-description {
+      color: var(--color-muted);
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -50,40 +80,18 @@
     </div>
   </header>
 
-  <main class="page-main" id="main-content">
-    <section class="page-hero" aria-labelledby="page-title">
-      <div class="container">
-        <h1 id="page-title">Get in Touch</h1>
-        <p>
-          If you rely on cannabis to get through the day but the price tag keeps fighting you,
-          you're exactly the kind of person I had in mind when I built this grow.
+  <main id="main-content">
+    <div class="error-container">
+      <div class="error-content">
+        <div class="error-code" aria-label="Error 404">404</div>
+        <h1 class="error-message">Page Not Found</h1>
+        <p class="error-description">
+          Looks like this plant didn't make it into the garden. 
+          The page you're looking for doesn't exist.
         </p>
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="container narrow">
-        <p>
-          There's no big intake form here on purpose. I'd rather you send an email in your own words.
-          Click the button below and it'll open an email draft with a few prompts to get you started.
-        </p>
-
-        <button id="emailButton" class="btn btn-primary" type="button">
-          Email Rochester Flower Company
-        </button>
-
-        <p class="footer-small" style="margin-top: 1.5rem;">
-          Please include your age (21+ only), general area, and a sentence or two about how cannabis helps you.
-          Share only what you're comfortable with. No medical records needed or wanted.
-        </p>
-
-        <p class="notice">
-          This project is small, and I can't promise I'll always have flower available or be able
-          to help everyone who reaches out. I also can't give medical advice or tell you what
-          you should do with your health—please talk to a licensed professional for that part.
-        </p>
-      </div>
-    </section>
+    </div>
   </main>
 
   <footer class="site-footer">

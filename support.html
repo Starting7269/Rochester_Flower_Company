@@ -6,25 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
   <meta name="description" content="Support Rochester Flower Company, a small personal home grow in Rochester, NY. Donations help cover seeds, soil, gear, and experiments in the garden.">
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://rochesterflowercompany.com/support.html">
+  
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="bg-animation"></div>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="bg-animation" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <img src="RFCLogo.png" alt="Rochester Flower Company logo" class="brand-logo">
+      <a href="index.html" class="brand" aria-label="Rochester Flower Company Home">
+        <img src="RFCLogo.png" alt="Rochester Flower Company logo featuring cannabis leaf design" class="brand-logo" width="56" height="56" loading="eager">
         <span class="brand-text">
           <span class="brand-title">Rochester Flower Company</span>
           <span class="brand-tagline">We're Different, By Design.</span>
         </span>
       </a>
 
-      <button class="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
       </button>
@@ -34,21 +46,19 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="craft.html">Craft Process</a></li>
-          <!-- <li><a href="support.html" class="active">Support</a></li> -->
           <li><a href="plants.html">Plants</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="page-main">
-    <!-- Page hero -->
-    <section class="page-hero">
+  <main class="page-main" id="main-content">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container narrow">
-        <h1>Support the Grow </h1>
+        <h1 id="page-title">Support the Grow</h1>
         <p>
-          Rochester Flower Company is a small personal home grow in Rochester, NY. There’s no storefront,
-          no menu, and no checkout. It’s just me, a couple of tents, too many notes, and a soft spot for
+          Rochester Flower Company is a small personal home grow in Rochester, NY. There's no storefront,
+          no menu, and no checkout. It's just me, a couple of tents, too many notes, and a soft spot for
           people who actually use cannabis as medicine.
         </p>
         <p>
@@ -60,32 +70,31 @@
           <a class="btn btn-primary"
              href="https://www.buymeacoffee.com/rochesterflowercompan"
              target="_blank"
-             rel="noopener">
+             rel="noopener noreferrer"
+             aria-label="Support Rochester Flower Company via Buy Me a Coffee (opens in new window)">
             Support via Buy Me a Coffee
           </a>
         </p>
       </div>
     </section>
 
-    <!-- What support helps with -->
     <section class="section">
       <div class="container narrow">
         <h2>What your support helps with</h2>
         <p>
-          Donations don’t turn this into a business. They just make it a little easier to keep doing this
+          Donations don't turn this into a business. They just make it a little easier to keep doing this
           the right way instead of the cheap way.
         </p>
         <ul>
           <li>New genetics, seeds, and clones for future runs</li>
-          <li>Mediums like coco, perlite, soil, and the “let’s see what happens” experiments</li>
+          <li>Mediums like coco, perlite, soil, and the "let's see what happens" experiments</li>
           <li>Upgrades to lights, fans, filters, and environmental controls</li>
           <li>Electricity to keep the tents running safely and consistently</li>
-          <li>Better documentation and photos so you can actually see what’s going on</li>
+          <li>Better documentation and photos so you can actually see what's going on</li>
         </ul>
       </div>
     </section>
 
-    <!-- Other ways to support -->
     <section class="section section-alt">
       <div class="container narrow">
         <h2>Other ways to support (that cost $0)</h2>
@@ -97,17 +106,16 @@
       </div>
     </section>
 
-    <!-- Legal / clarity section -->
     <section class="section">
       <div class="container narrow">
-        <h2>What this project is (and isn’t)</h2>
+        <h2>What this project is (and isn't)</h2>
         <div class="notice">
           <p>
             Rochester Flower Company is a personal, small-scale home grow in New York. Cannabis is
             <strong>not sold</strong> here. If cannabis is ever gifted, it is only:
           </p>
           <ul>
-            <li>To adults 21+ under New York’s personal use and gifting rules</li>
+            <li>To adults 21+ under New York's personal use and gifting rules</li>
             <li>Without any payment, trade, service, or other exchange of value for the flower itself</li>
             <li>In places where possession is legal (not in schools or other restricted locations)</li>
           </ul>
@@ -117,8 +125,8 @@
             to diagnose, treat, or cure anything.
           </p>
           <p style="font-size: 0.85rem; opacity: 0.9; margin-top: 0.4rem;">
-            Nothing on this page is legal or financial advice — it’s just one home grower being transparent about
-            what this project is and isn’t.
+            Nothing on this page is legal or financial advice – it's just one home grower being transparent about
+            what this project is and isn't.
           </p>
         </div>
       </div>
@@ -127,7 +135,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Rochester Flower Company</p>
+      <p>&copy; <span id="year">2025</span> Rochester Flower Company</p>
       <p class="footer-small">
         Rochester Flower Company is a personal, small-scale home grow. All cannabis is gifted 
         at no cost and only to adults 21+, consistent with New York personal cultivation laws. 

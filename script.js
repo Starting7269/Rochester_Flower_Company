@@ -35,68 +35,6 @@
   });
 })();
 
-// Enhanced contact button with rate limiting and better security
-(function contactButton() {
-  var button = document.getElementById("emailButton");
-  if (!button) return;
-
-  var lastClickTime = 0;
-  var COOLDOWN_MS = 3000; // 3 second cooldown
-  
-  // Enhanced age verification check with integrity
-  function verifyAge() {
-    var timestamp = sessionStorage.getItem('ageTimestamp');
-    var verified = sessionStorage.getItem('ageVerified');
-    
-    if (!timestamp || !verified) return false;
-    
-    // Basic integrity check - verify timestamp is reasonable (within last 24 hours)
-    var age = Date.now() - parseInt(timestamp, 10);
-    var ONE_DAY = 24 * 60 * 60 * 1000;
-    
-    return verified === 'true' && age < ONE_DAY && age > 0;
-  }
-
-  button.addEventListener("click", function (e) {
-    e.preventDefault();
-    
-    // Verify age first
-    if (!verifyAge()) {
-      alert("Please verify your age first.");
-      window.location.href = 'age-gate.html';
-      return;
-    }
-    
-    // Rate limiting
-    var now = Date.now();
-    if (now - lastClickTime < COOLDOWN_MS) {
-      alert("Please wait a moment before contacting again.");
-      return;
-    }
-    lastClickTime = now;
-    
-    // Build contact information securely
-    // Note: This still exposes email in JS, but with rate limiting
-    // For maximum security, consider using Formspree instead
-    var parts = {
-      user: "info",
-      domain: "rochesterflowercompany",
-      tld: "com"
-    };
-    
-    var address = parts.user + "@" + parts.domain + "." + parts.tld;
-    var subject = encodeURIComponent("Rochester Flower Company – Inquiry");
-    var body = encodeURIComponent(
-      "Please tell me about yourself:\n\n" +
-      "Age (must be 21+):\n" +
-      "General area in Rochester region:\n" +
-      "How cannabis helps you:\n"
-    );
-
-    window.location.href = "mailto:" + address + "?subject=" + subject + "&body=" + body;
-  });
-})();
-
 // Age gate redirect check for all pages except age-gate.html
 (function ageGateCheck() {
   // Don't run on the age gate page itself

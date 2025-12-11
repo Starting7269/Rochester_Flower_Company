@@ -2,8 +2,6 @@ User-agent: *
 Allow: /
 
 # Block sensitive files/directories
-Disallow: /.git/
-Disallow: /.github/
 Disallow: /node_modules/
 
 # Sitemap (create this file later if you add one)

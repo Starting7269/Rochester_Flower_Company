@@ -5,10 +5,10 @@
   <title>Contact – Rochester Flower Company</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
-  <meta name="description" content="Reach out if you rely on cannabis as medicine. This is a small project, but I do my best to help those who genuinely benefit.">
+  <meta name="description" content="Contact Rochester Flower Company. Reach out if you rely on cannabis as medicine.">
   
   <!-- Enhanced Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formsubmit.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
   <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
   <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -25,6 +25,124 @@
   <link rel="apple-touch-icon" href="favicon.png">
   
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Form styling to match brand */
+    .contact-form {
+      background: radial-gradient(circle at top left, rgba(244, 114, 182, 0.14), rgba(15, 23, 42, 0.98));
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-soft);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: var(--space-md);
+    }
+    
+    .form-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
+      color: var(--color-text);
+      font-size: 0.9rem;
+    }
+    
+    .form-label .required {
+      color: var(--color-primary);
+    }
+    
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(129, 140, 248, 0.5);
+      border-radius: var(--radius-md);
+      color: var(--color-text);
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      background: rgba(15, 23, 42, 0.8);
+    }
+    
+    .form-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .form-help {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      margin-top: var(--space-xs);
+      font-style: italic;
+    }
+    
+    .form-error {
+      color: var(--color-primary);
+      font-size: 0.85rem;
+      margin-top: var(--space-xs);
+      display: none;
+    }
+    
+    .form-group.error .form-error {
+      display: block;
+    }
+    
+    .form-group.error .form-input,
+    .form-group.error .form-textarea,
+    .form-group.error .form-select {
+      border-color: var(--color-primary);
+    }
+    
+    .btn-submit {
+      width: 100%;
+      padding: 1rem;
+      background: radial-gradient(circle at top left, var(--color-primary-soft), var(--color-primary));
+      border: none;
+      border-radius: 999px;
+      color: #111827;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: var(--shadow-soft);
+    }
+    
+    .btn-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 52px rgba(0, 0, 0, 0.9);
+    }
+    
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    
+    /* Honeypot - hide from humans, visible to bots */
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+    }
+    
+    @media (max-width: 720px) {
+      .contact-form {
+        padding: var(--space-md);
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -67,25 +185,111 @@
 
     <section class="section">
       <div class="container narrow">
-        <p>
-          There's no big intake form here on purpose. I'd rather you send an email in your own words.
-          Click the button below and it'll open an email draft with a few prompts to get you started.
-        </p>
+        <form 
+          id="contactForm" 
+          class="contact-form" 
+          action="https://formsubmit.co/info@rochesterflowercompany.com" 
+          method="POST"
+          novalidate>
+          
+          <!-- FormSubmit Configuration (hidden fields) -->
+          <input type="hidden" name="_subject" value="New Contact Form Submission - Rochester Flower Company">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+          
+          <!-- Name Field -->
+          <div class="form-group">
+            <label for="name" class="form-label">
+              Name <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              class="form-input" 
+              required
+              maxlength="100"
+              placeholder="Your name">
+            <span class="form-error">Please enter your name</span>
+          </div>
 
-        <p style="margin-top: 1.5rem; margin-bottom: 1rem;">
-          <strong>Curious about the project or interested in learning more?</strong>
-        </p>
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="email" class="form-label">
+              Email <span class="required">*</span>
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-input" 
+              required
+              placeholder="your.email@example.com">
+            <span class="form-help">So we can reply to you</span>
+            <span class="form-error">Please enter a valid email address</span>
+          </div>
 
-        <button id="emailButton" class="btn btn-primary" type="button">
-          Email Rochester Flower Company
-        </button>
+          <!-- Age Field -->
+          <div class="form-group">
+            <label for="age" class="form-label">
+              Age <span class="required">*</span>
+            </label>
+            <input 
+              type="number" 
+              id="age" 
+              name="age" 
+              class="form-input" 
+              required
+              min="21"
+              max="120"
+              placeholder="Must be 21+">
+            <span class="form-help">You must be 21 or older</span>
+            <span class="form-error">You must be at least 21 years old</span>
+          </div>
 
-        <p class="footer-small" style="margin-top: 1.5rem;">
-          Please include your age (21+ only), general area in the Rochester region, and a sentence or two about how cannabis helps you.
-          Share only what you're comfortable with. No medical records needed or wanted.
-        </p>
+          <!-- Location Field -->
+          <div class="form-group">
+            <label for="location" class="form-label">
+              Location <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="location" 
+              name="location" 
+              class="form-input" 
+              required
+              maxlength="100"
+              placeholder="Rochester area, NY">
+            <span class="form-help">General area (city/region) - we operate in Rochester, NY and surrounding areas</span>
+            <span class="form-error">Please enter your general location</span>
+          </div>
 
-        <div class="notice" style="margin-top: 1.5rem;">
+          <!-- Message Field -->
+          <div class="form-group">
+            <label for="message" class="form-label">
+              Message <span class="required">*</span>
+            </label>
+            <textarea 
+              id="message" 
+              name="message" 
+              class="form-textarea" 
+              required
+              minlength="20"
+              maxlength="2000"
+              placeholder="Tell us about yourself and how cannabis helps you..."></textarea>
+            <span class="form-help">Please share how cannabis helps you (minimum 20 characters)</span>
+            <span class="form-error">Please enter at least 20 characters</span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-submit" id="submitBtn">
+            Send Message
+          </button>
+        </form>
+
+        <!-- Important Notice -->
+        <div class="notice" style="margin-top: var(--space-lg);">
           <p><strong>What to expect after you reach out:</strong></p>
           <p style="margin-top: 0.5rem;">
             Expect a conversation—not a transaction. I'm looking for people who genuinely rely on cannabis as medicine, 
@@ -105,32 +309,26 @@
       <div class="container narrow">
         <h2>Common Questions</h2>
         
-        <div style="margin-top: 1.5rem;">
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">How do I get in touch?</h3>
-          <p style="margin-bottom: 1.5rem;">
-            Use the email button above. Please include your age (21+ only), general location, and how cannabis helps you. 
-            Keep it conversational—this is a person, not a dispensary.
-          </p>
-
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">What strains do you grow?</h3>
-          <p style="margin-bottom: 1.5rem;">
+        <div style="margin-top: var(--space-md);">
+          <h3 style="font-size: 1.1rem; margin-bottom: var(--space-xs);">What strains do you grow?</h3>
+          <p style="margin-bottom: var(--space-md);">
             It varies by season and seed availability. Check the Plants page for current runs. I prioritize genetics 
             from reputable breeders over specific strain requests.
           </p>
 
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Do you deliver?</h3>
-          <p style="margin-bottom: 1.5rem;">
+          <h3 style="font-size: 1.1rem; margin-bottom: var(--space-xs);">Do you deliver?</h3>
+          <p style="margin-bottom: var(--space-md);">
             This is a small, personal operation. Logistics are worked out case-by-case for those in the Rochester area 
             who genuinely benefit from what I'm growing.
           </p>
 
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Can I pay you or donate?</h3>
-          <p style="margin-bottom: 1.5rem;">
+          <h3 style="font-size: 1.1rem; margin-bottom: var(--space-xs);">Can I pay you or donate?</h3>
+          <p style="margin-bottom: var(--space-md);">
             No. This follows NY's gifting laws—no payment, trades, or exchanges of value for cannabis. 
             If you want to support the garden itself, visit the Support page.
           </p>
 
-          <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Is this legal?</h3>
+          <h3 style="font-size: 1.1rem; margin-bottom: var(--space-xs);">Is this legal?</h3>
           <p>
             Yes. NY allows adults 21+ to gift cannabis to other adults without compensation under personal cultivation 
             laws (NY Penal Law § 222.05). This isn't a business—it's a personal garden.
@@ -154,5 +352,109 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Form validation
+    (function() {
+      var form = document.getElementById('contactForm');
+      var submitBtn = document.getElementById('submitBtn');
+      
+      form.addEventListener('submit', function(e) {
+        var isValid = true;
+        
+        // Clear previous errors
+        var errorGroups = form.querySelectorAll('.form-group.error');
+        errorGroups.forEach(function(group) {
+          group.classList.remove('error');
+        });
+        
+        // Validate name
+        var nameInput = document.getElementById('name');
+        if (!nameInput.value.trim()) {
+          nameInput.closest('.form-group').classList.add('error');
+          isValid = false;
+        }
+        
+        // Validate email
+        var emailInput = document.getElementById('email');
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value)) {
+          emailInput.closest('.form-group').classList.add('error');
+          isValid = false;
+        }
+        
+        // Validate age (must be 21+)
+        var ageInput = document.getElementById('age');
+        var age = parseInt(ageInput.value);
+        if (isNaN(age) || age < 21) {
+          ageInput.closest('.form-group').classList.add('error');
+          isValid = false;
+        }
+        
+        // Validate location
+        var locationInput = document.getElementById('location');
+        if (!locationInput.value.trim()) {
+          locationInput.closest('.form-group').classList.add('error');
+          isValid = false;
+        }
+        
+        // Validate message (minimum 20 characters)
+        var messageInput = document.getElementById('message');
+        if (messageInput.value.trim().length < 20) {
+          messageInput.closest('.form-group').classList.add('error');
+          isValid = false;
+        }
+        
+        if (!isValid) {
+          e.preventDefault();
+          // Scroll to first error
+          var firstError = form.querySelector('.form-group.error');
+          if (firstError) {
+            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          return false;
+        }
+        
+        // Disable submit button to prevent double submission
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      });
+      
+      // Real-time validation feedback
+      var inputs = form.querySelectorAll('.form-input, .form-textarea, .form-select');
+      inputs.forEach(function(input) {
+        input.addEventListener('blur', function() {
+          var group = this.closest('.form-group');
+          
+          if (this.id === 'email') {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(this.value)) {
+              group.classList.add('error');
+            } else {
+              group.classList.remove('error');
+            }
+          } else if (this.id === 'age') {
+            var age = parseInt(this.value);
+            if (isNaN(age) || age < 21) {
+              group.classList.add('error');
+            } else {
+              group.classList.remove('error');
+            }
+          } else if (this.id === 'message') {
+            if (this.value.trim().length < 20) {
+              group.classList.add('error');
+            } else {
+              group.classList.remove('error');
+            }
+          } else if (this.hasAttribute('required')) {
+            if (!this.value.trim()) {
+              group.classList.add('error');
+            } else {
+              group.classList.remove('error');
+            }
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

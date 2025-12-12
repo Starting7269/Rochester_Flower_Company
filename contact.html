@@ -7,14 +7,14 @@
   <meta name="color-scheme" content="dark light">
   <meta name="description" content="Contact Rochester Flower Company. Reach out if you rely on cannabis as medicine.">
   
-  <!-- Enhanced Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formsubmit.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <!-- Enhanced Security Headers (meta tags for defense-in-depth, real headers via Cloudflare) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formsubmit.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
   <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
   <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://rochesterflowercompany.com/contact.html">
@@ -195,7 +195,13 @@
         <!-- Error Message -->
         <div id="errorMessage" style="display: none; background: radial-gradient(circle at top left, rgba(239, 68, 68, 0.2), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(239, 68, 68, 0.5); border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-lg); text-align: center;">
           <h2 style="color: #f87171; margin-bottom: var(--space-sm); font-size: 1.5rem;">Oops! Something went wrong</h2>
-          <p style="color: var(--color-text); margin-bottom: 0;">Please try again later. If the problem persists, the contact form will be restored as soon as possible.</p>
+          <p style="color: var(--color-text); margin-bottom: 0;">Please try again later. If the problem persists, refresh the page and try again.</p>
+        </div>
+
+        <!-- Rate Limit Message -->
+        <div id="rateLimitMessage" style="display: none; background: radial-gradient(circle at top left, rgba(251, 191, 36, 0.2), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(251, 191, 36, 0.5); border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-lg); text-align: center;">
+          <h2 style="color: #fbbf24; margin-bottom: var(--space-sm); font-size: 1.5rem;">⚠️ Too Many Submissions</h2>
+          <p style="color: var(--color-text); margin-bottom: 0;">You've reached the submission limit (3 per hour). Please wait before trying again.</p>
         </div>
 
         <form 
@@ -366,17 +372,105 @@
 
   <script src="script.js"></script>
   <script>
-    // Form validation and AJAX submission
+    // Enhanced form validation with rate limiting and input sanitization
     (function() {
+      'use strict';
+      
       var form = document.getElementById('contactForm');
       var submitBtn = document.getElementById('submitBtn');
       var successMessage = document.getElementById('successMessage');
       var errorMessage = document.getElementById('errorMessage');
+      var rateLimitMessage = document.getElementById('rateLimitMessage');
       
+      // Rate limiting configuration
+      var RATE_LIMIT_KEY = 'rfc_form_submissions';
+      var RATE_LIMIT_WINDOW = 3600000; // 1 hour in milliseconds
+      var MAX_SUBMISSIONS = 3;
+      
+      /**
+       * Input sanitization function
+       * Removes potentially dangerous characters and HTML
+       */
+      function sanitizeInput(input) {
+        if (!input || typeof input !== 'string') return '';
+        
+        // Create temporary element to leverage browser's HTML encoding
+        var div = document.createElement('div');
+        div.textContent = input;
+        var sanitized = div.innerHTML;
+        
+        // Further sanitize common XSS patterns
+        sanitized = sanitized.replace(/<script[^>]*>.*?<\/script>/gi, '');
+        sanitized = sanitized.replace(/<iframe[^>]*>.*?<\/iframe>/gi, '');
+        sanitized = sanitized.replace(/javascript:/gi, '');
+        sanitized = sanitized.replace(/on\w+\s*=/gi, ''); // Remove event handlers like onclick=
+        
+        return sanitized.trim();
+      }
+      
+      /**
+       * Check rate limit
+       * Returns true if user can submit, false if rate limited
+       */
+      function checkRateLimit() {
+        try {
+          var now = Date.now();
+          var submissionsJson = localStorage.getItem(RATE_LIMIT_KEY);
+          var submissions = submissionsJson ? JSON.parse(submissionsJson) : [];
+          
+          // Filter out submissions older than the rate limit window
+          var recentSubmissions = submissions.filter(function(timestamp) {
+            return now - timestamp < RATE_LIMIT_WINDOW;
+          });
+          
+          // Check if user has exceeded limit
+          if (recentSubmissions.length >= MAX_SUBMISSIONS) {
+            return false;
+          }
+          
+          return true;
+        } catch (error) {
+          console.error('Rate limit check error:', error);
+          // If there's an error, allow submission (fail open)
+          return true;
+        }
+      }
+      
+      /**
+       * Record submission timestamp
+       */
+      function recordSubmission() {
+        try {
+          var now = Date.now();
+          var submissionsJson = localStorage.getItem(RATE_LIMIT_KEY);
+          var submissions = submissionsJson ? JSON.parse(submissionsJson) : [];
+          
+          // Add current submission
+          submissions.push(now);
+          
+          // Keep only recent submissions (cleanup old ones)
+          var recentSubmissions = submissions.filter(function(timestamp) {
+            return now - timestamp < RATE_LIMIT_WINDOW;
+          });
+          
+          localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(recentSubmissions));
+        } catch (error) {
+          console.error('Failed to record submission:', error);
+        }
+      }
+      
+      /**
+       * Form submission handler
+       */
       form.addEventListener('submit', async function(e) {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
         
         var isValid = true;
+        
+        // Hide all messages
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
+        rateLimitMessage.style.display = 'none';
         
         // Clear previous errors
         var errorGroups = form.querySelectorAll('.form-group.error');
@@ -384,9 +478,12 @@
           group.classList.remove('error');
         });
         
-        // Hide any previous messages
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
+        // Check rate limit FIRST
+        if (!checkRateLimit()) {
+          rateLimitMessage.style.display = 'block';
+          rateLimitMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return false;
+        }
         
         // Validate name
         var nameInput = document.getElementById('name');
@@ -406,7 +503,7 @@
         // Validate age (must be 21+)
         var ageInput = document.getElementById('age');
         var age = parseInt(ageInput.value);
-        if (isNaN(age) || age < 21) {
+        if (isNaN(age) || age < 21 || age > 120) {
           ageInput.closest('.form-group').classList.add('error');
           isValid = false;
         }
@@ -434,6 +531,22 @@
           return false;
         }
         
+        // Sanitize all inputs before submission
+        var sanitizedData = new FormData();
+        
+        // Add hidden fields
+        sanitizedData.append('_subject', form.querySelector('[name="_subject"]').value);
+        sanitizedData.append('_captcha', form.querySelector('[name="_captcha"]').value);
+        sanitizedData.append('_template', form.querySelector('[name="_template"]').value);
+        sanitizedData.append('_honey', form.querySelector('[name="_honey"]').value);
+        
+        // Add sanitized user inputs
+        sanitizedData.append('name', sanitizeInput(nameInput.value));
+        sanitizedData.append('email', sanitizeInput(emailInput.value));
+        sanitizedData.append('age', sanitizeInput(ageInput.value));
+        sanitizedData.append('location', sanitizeInput(locationInput.value));
+        sanitizedData.append('message', sanitizeInput(messageInput.value));
+        
         // Disable submit button to prevent double submission
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
@@ -442,13 +555,16 @@
         try {
           var response = await fetch(form.action, {
             method: 'POST',
-            body: new FormData(form),
+            body: sanitizedData,
             headers: {
               'Accept': 'application/json'
             }
           });
           
           if (response.ok) {
+            // Record this submission for rate limiting
+            recordSubmission();
+            
             // Show success message
             successMessage.style.display = 'block';
             form.reset();
@@ -474,7 +590,7 @@
       });
       
       // Real-time validation feedback
-      var inputs = form.querySelectorAll('.form-input, .form-textarea, .form-select');
+      var inputs = form.querySelectorAll('.form-input, .form-textarea');
       inputs.forEach(function(input) {
         input.addEventListener('blur', function() {
           var group = this.closest('.form-group');
@@ -488,7 +604,7 @@
             }
           } else if (this.id === 'age') {
             var age = parseInt(this.value);
-            if (isNaN(age) || age < 21) {
+            if (isNaN(age) || age < 21 || age > 120) {
               group.classList.add('error');
             } else {
               group.classList.remove('error');
@@ -508,6 +624,7 @@
           }
         });
       });
+      
     })();
   </script>
 </body>

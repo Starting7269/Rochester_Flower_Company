@@ -1,4 +1,9 @@
-// Set footer year
+/**
+ * Rochester Flower Company - Main JavaScript
+ * Enhanced security and functionality
+ */
+
+// Set footer year automatically
 (function setYear() {
   var yearElem = document.getElementById("year");
   if (yearElem) {
@@ -35,40 +40,44 @@
   });
 })();
 
-// Age gate redirect check for all pages except age-gate.html
-(function ageGateCheck() {
+// Age gate verification - handled by age-gate.js
+// This ensures age-gate.js is loaded on all pages
+(function ensureAgeGate() {
+  'use strict';
+  
   // Don't run on the age gate page itself
-  if (window.location.pathname.endsWith('age-gate.html')) {
-    return;
-  }
-
-  // Enhanced age verification with timestamp
-  var timestamp = sessionStorage.getItem('ageTimestamp');
-  var verified = sessionStorage.getItem('ageVerified');
-  
-  if (!timestamp || !verified || verified !== 'true') {
-    // Redirect to age gate
-    window.location.href = 'age-gate.html';
+  if (window.location.pathname.endsWith('age-gate.html') || 
+      window.location.pathname.endsWith('age-gate')) {
     return;
   }
   
-  // Check if verification is stale (older than 24 hours)
-  var age = Date.now() - parseInt(timestamp, 10);
-  var ONE_DAY = 24 * 60 * 60 * 1000;
-  
-  if (age > ONE_DAY || age < 0) {
-    // Verification is too old or timestamp is invalid
-    sessionStorage.clear();
-    window.location.href = 'age-gate.html';
+  // Check if age-gate.js is already loaded
+  if (typeof window.ageGateLoaded === 'undefined') {
+    // Dynamically load age-gate.js
+    var script = document.createElement('script');
+    script.src = 'age-gate.js';
+    script.async = false; // Load synchronously to block page
+    script.onerror = function() {
+      console.error('Failed to load age-gate.js - redirecting to age gate');
+      window.location.href = 'age-gate.html';
+    };
+    document.head.appendChild(script);
   }
 })();
 
 // Security: Prevent common attacks
 (function securityMeasures() {
-  // Disable right-click context menu on sensitive images (optional)
-  // Uncomment if you want to protect your logo
+  'use strict';
+  
+  // Prevent frame embedding (defense in depth beyond X-Frame-Options)
+  if (window.self !== window.top) {
+    window.top.location = window.self.location;
+  }
+  
+  // Disable right-click on logo images (optional - currently commented out)
+  // Uncomment if you want to protect your logo from easy copying
   /*
-  var logos = document.querySelectorAll('.brand-logo, .hero-logo-big');
+  var logos = document.querySelectorAll('.brand-logo, .hero-logo-big, img[src*="RFCLogo"]');
   logos.forEach(function(logo) {
     logo.addEventListener('contextmenu', function(e) {
       e.preventDefault();
@@ -77,16 +86,129 @@
   });
   */
   
-  // Prevent frame embedding (defense in depth beyond X-Frame-Options)
-  if (window.self !== window.top) {
-    window.top.location = window.self.location;
+  // Console warning for potential attackers
+  if (console && console.log) {
+    console.log('%c⚠️ Security Notice', 'color: #ff7ac4; font-size: 20px; font-weight: bold;');
+    console.log('%cThis is a browser feature intended for developers.', 'font-size: 14px;');
+    console.log('%cIf someone told you to copy-paste something here, it is a scam.', 'font-size: 14px; color: #f87171;');
+    console.log('%cPasting code here can give attackers access to your information.', 'font-size: 14px; color: #f87171;');
+    console.log('%c\nIf you\'re a security researcher, please report issues via: https://rochesterflowercompany.com/contact.html', 'font-size: 12px; color: #4ade80;');
   }
   
-  // Clear sessionStorage on unload for privacy (optional - may be too aggressive)
-  // Uncomment if you want users to re-verify age every time they close the browser
-  /*
-  window.addEventListener('beforeunload', function() {
-    sessionStorage.clear();
-  });
-  */
+  // Detect if console is open (basic check)
+  var devtoolsOpen = false;
+  var threshold = 160;
+  var widthThreshold = window.outerWidth - window.innerWidth > threshold;
+  var heightThreshold = window.outerHeight - window.innerHeight > threshold;
+  
+  if (widthThreshold || heightThreshold) {
+    devtoolsOpen = true;
+  }
+  
+  // Store detection result (don't act on it, just for logging)
+  window.devtoolsDetected = devtoolsOpen;
 })();
+
+// Smooth scroll for skip links and anchor links
+(function smoothScrollSetup() {
+  'use strict';
+  
+  // Handle skip link
+  var skipLink = document.querySelector('.skip-link');
+  if (skipLink) {
+    skipLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.getElementById('main-content');
+      if (target) {
+        target.focus();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+  
+  // Handle all anchor links with smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var href = this.getAttribute('href');
+      if (href === '#') return; // Skip empty anchors
+      
+      e.preventDefault();
+      var target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // Update URL without jumping
+        if (history.pushState) {
+          history.pushState(null, null, href);
+        }
+      }
+    });
+  });
+})();
+
+// Performance: Lazy load images (if any are added with data-src attribute)
+(function lazyLoadImages() {
+  'use strict';
+  
+  if ('IntersectionObserver' in window) {
+    var imageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var img = entry.target;
+          var src = img.getAttribute('data-src');
+          if (src) {
+            img.src = src;
+            img.removeAttribute('data-src');
+            imageObserver.unobserve(img);
+          }
+        }
+      });
+    });
+    
+    document.querySelectorAll('img[data-src]').forEach(function(img) {
+      imageObserver.observe(img);
+    });
+  } else {
+    // Fallback for browsers without IntersectionObserver
+    document.querySelectorAll('img[data-src]').forEach(function(img) {
+      var src = img.getAttribute('data-src');
+      if (src) {
+        img.src = src;
+        img.removeAttribute('data-src');
+      }
+    });
+  }
+})();
+
+// Add loading indicator class when page is loading
+(function pageLoadingState() {
+  'use strict';
+  
+  // Remove loading class when page is fully loaded
+  window.addEventListener('load', function() {
+    document.body.classList.add('loaded');
+  });
+})();
+
+// GDPR-friendly analytics placeholder
+// Replace with your analytics code if needed
+(function analyticsSetup() {
+  'use strict';
+  
+  // Placeholder for future analytics
+  // Only track if user hasn't opted out
+  var analyticsOptOut = localStorage.getItem('analyticsOptOut');
+  
+  if (analyticsOptOut !== 'true') {
+    // Add your analytics code here
+    // Example: Google Analytics, Plausible, etc.
+    
+    // For now, just basic page view tracking to console in dev mode
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      console.log('Page view:', window.location.pathname);
+    }
+  }
+})();
+
+// Export for age-gate.js to set
+window.ageGateLoaded = false;

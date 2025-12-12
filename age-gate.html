@@ -212,63 +212,6 @@
       This site is for educational and informational purposes only.
     </p>
   </div>
-
-  <script>
-    (function() {
-      // Enhanced age verification with timestamp and integrity
-      var timestamp = sessionStorage.getItem('ageTimestamp');
-      var ageVerified = sessionStorage.getItem('ageVerified');
-      
-      // Check if already verified and timestamp is valid (within 24 hours)
-      if (ageVerified === 'true' && timestamp) {
-        var age = Date.now() - parseInt(timestamp, 10);
-        var ONE_DAY = 24 * 60 * 60 * 1000;
-        
-        if (age < ONE_DAY && age > 0) {
-          window.location.href = 'index.html';
-          return;
-        }
-      }
-
-      var btnYes = document.getElementById('btn-yes');
-      var btnNo = document.getElementById('btn-no');
-      var clickCount = 0;
-      var RATE_LIMIT = 5; // Max 5 clicks per page load
-
-      btnYes.addEventListener('click', function() {
-        // Rate limiting to prevent abuse
-        clickCount++;
-        if (clickCount > RATE_LIMIT) {
-          alert('Too many attempts. Please refresh the page.');
-          btnYes.disabled = true;
-          return;
-        }
-        
-        // Set verification with timestamp
-        var now = Date.now();
-        sessionStorage.setItem('ageVerified', 'true');
-        sessionStorage.setItem('ageTimestamp', now.toString());
-        
-        // Small delay to prevent rapid clicking
-        btnYes.disabled = true;
-        setTimeout(function() {
-          window.location.href = 'index.html';
-        }, 300);
-      });
-
-      btnNo.addEventListener('click', function() {
-        // Clear any existing verification
-        sessionStorage.clear();
-        
-        // Redirect away
-        window.location.href = 'https://www.google.com';
-      });
-      
-      // Prevent frame embedding
-      if (window.self !== window.top) {
-        window.top.location = window.self.location;
-      }
-    })();
-  </script>
+<script src="age-gate.js"></script>
 </body>
 </html>

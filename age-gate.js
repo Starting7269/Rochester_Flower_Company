@@ -2,11 +2,7 @@
  * Enhanced Age Gate Verification
  * Rochester Flower Company
  * 
- * Security improvements:
- * - Checksum verification
- * - Dev tools detection
- * - Enhanced timestamp validation
- * - Rate limiting
+ * Security improvements with mobile browser compatibility
  */
 
 (function() {
@@ -21,15 +17,49 @@
   };
   
   /**
+   * Check if crypto.subtle is available
+   */
+  function hasCryptoSupport() {
+    return window.crypto && window.crypto.subtle && typeof window.crypto.subtle.digest === 'function';
+  }
+  
+  /**
+   * Fallback checksum for browsers without crypto.subtle
+   * Simple hash function - not cryptographically secure but better than nothing
+   */
+  function simpleHash(str) {
+    var hash = 0;
+    if (str.length === 0) return hash.toString();
+    for (var i = 0; i < str.length; i++) {
+      var char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash; // Convert to 32bit integer
+    }
+    return Math.abs(hash).toString(16);
+  }
+  
+  /**
    * Generate checksum for verification
    */
   async function generateChecksum(verified, timestamp) {
     const data = verified + timestamp + SECRET_SALT;
-    const encoder = new TextEncoder();
-    const dataBuffer = encoder.encode(data);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', dataBuffer);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    
+    // Try to use crypto.subtle if available
+    if (hasCryptoSupport()) {
+      try {
+        const encoder = new TextEncoder();
+        const dataBuffer = encoder.encode(data);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', dataBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      } catch (error) {
+        console.warn('crypto.subtle failed, using fallback:', error);
+        return simpleHash(data);
+      }
+    } else {
+      // Fallback for browsers without crypto.subtle (older mobile browsers)
+      return simpleHash(data);
+    }
   }
   
   /**
@@ -76,13 +106,20 @@
    * Set age verification
    */
   async function setAgeVerification() {
-    const timestamp = Date.now().toString();
-    const verified = 'true';
-    const checksum = await generateChecksum(verified, timestamp);
-    
-    sessionStorage.setItem(STORAGE_KEYS.verified, verified);
-    sessionStorage.setItem(STORAGE_KEYS.timestamp, timestamp);
-    sessionStorage.setItem(STORAGE_KEYS.checksum, checksum);
+    try {
+      const timestamp = Date.now().toString();
+      const verified = 'true';
+      const checksum = await generateChecksum(verified, timestamp);
+      
+      sessionStorage.setItem(STORAGE_KEYS.verified, verified);
+      sessionStorage.setItem(STORAGE_KEYS.timestamp, timestamp);
+      sessionStorage.setItem(STORAGE_KEYS.checksum, checksum);
+      
+      return true;
+    } catch (error) {
+      console.error('Failed to set age verification:', error);
+      return false;
+    }
   }
   
   /**
@@ -90,7 +127,9 @@
    */
   function isAgeGatePage() {
     return window.location.pathname.endsWith('age-gate.html') || 
-           window.location.pathname.endsWith('age-gate');
+           window.location.pathname.endsWith('age-gate') ||
+           window.location.pathname === '/age-gate.html' ||
+           window.location.pathname === '/age-gate';
   }
   
   /**
@@ -105,7 +144,11 @@
     
     if (!isVerified) {
       // Store intended destination
-      sessionStorage.setItem('intendedDestination', window.location.pathname);
+      try {
+        sessionStorage.setItem('intendedDestination', window.location.pathname);
+      } catch (e) {
+        console.warn('Could not store intended destination:', e);
+      }
       window.location.href = 'age-gate.html';
     }
   }
@@ -128,8 +171,18 @@
     
     let clickCount = 0;
     const MAX_CLICKS = 5;
+    let isProcessing = false; // Prevent double-clicks
     
-    btnYes.addEventListener('click', async function() {
+    // Handle "Yes" button
+    btnYes.addEventListener('click', async function(e) {
+      e.preventDefault(); // Prevent any default behavior
+      
+      // Prevent double-clicks
+      if (isProcessing) {
+        console.log('Already processing, ignoring click');
+        return;
+      }
+      
       // Rate limiting
       clickCount++;
       if (clickCount > MAX_CLICKS) {
@@ -138,31 +191,59 @@
         return;
       }
       
-      // Set verification
-      await setAgeVerification();
+      isProcessing = true;
       
-      // Disable button to prevent double-click
+      // Disable button immediately
       btnYes.disabled = true;
       btnYes.textContent = 'Verifying...';
       
-      // Small delay for UX
-      setTimeout(function() {
-        // Check for intended destination
-        const intended = sessionStorage.getItem('intendedDestination');
-        const destination = intended && intended !== '/age-gate.html' 
-          ? intended 
-          : 'index.html';
+      try {
+        // Set verification
+        const success = await setAgeVerification();
         
-        // Clear intended destination
-        sessionStorage.removeItem('intendedDestination');
+        if (!success) {
+          throw new Error('Failed to set age verification');
+        }
         
-        window.location.href = destination;
-      }, 300);
+        // Small delay for UX
+        setTimeout(function() {
+          // Check for intended destination
+          let destination = 'index.html';
+          try {
+            const intended = sessionStorage.getItem('intendedDestination');
+            if (intended && intended !== '/age-gate.html' && intended !== '/age-gate') {
+              destination = intended;
+            }
+            // Clear intended destination
+            sessionStorage.removeItem('intendedDestination');
+          } catch (e) {
+            console.warn('Could not retrieve intended destination:', e);
+          }
+          
+          // Redirect
+          window.location.href = destination;
+        }, 300);
+        
+      } catch (error) {
+        console.error('Age verification failed:', error);
+        // Re-enable button on error
+        btnYes.disabled = false;
+        btnYes.textContent = "I'm 21 or Older";
+        isProcessing = false;
+        alert('Verification failed. Please try again.');
+      }
     });
     
-    btnNo.addEventListener('click', function() {
+    // Handle "No" button
+    btnNo.addEventListener('click', function(e) {
+      e.preventDefault();
+      
       // Clear any verification
-      sessionStorage.clear();
+      try {
+        sessionStorage.clear();
+      } catch (e) {
+        console.warn('Could not clear session storage:', e);
+      }
       
       // Redirect away
       window.location.href = 'https://www.google.com';
@@ -179,20 +260,19 @@
   /**
    * Initialize based on page
    */
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', async function() {
-      if (isAgeGatePage()) {
-        initAgeGate();
-      } else {
-        await checkAgeGate();
-      }
-    });
-  } else {
+  function init() {
     if (isAgeGatePage()) {
       initAgeGate();
     } else {
       checkAgeGate();
     }
+  }
+  
+  // Wait for DOM to be ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
   
 })();

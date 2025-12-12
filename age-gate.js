@@ -2,7 +2,7 @@
  * Enhanced Age Gate Verification
  * Rochester Flower Company
  * 
- * Security improvements with mobile browser compatibility
+ * Special handling for Brave Android redirect blocking
  */
 
 (function() {
@@ -17,6 +17,14 @@
   };
   
   /**
+   * Detect if running in Brave browser
+   */
+  function isBrave() {
+    return (navigator.brave && typeof navigator.brave.isBrave === 'function') || 
+           navigator.userAgent.toLowerCase().includes('brave');
+  }
+  
+  /**
    * Check if crypto.subtle is available
    */
   function hasCryptoSupport() {
@@ -25,7 +33,6 @@
   
   /**
    * Fallback checksum for browsers without crypto.subtle
-   * Simple hash function - not cryptographically secure but better than nothing
    */
   function simpleHash(str) {
     var hash = 0;
@@ -33,7 +40,7 @@
     for (var i = 0; i < str.length; i++) {
       var char = str.charCodeAt(i);
       hash = ((hash << 5) - hash) + char;
-      hash = hash & hash; // Convert to 32bit integer
+      hash = hash & hash;
     }
     return Math.abs(hash).toString(16);
   }
@@ -44,7 +51,6 @@
   async function generateChecksum(verified, timestamp) {
     const data = verified + timestamp + SECRET_SALT;
     
-    // Try to use crypto.subtle if available
     if (hasCryptoSupport()) {
       try {
         const encoder = new TextEncoder();
@@ -53,11 +59,9 @@
         const hashArray = Array.from(new Uint8Array(hashBuffer));
         return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
       } catch (error) {
-        console.warn('crypto.subtle failed, using fallback:', error);
         return simpleHash(data);
       }
     } else {
-      // Fallback for browsers without crypto.subtle (older mobile browsers)
       return simpleHash(data);
     }
   }
@@ -71,32 +75,26 @@
       const timestamp = sessionStorage.getItem(STORAGE_KEYS.timestamp);
       const storedChecksum = sessionStorage.getItem(STORAGE_KEYS.checksum);
       
-      // Check all values exist
       if (!verified || !timestamp || !storedChecksum) {
         return false;
       }
       
-      // Verify checksum
       const expectedChecksum = await generateChecksum(verified, timestamp);
       if (storedChecksum !== expectedChecksum) {
-        console.warn('Age verification checksum mismatch - clearing session');
         sessionStorage.clear();
         return false;
       }
       
-      // Verify timestamp is valid and not too old
       const timestampInt = parseInt(timestamp, 10);
       const age = Date.now() - timestampInt;
       
       if (isNaN(timestampInt) || age < 0 || age > MAX_AGE_MS) {
-        console.warn('Age verification expired or invalid - clearing session');
         sessionStorage.clear();
         return false;
       }
       
       return verified === 'true';
     } catch (error) {
-      console.error('Age verification error:', error);
       sessionStorage.clear();
       return false;
     }
@@ -117,7 +115,6 @@
       
       return true;
     } catch (error) {
-      console.error('Failed to set age verification:', error);
       return false;
     }
   }
@@ -133,23 +130,72 @@
   }
   
   /**
+   * Multiple redirect methods for Brave Android compatibility
+   */
+  function performRedirect(destination) {
+    // Method 1: Try standard redirect
+    try {
+      window.location.href = destination;
+      return;
+    } catch (e) {
+      // Continue to next method
+    }
+    
+    // Method 2: Try replace (doesn't add to history)
+    try {
+      window.location.replace(destination);
+      return;
+    } catch (e) {
+      // Continue to next method
+    }
+    
+    // Method 3: Try assign
+    try {
+      window.location.assign(destination);
+      return;
+    } catch (e) {
+      // Continue to next method
+    }
+    
+    // Method 4: Direct property assignment
+    try {
+      window.location = destination;
+      return;
+    } catch (e) {
+      // Continue to next method
+    }
+    
+    // Method 5: Use anchor click (bypasses some redirect blocks)
+    try {
+      var link = document.createElement('a');
+      link.href = destination;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      return;
+    } catch (e) {
+      // All methods failed
+      alert('Unable to redirect. Please manually navigate to the home page.');
+    }
+  }
+  
+  /**
    * Redirect to age gate if not verified
    */
   async function checkAgeGate() {
     if (isAgeGatePage()) {
-      return; // Don't redirect if already on gate page
+      return;
     }
     
     const isVerified = await verifyAgeVerification();
     
     if (!isVerified) {
-      // Store intended destination
       try {
         sessionStorage.setItem('intendedDestination', window.location.pathname);
       } catch (e) {
-        console.warn('Could not store intended destination:', e);
+        // Ignore
       }
-      window.location.href = 'age-gate.html';
+      performRedirect('age-gate.html');
     }
   }
   
@@ -165,25 +211,25 @@
     const btnNo = document.getElementById('btn-no');
     
     if (!btnYes || !btnNo) {
-      console.error('Age gate buttons not found');
       return;
     }
     
     let clickCount = 0;
     const MAX_CLICKS = 5;
-    let isProcessing = false; // Prevent double-clicks
+    let isProcessing = false;
     
-    // Handle "Yes" button
+    // Detect Brave Android
+    const isBraveAndroid = isBrave() && /android/i.test(navigator.userAgent);
+    
+    // YES button
     btnYes.addEventListener('click', async function(e) {
-      e.preventDefault(); // Prevent any default behavior
+      e.preventDefault();
+      e.stopPropagation();
       
-      // Prevent double-clicks
       if (isProcessing) {
-        console.log('Already processing, ignoring click');
         return;
       }
       
-      // Rate limiting
       clickCount++;
       if (clickCount > MAX_CLICKS) {
         alert('Too many attempts. Please refresh the page.');
@@ -192,41 +238,40 @@
       }
       
       isProcessing = true;
-      
-      // Disable button immediately
       btnYes.disabled = true;
       btnYes.textContent = 'Verifying...';
       
       try {
-        // Set verification
         const success = await setAgeVerification();
         
         if (!success) {
           throw new Error('Failed to set age verification');
         }
         
-        // Small delay for UX
-        setTimeout(function() {
-          // Check for intended destination
-          let destination = 'index.html';
-          try {
-            const intended = sessionStorage.getItem('intendedDestination');
-            if (intended && intended !== '/age-gate.html' && intended !== '/age-gate') {
-              destination = intended;
-            }
-            // Clear intended destination
-            sessionStorage.removeItem('intendedDestination');
-          } catch (e) {
-            console.warn('Could not retrieve intended destination:', e);
+        // Get destination
+        let destination = 'index.html';
+        try {
+          const intended = sessionStorage.getItem('intendedDestination');
+          if (intended && intended !== '/age-gate.html' && intended !== '/age-gate') {
+            destination = intended;
           }
-          
-          // Redirect
-          window.location.href = destination;
-        }, 300);
+          sessionStorage.removeItem('intendedDestination');
+        } catch (e) {
+          // Use default
+        }
+        
+        // For Brave Android, use immediate redirect without setTimeout
+        if (isBraveAndroid) {
+          // Brave Android: redirect immediately
+          performRedirect(destination);
+        } else {
+          // Other browsers: small delay for UX
+          setTimeout(function() {
+            performRedirect(destination);
+          }, 300);
+        }
         
       } catch (error) {
-        console.error('Age verification failed:', error);
-        // Re-enable button on error
         btnYes.disabled = false;
         btnYes.textContent = "I'm 21 or Older";
         isProcessing = false;
@@ -234,19 +279,18 @@
       }
     });
     
-    // Handle "No" button
+    // NO button
     btnNo.addEventListener('click', function(e) {
       e.preventDefault();
+      e.stopPropagation();
       
-      // Clear any verification
       try {
         sessionStorage.clear();
       } catch (e) {
-        console.warn('Could not clear session storage:', e);
+        // Ignore
       }
       
-      // Redirect away
-      window.location.href = 'https://www.google.com';
+      performRedirect('https://www.google.com');
     });
   }
   
@@ -268,7 +312,6 @@
     }
   }
   
-  // Wait for DOM to be ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

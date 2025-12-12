@@ -1,20 +1,36 @@
-Contact: mailto:info@rochesterflowercompany.com
+Contact: https://rochesterflowercompany.com/contact.html
 Expires: 2026-12-31T23:59:59.000Z
 Preferred-Languages: en
 Canonical: https://rochesterflowercompany.com/.well-known/security.txt
-Policy: https://rochesterflowercompany.com/security-policy.html
 
-# Security Disclosure
+# Security Disclosure Policy
 # If you discover a security vulnerability, please report it responsibly.
-# We appreciate your help in keeping Rochester Flower Company secure.
+# Use the contact form above - do not publicly disclose until resolved.
 
 # Scope
-# This site is a static website hosted on GitHub Pages
-# In scope: XSS, injection attacks, authentication bypass
-# Out of scope: DoS attacks, social engineering
+# This is a static website hosted on GitHub Pages with Cloudflare CDN
+# In scope: XSS, injection attacks, CSP bypasses, authentication bypass
+# Out of scope: DoS attacks (protected by Cloudflare), social engineering
 
 # Response Time
-# We will acknowledge receipt within 48 hours
-# We aim to resolve critical issues within 7 days
+# We will acknowledge receipt within 72 hours
+# We aim to resolve critical issues within 14 days
 
-Acknowledgments: https://rochesterflowercompany.com/security-acknowledgments.html
+# Safe Harbor
+# We will not pursue legal action against security researchers who:
+# - Make a good faith effort to avoid privacy violations and data destruction
+# - Report vulnerabilities promptly and privately
+# - Give reasonable time for remediation before public disclosure
+# - Do not exploit vulnerabilities beyond what is necessary to demonstrate the issue
+
+# Out of Scope
+# The following are explicitly out of scope:
+# - Spam or social engineering attacks
+# - Physical security of our facilities
+# - Third-party services (FormSubmit, GitHub, Cloudflare)
+# - Denial of Service attacks
+# - Issues in old browser versions (we support modern browsers only)
+
+# Recognition
+# We appreciate responsible disclosure and will publicly recognize reporters
+# (with permission) after issues are resolved.

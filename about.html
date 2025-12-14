@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About – Rochester Flower Company</title>
+  <title>About — Rochester Flower Company</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
   <meta name="description" content="About Rochester Flower Company, a small-batch personal home cannabis grow in Rochester, NY focused on gifting clean craft flower to adults who truly benefit from it.">
@@ -27,16 +27,189 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    .about-top h1 {
+    /* About page specific styles */
+    .about-hero {
       text-align: center;
-      margin-bottom: 0.6rem;
+      padding: var(--space-2xl) 0 var(--space-xl);
     }
 
-    .about-top p {
-      text-align: left;
-      margin-left: auto;
-      margin-right: auto;
+    .about-hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: var(--space-sm);
+      line-height: 1.1;
+    }
+
+    .about-hero .lead {
+      font-size: 1.15rem;
+      color: var(--color-primary-soft);
+      max-width: 680px;
+      margin: 0 auto var(--space-md);
+      line-height: 1.5;
+    }
+
+    .about-hero .subtitle {
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Core principles grid */
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+
+    .principle-card {
+      background: radial-gradient(circle at top left, rgba(79, 209, 197, 0.08), rgba(15, 23, 42, 0.95));
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-md);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .principle-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+    }
+
+    .principle-icon {
+      font-size: 2rem;
+      margin-bottom: var(--space-xs);
+      display: block;
+    }
+
+    .principle-card h3 {
+      font-size: 1.1rem;
+      margin: 0 0 var(--space-xs);
+      color: var(--color-primary-soft);
+    }
+
+    .principle-card p {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Two-column layout for who this is for */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-md);
+    }
+
+    .audience-box {
+      background: radial-gradient(circle at top left, rgba(244, 114, 182, 0.08), rgba(15, 23, 42, 0.95));
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-md);
+    }
+
+    .audience-box h3 {
+      margin-top: 0;
+      margin-bottom: var(--space-sm);
+      font-size: 1.2rem;
+    }
+
+    .audience-box ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .audience-box li {
+      margin-bottom: var(--space-xs);
+      color: var(--color-muted);
+    }
+
+    /* Highlight box for important notices */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(79, 209, 197, 0.1));
+      border: 2px solid var(--color-primary);
+      border-radius: var(--radius-lg);
+      padding: var(--space-md) var(--space-lg);
+      margin: var(--space-lg) 0;
+    }
+
+    .highlight-box h3 {
+      margin-top: 0;
+      margin-bottom: var(--space-sm);
+      color: var(--color-primary-soft);
+    }
+
+    .highlight-box p {
+      margin-bottom: var(--space-xs);
+    }
+
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Story section */
+    .story-content {
       max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .story-content p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-muted);
+      margin-bottom: var(--space-md);
+    }
+
+    .story-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Personal touch section */
+    .personal {
+      background: radial-gradient(circle at center, rgba(79, 209, 197, 0.08), transparent 70%);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .personal p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--color-muted);
+      margin-bottom: var(--space-sm);
+    }
+
+    .personal p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Center all section headings for consistency */
+    .section h2,
+    .about-hero h2 {
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .about-hero {
+        padding: var(--space-xl) 0 var(--space-lg);
+      }
+
+      .about-hero .lead {
+        font-size: 1.05rem;
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+      }
+
+      .audience-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
     }
   </style>
 </head>
@@ -71,149 +244,169 @@
 
   <main class="page-main" id="main-content">
 
-  <!-- Hero -->
-  <section class="page-hero" aria-labelledby="page-title">
-    <div class="container narrow">
-      <h1 id="page-title">Craft cannabis for real people.</h1>
-      <p>
-        Rochester Flower Company isn't a brand or a business. It's just one grower in Rochester, NY 
-        working in small batches to make good flower accessible to people who genuinely rely on it. 
-        No storefront, no hype – just plants, craft, and community.
-      </p>
-    </div>
-  </section>
-
-  <!-- How it started -->
-  <section class="section">
-    <div class="container">
-      <h2>How this all started</h2>
-      <p>
-        This didn't begin as a "project." It started because I saw people in my life struggling to afford 
-        the thing that helped them function, sleep, heal, or feel like themselves. Meanwhile, the legal market 
-        flooded with corporate branding, high prices, and flower that didn't feel like medicine.
-      </p>
-      <p>
-        Here's something that bothers me: Some commercial growers don't dry, cure, or store properly—letting 
-        the terpenes off-gas. Then they spray synthetic terpenes back on to fake quality. That's not medicine. 
-        That's not cool.
-      </p>
-      <p>
-        So I decided to grow the way I wish the world grew: small batches, clean inputs, honest curing, 
-        no shortcuts, and no sales – just trustworthy flower, shared responsibly with adults who need it.
-      </p>
-    </div>
-  </section>
-
-  <!-- Values -->
-  <section class="section section-alt">
-    <div class="container">
-      <h2>What I believe in</h2>
-      <ul>
-        <li><strong>Small batch:</strong> Good cannabis isn't made at scale. It comes from attention, the kind you only get when the entire grow is in the hands of one person. I typically run 2-4 plants per cycle.</li>
-        <li><strong>Clean environments:</strong> Indoor tents, coco/perlite, tuned LEDs, and obsessive environmental management. Temp, humidity, VPD, DLI. Everything is intentional.</li>
-        <li><strong>Slow dry, real cure:</strong> Fast drying ruins good work. Every harvest gets the time it deserves so the terpene profile actually survives long enough to be appreciated.</li>
-        <li><strong>No ego, no hype:</strong> I don't compete, I don't chase trends, and I don't pretend this is a business. I just grow because it helps people and because I love it.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- What this is -->
-  <section class="section">
-    <div class="container">
-      <h2>What this is (and isn't)</h2>
-      <p>
-        Everything I grow is <strong>gifted</strong>, not sold. New York law allows adults 21+ to gift cannabis 
-        to other adults – without payment, trades, services, or anything of value involved. I follow that fully.
-      </p>
-      <p>
-        I don't sell cannabis.<br>
-        I don't run a commercial operation.<br>
-        I don't offer medical advice.<br>
-        I don't diagnose, treat, or prescribe.
-      </p>
-      <p>
-        This is a home garden, one I take seriously, work hard on, and am proud to share with people who truly benefit from it.
-      </p>
-      <div class="notice" style="margin-top: 1.5rem;">
-        <p><strong>⚠️ Medical Disclaimer:</strong> I'm not a doctor. Nothing on this site is medical advice. 
-        I don't diagnose, treat, or prescribe. Talk to a healthcare professional about whether cannabis is right for you.</p>
+    <!-- Hero -->
+    <section class="about-hero">
+      <div class="container narrow">
+        <h1>Craft cannabis for real people</h1>
+        <p class="lead">
+          Rochester Flower Company isn't a brand or a business. It's just one grower in Rochester, NY working in small batches to make good flower accessible to people who genuinely rely on it.
+        </p>
+        <p class="subtitle">
+          No storefront, no hype — just plants, craft, and community.
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Who this is for -->
-  <section class="section section-alt">
-    <div class="container">
-      <div style="max-width: 720px; margin: 0 auto;">
-        <h2>Who this is for</h2>
-        <ul>
-          <li>People who use cannabis as real medicine</li>
-          <li>People who appreciate well-grown flower</li>
-          <li>People who value honesty and transparency</li>
-          <li>People who can't always afford dispensary prices</li>
-          <li>People who believe craft matters</li>
-        </ul>
-        
-        <h2 style="margin-top: 2.5rem;">Who this isn't for</h2>
-        <ul>
-          <li>Anyone under 21 (strictly enforced)</li>
-          <li>People looking for commercial transactions</li>
-          <li>Those seeking medical advice or diagnosis</li>
-          <li>Anyone uncomfortable with the personal, informal nature of gifting</li>
-          <li>People building a stash rather than using for genuine need</li>
-        </ul>
+    <!-- What drives this -->
+    <section class="section">
+      <div class="container">
+        <div class="story-content">
+          <h2>Why this exists</h2>
+          <p>
+            This started because I saw people in my life struggling to afford the thing that helped them function, sleep, heal, or feel like themselves. Meanwhile, the legal market flooded with corporate branding, high prices, and flower that didn't feel like medicine.
+          </p>
+          <p>
+            Some commercial growers don't dry, cure, or store properly—letting the terpenes off-gas, then spraying synthetic terpenes back on to fake quality. That's not medicine. That's not cool.
+          </p>
+          <p>
+            So I grow the way I wish the world grew: small batches, clean inputs, honest curing, no shortcuts, and no sales — just trustworthy flower, shared responsibly with adults who need it.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Geographic scope -->
-  <section class="section">
-    <div class="container">
-      <h2>Where I operate</h2>
-      <p>
-        I operate exclusively in Rochester, NY and surrounding areas where I can personally verify compliance 
-        and build genuine relationships. This isn't scalable, and that's intentional.
-      </p>
-      <p>
-        This is a garden, not a distribution network. Quality and care don't scale, and I'm not trying to make them.
-      </p>
-    </div>
-  </section>
+    <!-- Core principles -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 style="margin-bottom: var(--space-lg);">How I grow</h2>
+        <div class="principles">
+          <div class="principle-card">
+            <span class="principle-icon">🌱</span>
+            <h3>Small Batch</h3>
+            <p>I typically run 2-4 plants per cycle. Good cannabis isn't made at scale—it comes from attention.</p>
+          </div>
 
-  <!-- The grower -->
-  <section class="section section-alt">
-    <div class="container">
-      <h2>The human behind the plants</h2>
-      <p>
-        It's just me: a husband, a pet dad, a spreadsheet addict, and a slightly obsessive plant nerd. What started as a hobby became a personal mission: grow the best flower I can, 
-        share it responsibly, and make the whole thing feel human again.
-      </p>
-      <p>
-        One day I might put more of myself here. Photos, stories, the journey. But for now, just know that everything you see comes from one pair of hands, in one home, in one city.
-      </p>
-    </div>
-  </section>
+          <div class="principle-card">
+            <span class="principle-icon">🔬</span>
+            <h3>Clean Environment</h3>
+            <p>Indoor tents, coco/perlite, tuned LEDs, and obsessive environmental management. Everything is intentional.</p>
+          </div>
 
-  <!-- CTA -->
-  <section class="section">
-    <div class="container">
-      <h2>Where to go next</h2>
-      <p>
-        I don't have big plans to scale or turn this into something commercial. The goal is simple: keep the garden healthy, keep learning, keep helping, and keep sharing. If I were allowed to 
-        dream for a moment, I'd love to see my passion for helping animals and providing medicinal plants to people collide. Imagine craft flower grown using composted "output" 💩 from 
-        rescued animals, and the profit from the flower pays to feed and care for those animals. That seems like a rad world that I want to live in.
-      </p>
-      <p>
-        Thanks for being here. Truly.
-      </p>
-    </div>
-  </section>
+          <div class="principle-card">
+            <span class="principle-icon">⏱️</span>
+            <h3>Proper Cure</h3>
+            <p>Slow dry, real cure. Fast drying ruins good work. Every harvest gets the time it deserves.</p>
+          </div>
+
+          <div class="principle-card">
+            <span class="principle-icon">🎯</span>
+            <h3>No Ego, No Hype</h3>
+            <p>I don't compete, I don't chase trends. I just grow because it helps people and because I love it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What this is and isn't -->
+    <section class="section">
+      <div class="container narrow">
+        <div class="highlight-box">
+          <h3>🎁 Everything is gifted, not sold</h3>
+          <p>
+            New York law allows adults 21+ to gift cannabis to other adults—without payment, trades, services, or anything of value involved. I follow that fully.
+          </p>
+          <p style="margin-top: var(--space-sm);">
+            <strong>I don't:</strong> sell cannabis, run a commercial operation, offer medical advice, diagnose, treat, or prescribe.
+          </p>
+          <p style="margin-top: var(--space-xs);">
+            <strong>I do:</strong> run a home garden that I take seriously, work hard on, and am proud to share with people who truly benefit from it.
+          </p>
+        </div>
+
+        <div class="notice" style="margin-top: var(--space-md);">
+          <p><strong>⚠️ Medical Disclaimer:</strong> I'm not a doctor. Nothing on this site is medical advice. I don't diagnose, treat, or prescribe. Talk to a healthcare professional about whether cannabis is right for you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who this is for -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 style="margin-bottom: var(--space-md);">Who this is for (and who it isn't)</h2>
+        <div class="audience-grid">
+          <div class="audience-box">
+            <h3>✓ This is for you if:</h3>
+            <ul>
+              <li>You use cannabis as real medicine</li>
+              <li>You appreciate well-grown flower</li>
+              <li>You value honesty and transparency</li>
+              <li>You can't always afford dispensary prices</li>
+              <li>You believe craft matters</li>
+            </ul>
+          </div>
+
+          <div class="audience-box">
+            <h3>✗ This isn't for you if:</h3>
+            <ul>
+              <li>You're under 21 (strictly enforced)</li>
+              <li>You're looking for commercial transactions</li>
+              <li>You're seeking medical advice or diagnosis</li>
+              <li>You're uncomfortable with the personal nature of gifting</li>
+              <li>You're building a stash rather than using for genuine need</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Geographic scope -->
+    <section class="section">
+      <div class="container narrow">
+        <h2>Where I operate</h2>
+        <p>
+          I operate exclusively in Rochester, NY and surrounding areas where I can personally verify compliance and build genuine relationships. This isn't scalable, and that's intentional. This is a garden, not a distribution network.
+        </p>
+      </div>
+    </section>
+
+    <!-- The human -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="personal">
+          <h2>The human behind the plants</h2>
+          <p>
+            It's just me: a husband, a pet dad, a spreadsheet addict, and a slightly obsessive plant nerd. What started as a hobby became a personal mission—grow the best flower I can, share it responsibly, and make the whole thing feel human again.
+          </p>
+          <p>
+            Everything you see comes from one pair of hands, in one home, in one city.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future vision -->
+    <section class="section">
+      <div class="container narrow">
+        <h2>What's next</h2>
+        <p>
+          I don't have plans to scale or turn this into something commercial. The goal is simple: keep the garden healthy, keep learning, keep helping, and keep sharing.
+        </p>
+        <p>
+          If I could dream for a moment—I'd love to see my passion for helping animals and providing medicinal plants collide. Imagine craft flower grown using composted output from rescued animals, with proceeds feeding and caring for those animals. That's a world I want to live in.
+        </p>
+        <p style="margin-top: var(--space-md); font-style: italic; color: var(--color-primary-soft);">
+          Thanks for being here. Truly.
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation cards -->
     <section class="section section-alt">
       <div class="container cards">
         <article class="card">
           <h3>Show Me the Plants</h3>
           <p>
-            If you want to follow the plants themselves, the Plants page is updated regularly.
+            Follow the plants themselves with regular updates on current and past grows.
           </p>
           <a href="plants.html" class="card-link" aria-label="View current and past cannabis plant grows">View the plants →</a>
         </article>
@@ -221,22 +414,22 @@
         <article class="card">
           <h3>Crafting the Best Flower</h3>
           <p>
-            If you want to see how I grow, check out the craft process page.
+            See the detailed process behind how I grow, dry, cure, and maintain quality.
           </p>
           <a href="craft.html" class="card-link" aria-label="Learn about the detailed craft growing process">See the process →</a>
         </article>
 
         <article class="card">
-          <h3>Take Me Home!</h3>
+          <h3>Get in Touch</h3>
           <p>
-            Clicking the link below takes you back to RochesterFlowerCompany.com
+            Ready to connect? Head to the contact page to reach out directly.
           </p>
-          <a href="index.html" class="card-link" aria-label="Return to Rochester Flower Company homepage">Back to home →</a>
+          <a href="contact.html" class="card-link" aria-label="Contact Rochester Flower Company">Contact me →</a>
         </article>
       </div>
-    </section>    
+    </section>
 
-</main>
+  </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rochester Flower Company – We're Different, By Design</title>
+  <title>Rochester Flower Company — We're Different, By Design</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
   <meta name="description" content="Small-batch craft cannabis grown in Rochester, NY and gifted to people who actually need the medicine. Clean, slow-cured flower grown with genuine care.">
@@ -19,7 +19,7 @@
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rochesterflowercompany.com/">
-  <meta property="og:title" content="Rochester Flower Company – Small Batch Craft Cannabis">
+  <meta property="og:title" content="Rochester Flower Company — Small Batch Craft Cannabis">
   <meta property="og:description" content="Small-batch craft cannabis grown in Rochester, NY and gifted to people who actually need the medicine.">
   <meta property="og:image" content="https://rochesterflowercompany.com/RFCLogo.png">
   
@@ -32,6 +32,195 @@
   <link rel="apple-touch-icon" href="favicon.png">
   
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Enhanced hero styling */
+    .hero h1 {
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+      line-height: 1.15;
+    }
+
+    .hero p:first-of-type {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Status banner */
+    .status-banner {
+      background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(251, 146, 60, 0.15));
+      border: 2px solid rgba(251, 191, 36, 0.4);
+      border-radius: var(--radius-lg, 12px);
+      padding: 1.25rem 1.75rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .status-banner p {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fbbf24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .status-banner p::before {
+      content: "⚠️";
+      font-size: 1.25rem;
+    }
+
+    /* Enhanced card styling */
+    .card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-primary, #ff7ac4), var(--color-accent, #4fd1c5));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.75);
+      border-color: rgba(79, 209, 197, 0.4);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      font-size: 2.75rem;
+      margin-bottom: 1.25rem;
+      display: block;
+      opacity: 0.9;
+      line-height: 1;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .card-link:hover {
+      gap: 0.75rem;
+    }
+
+    /* Why section enhancement */
+    .why-section {
+      background: radial-gradient(circle at center, rgba(79, 209, 197, 0.08), transparent);
+      padding: var(--space-xl, 3rem) 0;
+    }
+
+    .why-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .why-section h2 {
+      text-align: center;
+      font-size: 2.25rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, var(--color-primary, #ff7ac4), var(--color-accent, #4fd1c5));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .why-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Trust indicators */
+    .trust-indicators {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(79, 209, 197, 0.2);
+    }
+
+    .trust-item {
+      text-align: center;
+    }
+
+    .trust-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .trust-item h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--color-accent, #4fd1c5);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .trust-item p {
+      font-size: 0.9rem;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .status-banner {
+        padding: 1rem 1.25rem;
+      }
+
+      .status-banner p {
+        font-size: 0.9rem;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .card-icon {
+        font-size: 2.25rem;
+      }
+
+      .why-section h2 {
+        font-size: 1.75rem;
+      }
+
+      .trust-indicators {
+        gap: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -76,11 +265,17 @@
           </p>
           <p>
             I grow clean, slow-cured flower in small batches and gift it to adults 21+ who truly benefit from it. 
-            <br>No storefront. No hype. No pressure. No transaction required. Just plants, craft, and community.
+            No storefront. No hype. No pressure. No transaction required. Just plants, craft, and community.
           </p>
+
+          <!-- STATUS BANNER -->
+          <div class="status-banner">
+            <p>Currently not accepting new recipients — at capacity</p>
+          </div>
+
           <div class="hero-actions">
-            <a href="contact.html" class="btn btn-primary">Contact Rochester Flower Company</a>
-            <a href="about.html" class="btn btn-ghost">What is this project?</a>
+            <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+            <a href="about.html" class="btn btn-ghost">Learn More About This Project</a>
           </div>
           <p class="hero-note">
             I don't sell anything. Everything is gifted, not sold, and only gifted to adults 21+ in compliance
@@ -94,20 +289,42 @@
       </div>
     </section>
 
-    <!-- Highlights -->
-    <section class="section" aria-labelledby="why-section">
-      <div class="container">
-        <div>
-          <h2 id="why-section">Why this exists</h2>
-          <p>
-            Some people use plants the same way other folks use an inhaler, a heating pad,
-            or a good night's sleep: it keeps them functional and sane. Then the prices hit,
-            and suddenly their "medicine" is a luxury item.
-          </p>
-          <p>
-            Rochester Flower Company is my way of pushing back: grow small, grow clean,
-            and share good flower with people who genuinely need it—not just want it.
-          </p>
+    <!-- Why This Exists -->
+    <section class="section why-section" aria-labelledby="why-section">
+      <div class="container why-content">
+        <h2 id="why-section">Why This Exists</h2>
+        <p>
+          Some people use plants the same way other folks use an inhaler, a heating pad,
+          or a good night's sleep: it keeps them functional and sane. Then the prices hit,
+          and suddenly their "medicine" is a luxury item.
+        </p>
+        <p>
+          Rochester Flower Company is my way of pushing back: grow small, grow clean,
+          and share good flower with people who genuinely need it—not just want it.
+        </p>
+
+        <!-- Trust Indicators -->
+        <div class="trust-indicators">
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">🏠</span>
+            <h4>Indoor Controlled</h4>
+            <p>Tents, LEDs, climate control</p>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">🌱</span>
+            <h4>Clean Growing</h4>
+            <p>No pesticides, pH monitored</p>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">❄️</span>
+            <h4>Slow Dried</h4>
+            <p>60°F / 60% RH for preservation</p>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">🧬</span>
+            <h4>Quality Genetics</h4>
+            <p>Reputable breeders only</p>
+          </div>
         </div>
       </div>
     </section>
@@ -116,29 +333,38 @@
     <section class="section section-alt" aria-labelledby="explore-section">
       <div class="container cards">
         <article class="card">
+          <span class="card-icon" aria-hidden="true">👤</span>
           <h3>The Person Behind the Plants</h3>
           <p>
             RFC isn't a "brand team." It's just me, my wife, our very spoiled pets, 
             and a home grow that got a little out of hand in the best way possible.
           </p>
-          <a href="about.html" class="card-link" aria-label="Read the full story about Rochester Flower Company">Read the story →</a>
+          <a href="about.html" class="card-link" aria-label="Read the full story about Rochester Flower Company">
+            Read the story <span aria-hidden="true">→</span>
+          </a>
         </article>
 
         <article class="card">
-          <h3>Show Me The Plants</h3>
+          <span class="card-icon" aria-hidden="true">🌿</span>
+          <h3>See The Plants</h3>
           <p>
             If you want to follow the plants themselves, the Plants page is updated regularly with current grows and past harvests.
           </p>
-          <a href="plants.html" class="card-link" aria-label="View current and past plant grows">View the plants →</a>
+          <a href="plants.html" class="card-link" aria-label="View current and past plant grows">
+            View the plants <span aria-hidden="true">→</span>
+          </a>
         </article>
 
         <article class="card">
+          <span class="card-icon" aria-hidden="true">⚙️</span>
           <h3>How the Grow Works</h3>
           <p>
             Indoor tents, coco/perlite, LEDs, controlled temp and humidity, slow dry, real cure.
             Less marketing talk, more "here's exactly what I'm doing and why."
           </p>
-          <a href="craft.html" class="card-link" aria-label="Learn about the craft growing process">See the process →</a>
+          <a href="craft.html" class="card-link" aria-label="Learn about the craft growing process">
+            See the process <span aria-hidden="true">→</span>
+          </a>
         </article>
       </div>
     </section>

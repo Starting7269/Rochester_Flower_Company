@@ -112,14 +112,6 @@
         isValid = false;
       }
       
-      // Validate age (must be 21+)
-      var ageInput = document.getElementById('age');
-      var age = parseInt(ageInput.value);
-      if (isNaN(age) || age < 21) {
-        ageInput.closest('.form-group').classList.add('error');
-        isValid = false;
-      }
-      
       // Validate location
       var locationInput = document.getElementById('location');
       if (!locationInput.value.trim()) {
@@ -198,13 +190,6 @@
         if (this.id === 'email') {
           var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           if (!emailPattern.test(this.value)) {
-            group.classList.add('error');
-          } else {
-            group.classList.remove('error');
-          }
-        } else if (this.id === 'age') {
-          var age = parseInt(this.value);
-          if (isNaN(age) || age < 21) {
             group.classList.add('error');
           } else {
             group.classList.remove('error');

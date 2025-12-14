@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Craft Process – Rochester Flower Company</title>
+  <title>Craft Process — Rochester Flower Company</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
   <meta name="description" content="How I grow: tents, coco, LEDs, controlled environment, slow dry, careful cure. Every plant gets more attention than is probably reasonable.">
@@ -25,6 +25,185 @@
   <link rel="apple-touch-icon" href="favicon.png">
   
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Card-based layout for craft sections */
+    .craft-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: var(--space-lg, 2rem);
+      margin-top: var(--space-xl, 3rem);
+    }
+
+    .craft-card {
+      background: radial-gradient(circle at top left, rgba(79, 209, 197, 0.08), rgba(15, 23, 42, 0.95));
+      border-radius: var(--radius-lg, 12px);
+      padding: var(--space-lg, 2rem);
+      border: 1px solid rgba(79, 209, 197, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .craft-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-primary, #ff7ac4), var(--color-accent, #4fd1c5));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .craft-card:hover {
+      border-color: rgba(79, 209, 197, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(79, 209, 197, 0.15);
+    }
+
+    .craft-card:hover::before {
+      opacity: 1;
+    }
+
+    .craft-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1;
+      display: block;
+    }
+
+    .craft-card h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: var(--color-heading, #fff);
+    }
+
+    .craft-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .craft-card li {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .craft-card li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent, #4fd1c5);
+      font-weight: bold;
+    }
+
+    .craft-card p {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(79, 209, 197, 0.15);
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Two-column layout for drying/curing section */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: var(--space-lg, 2rem);
+      margin-top: var(--space-xl, 3rem);
+    }
+
+    .process-card {
+      background: radial-gradient(circle at top right, rgba(255, 122, 196, 0.08), rgba(15, 23, 42, 0.95));
+      border-radius: var(--radius-lg, 12px);
+      padding: var(--space-lg, 2rem);
+      border: 1px solid rgba(255, 122, 196, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .process-card:hover {
+      border-color: rgba(255, 122, 196, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(255, 122, 196, 0.15);
+    }
+
+    .process-card h2 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    .process-card-icon {
+      font-size: 1.75rem;
+    }
+
+    .process-card strong {
+      color: var(--color-primary, #ff7ac4);
+    }
+
+    /* Highlight callout for genetics */
+    .genetics-highlight {
+      background: linear-gradient(135deg, rgba(255, 122, 196, 0.1), rgba(79, 209, 197, 0.1));
+      border: 2px solid rgba(255, 122, 196, 0.3);
+      border-radius: var(--radius-lg, 12px);
+      padding: var(--space-lg, 2rem);
+      margin: var(--space-xl, 3rem) 0;
+    }
+
+    .genetics-highlight h2 {
+      margin-top: 0;
+      font-size: 1.75rem;
+      color: var(--color-primary, #ff7ac4);
+    }
+
+    /* Final section styling */
+    .why-bother {
+      background: radial-gradient(circle at center, rgba(79, 209, 197, 0.05), transparent);
+      padding: var(--space-xl, 3rem) 0;
+      text-align: center;
+    }
+
+    .why-bother h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, var(--color-primary, #ff7ac4), var(--color-accent, #4fd1c5));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .why-bother p {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .craft-card, .process-card {
+        padding: 1.5rem;
+      }
+
+      .craft-card-icon {
+        font-size: 2rem;
+      }
+
+      .craft-card h2, .process-card h2 {
+        font-size: 1.25rem;
+      }
+
+      .why-bother h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -60,65 +239,69 @@
       <div class="container">
         <h1 id="page-title">How I Grow</h1>
         <p>
-          Short version: way too much effort for the tiny amount of flower that leaves this room.
+          Short version: way too much effort for the tiny amount of flower that leaves this room.<br>
           Long version: keep scrolling.
         </p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container split">
-        <div>
-          <h2>Indoor Environment &amp; Medium</h2>
-          <ul>
-            <li>Indoor tents. I use one tent for growing, another for drying.</li> 
-            <li>LED lights tuned for cannabis.</li>
-            <li>Under-canopy LED lighting to increase yield and reduce larf.</li>
-            <li>50/50 mix of coco coir + perlite for a fast, oxygen-rich root zone. I'm injecting air to the roots via a pump, so a traditional 70/30 mix isn't an option.</li>
-            <li>Self-watering SIP system with air domes so the roots never have to guess about water or air.</li>
-            <li>Swivel fans to circulate air.</li>
-            <li>An exhaust fan for negative air exchange and an intake fan for positive air exchange.</li>
-            <li>A heater for cold NY winters and an AC to ensure hot NY summers don't harm the plants.</li>
-            <li>A humidifier and dehumidifier to ensure proper vapor pressure deficit and to prevent mold.</li>
-          </ul>
-          <p>
-            The idea is simple: give the plant a stable, predictable world so it can
-            focus on being its best self instead of surviving my mistakes.
-          </p>
-        </div>
-        
-        <div>
-          <h2>Outdoor Environment &amp; Medium</h2>
-          <ul>
-            <li>70/30 mix of soil base and perlite.</li> 
-            <li>Mother nature provides the lighting.</li>
-            <li>Environment is out of my control. If a major storm is coming I may try to protect the plants, but otherwise 
-              I let nature take the wheel.</li>
-            <li>Fabric pots.</li>
-            <li>Bottom feed wicking system.</li>
-          </ul>
-          <p>
-            Outdoor is interesting because you can control less, so you're doing a lot of precautionary work you wouldn't do indoors.
-            For example, I may use copper strips around my pots outside to keep slugs and snails away. It's also much cheaper—no tent, no lights, no AC, no heater, no fans. 
-          </p>
+      <div class="container">
+        <div class="craft-cards">
+          <article class="craft-card">
+            <span class="craft-card-icon" aria-hidden="true">🏠</span>
+            <h2>Indoor Environment &amp; Medium</h2>
+            <ul>
+              <li>Indoor tents. I use one tent for growing, another for drying.</li>
+              <li>LED lights tuned for cannabis.</li>
+              <li>Under-canopy LED lighting to increase yield and reduce larf.</li>
+              <li>50/50 mix of coco coir + perlite for a fast, oxygen-rich root zone. I'm injecting air to the roots via a pump, so a traditional 70/30 mix isn't an option.</li>
+              <li>Self-watering SIP system with air domes so the roots never have to guess about water or air.</li>
+              <li>Swivel fans to circulate air.</li>
+              <li>An exhaust fan for negative air exchange and an intake fan for positive air exchange.</li>
+              <li>A heater for cold NY winters and an AC to ensure hot NY summers don't harm the plants.</li>
+              <li>A humidifier and dehumidifier to ensure proper vapor pressure deficit and to prevent mold.</li>
+            </ul>
+            <p>
+              The idea is simple: give the plant a stable, predictable world so it can
+              focus on being its best self instead of surviving my mistakes.
+            </p>
+          </article>
+
+          <article class="craft-card">
+            <span class="craft-card-icon" aria-hidden="true">🌞</span>
+            <h2>Outdoor Environment &amp; Medium</h2>
+            <ul>
+              <li>70/30 mix of soil base and perlite.</li>
+              <li>Mother nature provides the lighting.</li>
+              <li>Environment is out of my control. If a major storm is coming I may try to protect the plants, but otherwise I let nature take the wheel.</li>
+              <li>Fabric pots.</li>
+              <li>Bottom feed wicking system.</li>
+            </ul>
+            <p>
+              Outdoor is interesting because you can control less, so you're doing a lot of precautionary work you wouldn't do indoors.
+              For example, I may use copper strips around my pots outside to keep slugs and snails away. It's also much cheaper—no tent, no lights, no AC, no heater, no fans.
+            </p>
+          </article>
+
+          <article class="craft-card">
+            <span class="craft-card-icon" aria-hidden="true">🌱</span>
+            <h2>Feeding &amp; General Plant Care</h2>
+            <ul>
+              <li>Balanced, cannabis-focused nutrients with a "less but consistent" mindset. I'm constantly trying new brands and approaches—if you know a brand, I've probably used it.</li>
+              <li>Monitor pH, EC, and VPD (Temp + Relative Humidity).</li>
+              <li>Measuring and adjusting Daily Light Integral to ensure the plants are getting the exact amount of photons.</li>
+              <li>Gentle training—no plant torture, just shaping for light penetration and airflow.</li>
+            </ul>
+            <p>
+              I'm always trying to hit that sweet spot where the plants look happy,
+              not stressed, and the leaves are praying but not screaming.
+            </p>
+          </article>
         </div>
 
-        <div>
-          <h2>Feeding &amp; General Plant Care</h2>
-          <ul>
-            <li>Balanced, cannabis-focused nutrients with a "less but consistent" mindset. I'm constantly trying new brands and approaches—if you know a brand, I've probably used it.</li>
-            <li>Monitor pH, EC, and VPD (Temp + Relative Humidity).</li>
-            <li>Measuring and adjusting Daily Light Integral to ensure the plants are getting the exact amount of photons.</li>
-            <li>Gentle training—no plant torture, just shaping for light penetration and airflow.</li>
-          </ul>
-          <p>
-            I'm always trying to hit that sweet spot where the plants look happy,
-            not stressed, and the leaves are praying but not screaming.
-          </p>
-        </div>
-        
-        <div>
-          <h2>Genetics</h2>
+        <div class="genetics-highlight">
+          <h2>🧬 Genetics: The Foundation of Everything</h2>
           <p>
             This is by far one of the most important factors and also one of the most ignored. <strong>Buy great genetics.</strong>
           </p>
@@ -136,33 +319,42 @@
     </section>
 
     <section class="section section-alt">
-      <div class="container split">
-        <div>
-          <h2>Drying</h2>
-          <p>
-            When it's chop time, plants get hung whole in a separate, controlled space.
-            I aim for around <strong>60°F and 60% relative humidity</strong> as often as real life allows.
-          </p>
-          <p>
-            Fast, hot dries are harsh and sad. Slow, cool dries keep terpenes and
-            make the smoke something your lungs don't resent you for.
-          </p>
-        </div>
-        <div>
-          <h2>Curing</h2>
-          <p>
-            Once the outsides feel dry and the stems give that "almost snap," I buck the
-            flower down and move it into Grove Bag curing containers in a stable, cool environment.
-          </p>
-          <p>
-            This is where everything smooths out and the flower becomes something you
-            actually want to smoke, not just "technically dried plant matter."
-          </p>
+      <div class="container">
+        <div class="process-grid">
+          <article class="process-card">
+            <h2>
+              <span class="process-card-icon" aria-hidden="true">❄️</span>
+              Drying
+            </h2>
+            <p>
+              When it's chop time, plants get hung whole in a separate, controlled space.
+              I aim for around <strong>60°F and 60% relative humidity</strong> as often as real life allows.
+            </p>
+            <p>
+              Fast, hot dries are harsh and sad. Slow, cool dries keep terpenes and
+              make the smoke something your lungs don't resent you for.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <h2>
+              <span class="process-card-icon" aria-hidden="true">🌿</span>
+              Curing
+            </h2>
+            <p>
+              Once the outsides feel dry and the stems give that "almost snap," I buck the
+              flower down and move it into Grove Bag curing containers in a stable, cool environment.
+            </p>
+            <p>
+              This is where everything smooths out and the flower becomes something you
+              actually want to smoke, not just "technically dried plant matter."
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section why-bother">
       <div class="container">
         <h2>Why bother with all this?</h2>
         <p>

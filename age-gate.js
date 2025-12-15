@@ -11,6 +11,9 @@
 (function() {
   'use strict';
   
+  // Set flag to prevent double-loading
+  window.ageGateLoaded = true;
+  
   const SECRET_SALT = 'rfc-age-verify-v2-' + window.location.hostname;
   const MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours
   const STORAGE_KEYS = {
@@ -105,7 +108,7 @@
     if (!isVerified) {
       // Store intended destination
       sessionStorage.setItem('intendedDestination', window.location.pathname);
-      window.location.href = '/age-gate.html'; // FIXED: Added leading slash for absolute path
+      window.location.href = '/age-gate.html'; // ABSOLUTE PATH
     }
   }
   
@@ -150,7 +153,7 @@
         const intended = sessionStorage.getItem('intendedDestination');
         const destination = intended && intended !== '/age-gate.html' 
           ? intended 
-          : '/index.html'; // FIXED: Changed to absolute path
+          : '/index.html'; // ABSOLUTE PATH
         
         // Clear intended destination
         sessionStorage.removeItem('intendedDestination');

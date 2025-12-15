@@ -1,0 +1,40 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME  # UPDATE THIS: e.g., "kp/rochesterflowercompany"
+  branch: main  # or 'master' if that's your default branch
+
+# Publish mode: require editorial workflow (drafts)
+publish_mode: editorial_workflow
+
+# Media files (images, etc.)
+media_folder: "assets/images/blog"
+public_folder: "/assets/images/blog"
+
+# Collections
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "featured_image", widget: "image", required: false}
+      - label: "Categories"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        options:
+          - {label: "Grow Tips", value: "grow-tips"}
+          - {label: "Winter 2025", value: "winter-2025"}
+          - {label: "Spring 2025", value: "spring-2025"}
+          - {label: "Summer 2025", value: "summer-2025"}
+          - {label: "Fall 2025", value: "fall-2025"}
+          - {label: "Harvest", value: "harvest"}
+          - {label: "Genetics", value: "genetics"}
+          - {label: "Updates", value: "updates"}
+      - {label: "Body", name: "body", widget: "markdown"}

@@ -235,10 +235,10 @@ custom_css: |
   </div>
 
   <div class="category-filter">
-    <a href="/plants.html" class="category-filter-btn" id="filter-all">All Posts</a>
+    <a href="/plants/" class="category-filter-btn" id="filter-all">All Posts</a>
     {% assign all_categories = site.posts | map: 'categories' | join: ',' | split: ',' | uniq | sort %}
     {% for category in all_categories %}
-    <a href="/plants.html?category={{ category }}" class="category-filter-btn" data-category="{{ category }}">
+    <a href="/plants/?category={{ category }}" class="category-filter-btn" data-category="{{ category }}">
       {{ site.category_names[category] | default: category }}
     </a>
     {% endfor %}
@@ -265,7 +265,7 @@ custom_css: |
         {% if post.categories %}
         <div class="post-card-categories">
           {% for category in post.categories %}
-          <a href="/plants.html?category={{ category }}" class="post-card-category">
+          <a href="/plants/?category={{ category }}" class="post-card-category">
             {{ site.category_names[category] | default: category }}
           </a>
           {% endfor %}
@@ -299,7 +299,7 @@ custom_css: |
     {% if page == paginator.page %}
       <span class="active">{{ page }}</span>
     {% elsif page == 1 %}
-      <a href="/plants.html">{{ page }}</a>
+      <a href="/plants/">{{ page }}</a>
     {% else %}
       <a href="{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a>
     {% endif %}

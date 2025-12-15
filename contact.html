@@ -1,599 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact — Rochester Flower Company</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark light">
-  <meta name="description" content="Contact Rochester Flower Company for business inquiries, questions, or partnerships.">
-  
-  <!-- Enhanced Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formsubmit.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
-  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://rochesterflowercompany.com/contact.html">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  
-  <link rel="stylesheet" href="style.css">
-  
-  <style>
-    /* Enhanced form styling to match brand */
-    .contact-form {
-      background: radial-gradient(circle at top left, rgba(244, 114, 182, 0.12), rgba(15, 23, 42, 0.98));
-      border-radius: var(--radius-lg, 12px);
-      padding: var(--space-xl, 3rem);
-      border: 1px solid rgba(255, 122, 196, 0.2);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      max-width: 700px;
-      margin: 0 auto;
-      transition: all 0.3s ease;
-    }
-
-    .contact-form:hover {
-      border-color: rgba(255, 122, 196, 0.3);
-    }
-    
-    .form-group {
-      margin-bottom: 1.75rem;
-    }
-    
-    .form-label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--color-text, #fff);
-      font-size: 1rem;
-      letter-spacing: 0.01em;
-    }
-    
-    .form-label .required {
-      color: var(--color-primary, #ff7ac4);
-    }
-    
-    .form-input,
-    .form-textarea,
-    .form-select {
-      width: 100%;
-      padding: 0.875rem 1.125rem;
-      background: rgba(15, 23, 42, 0.6);
-      border: 2px solid rgba(129, 140, 248, 0.4);
-      border-radius: var(--radius-md, 8px);
-      color: var(--color-text, #fff);
-      font-size: 1rem;
-      font-family: inherit;
-      transition: all 0.2s ease;
-    }
-    
-    .form-input:focus,
-    .form-textarea:focus,
-    .form-select:focus {
-      outline: none;
-      border-color: var(--color-primary, #ff7ac4);
-      background: rgba(15, 23, 42, 0.8);
-      box-shadow: 0 0 0 3px rgba(255, 122, 196, 0.1);
-    }
-    
-    .form-textarea {
-      min-height: 180px;
-      resize: vertical;
-      line-height: 1.6;
-    }
-    
-    .form-help {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.6);
-      margin-top: 0.5rem;
-      font-style: italic;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .form-help::before {
-      content: "ℹ️";
-      font-style: normal;
-    }
-    
-    .form-error {
-      color: var(--color-primary, #ff7ac4);
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-top: 0.5rem;
-      display: none;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .form-error::before {
-      content: "⚠️";
-    }
-    
-    .form-group.error .form-error {
-      display: flex;
-    }
-    
-    .form-group.error .form-input,
-    .form-group.error .form-textarea,
-    .form-group.error .form-select {
-      border-color: var(--color-primary, #ff7ac4);
-      border-width: 2px;
-      background: rgba(255, 122, 196, 0.08);
-    }
-    
-    .btn-submit {
-      width: 100%;
-      padding: 1.125rem;
-      background: linear-gradient(135deg, var(--color-primary, #ff7ac4), rgba(255, 122, 196, 0.8));
-      border: none;
-      border-radius: 999px;
-      color: #111827;
-      font-size: 1.05rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(255, 122, 196, 0.3);
-      letter-spacing: 0.02em;
-    }
-    
-    .btn-submit:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(255, 122, 196, 0.4);
-    }
-    
-    .btn-submit:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-    
-    /* Honeypot - hide from humans, visible to bots */
-    .honeypot {
-      position: absolute;
-      left: -9999px;
-      width: 1px;
-      height: 1px;
-    }
-
-    /* Message alerts */
-    .alert-message {
-      border-radius: var(--radius-lg, 12px);
-      padding: 1.5rem 2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      border: 2px solid;
-      display: none;
-    }
-
-    .alert-message h2 {
-      margin-bottom: 0.5rem;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .alert-message p {
-      margin-bottom: 0;
-      font-size: 1rem;
-    }
-
-    #successMessage {
-      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.2), rgba(15, 23, 42, 0.95));
-      border-color: rgba(34, 197, 94, 0.5);
-    }
-
-    #successMessage h2 {
-      color: #4ade80;
-    }
-
-    #errorMessage {
-      background: radial-gradient(circle at top left, rgba(239, 68, 68, 0.2), rgba(15, 23, 42, 0.95));
-      border-color: rgba(239, 68, 68, 0.5);
-    }
-
-    #errorMessage h2 {
-      color: #f87171;
-    }
-
-    #rateLimitMessage {
-      background: radial-gradient(circle at top left, rgba(251, 191, 36, 0.2), rgba(15, 23, 42, 0.95));
-      border-color: rgba(251, 191, 36, 0.5);
-    }
-
-    #rateLimitMessage h2 {
-      color: #fbbf24;
-    }
-
-    /* Status Notice - NOT ACCEPTING NEW RECIPIENTS */
-    .status-notice {
-      background: radial-gradient(circle at top left, rgba(251, 191, 36, 0.15), rgba(15, 23, 42, 0.98));
-      border: 2px solid rgba(251, 191, 36, 0.4);
-      border-radius: var(--radius-lg, 12px);
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-
-    .status-notice h2 {
-      color: #fbbf24;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .status-notice p {
-      margin-bottom: 0.75rem;
-      line-height: 1.7;
-      font-size: 1.05rem;
-    }
-
-    .status-notice p:last-child {
-      margin-bottom: 0;
-    }
-
-    .status-notice strong {
-      color: #fbbf24;
-    }
-
-    /* What to Expect Notice */
-    .expect-notice {
-      background: radial-gradient(circle at top right, rgba(79, 209, 197, 0.1), rgba(15, 23, 42, 0.95));
-      border: 1px solid rgba(79, 209, 197, 0.3);
-      border-radius: var(--radius-lg, 12px);
-      padding: 2rem;
-      margin-top: 3rem;
-    }
-
-    .expect-notice h3 {
-      color: var(--color-accent, #4fd1c5);
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .expect-notice p {
-      margin-bottom: 1rem;
-      line-height: 1.7;
-    }
-
-    .expect-notice p:last-child {
-      margin-bottom: 0;
-    }
-
-    .expect-notice ul {
-      margin: 1rem 0;
-      padding-left: 1.5rem;
-    }
-
-    .expect-notice li {
-      margin-bottom: 0.5rem;
-      line-height: 1.6;
-    }
-
-    /* FAQ Cards */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .faq-card {
-      background: radial-gradient(circle at top left, rgba(79, 209, 197, 0.08), rgba(15, 23, 42, 0.95));
-      border: 1px solid rgba(79, 209, 197, 0.2);
-      border-radius: var(--radius-lg, 12px);
-      padding: 1.75rem;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .faq-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--color-accent, #4fd1c5), var(--color-primary, #ff7ac4));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .faq-card:hover {
-      border-color: rgba(79, 209, 197, 0.4);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(79, 209, 197, 0.15);
-    }
-
-    .faq-card:hover::before {
-      opacity: 1;
-    }
-
-    .faq-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.75rem;
-      color: var(--color-heading, #fff);
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-
-    .faq-icon {
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-
-    .faq-card p {
-      margin-bottom: 0;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    @media (max-width: 768px) {
-      .contact-form {
-        padding: 2rem 1.5rem;
-      }
-
-      .status-notice,
-      .expect-notice {
-        padding: 1.5rem;
-      }
-
-      .faq-card {
-        padding: 1.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Rochester Flower Company for business inquiries and general questions.">
+    <title>Contact - Rochester Flower Company</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <div class="bg-animation" aria-hidden="true"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">Rochester Flower Company</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="craft.html">Craft</a></li>
+                <li><a href="plants.html">Plants</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="Rochester Flower Company Home">
-        <img src="RFCLogo.png" alt="Rochester Flower Company logo featuring cannabis leaf design" class="brand-logo" width="56" height="56" loading="eager">
-        <span class="brand-text">
-          <span class="brand-title">Rochester Flower Company</span>
-          <span class="brand-tagline">We're Different, By Design.</span>
-        </span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="plants.html">Plants</a></li>
-          <li><a href="craft.html">Craft Process</a></li>
-          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main>
+        <section class="contact-section">
+            <div class="container">
+                <h1>Get in Touch</h1>
+                <p class="intro-text">
+                    Have questions about the craft or interested in business opportunities? 
+                    Reach out through the form below.
+                </p>
+                
+                <div class="contact-note">
+                    <p><strong>Please note:</strong> We are not currently accepting new recipients. 
+                    The contact form is for business inquiries and general questions only.</p>
+                </div>
 
-  <main class="page-main" id="main-content">
-    <section class="page-hero" aria-labelledby="page-title">
-      <div class="container narrow">
-        <h1 id="page-title">Get in Touch</h1>
-        <p>
-          Questions about the grow process? Business inquiry? General curiosity about what happens here? 
-          Feel free to reach out.
-        </p>
-      </div>
-    </section>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required 
+                            aria-required="true"
+                            placeholder="Your name"
+                        >
+                    </div>
 
-    <section class="section">
-      <div class="container narrow">
-        
-        <!-- STATUS: NOT ACCEPTING NEW RECIPIENTS -->
-        <div class="status-notice">
-          <h2>⚠️ Currently Not Accepting New Recipients</h2>
-          <p>
-            I'm at capacity right now and <strong>not accepting requests for flower</strong>. I'm also not keeping a waitlist.
-          </p>
-          <p>
-            If you're reaching out about becoming a recipient, I won't be able to respond—I simply don't have the bandwidth 
-            to help everyone who asks, and I can't make promises about future availability.
-          </p>
-          <p style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(251, 191, 36, 0.2);">
-            <strong>This form is still active for:</strong> business discussions, collaboration opportunities, 
-            grow questions, or general inquiries about the operation.
-          </p>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            aria-required="true"
+                            placeholder="your.email@example.com"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            required 
+                            aria-required="true"
+                            placeholder="What's this about?"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="6" 
+                            required 
+                            aria-required="true"
+                            placeholder="Your message..."
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Rochester Flower Company. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="support.html">Support</a>
+            </div>
         </div>
+    </footer>
 
-        <!-- Success Message -->
-        <div id="successMessage" class="alert-message">
-          <h2>🎉 Message Sent Successfully!</h2>
-          <p>Thank you for reaching out. We'll review your message and get back to you as soon as possible.</p>
-        </div>
-
-        <!-- Error Message -->
-        <div id="errorMessage" class="alert-message">
-          <h2>❌ Oops! Something went wrong</h2>
-          <p>Please try again later. If the problem persists, the contact form will be restored as soon as possible.</p>
-        </div>
-
-        <!-- Rate Limit Message -->
-        <div id="rateLimitMessage" class="alert-message">
-          <h2>⚠️ Too Many Submissions</h2>
-          <p>You've reached the submission limit (3 per hour). Please wait before trying again.</p>
-        </div>
-
-        <form 
-          id="contactForm" 
-          class="contact-form" 
-          action="https://formsubmit.co/d176036c453fcdd164e2b55243c57632" 
-          method="POST"
-          novalidate>
-          
-          <!-- FormSubmit Configuration (hidden fields) -->
-          <input type="hidden" name="_subject" value="New Contact Form Submission - Rochester Flower Company">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
-          
-          <!-- Name Field -->
-          <div class="form-group">
-            <label for="name" class="form-label">
-              Name <span class="required">*</span>
-            </label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              class="form-input" 
-              required
-              maxlength="100"
-              placeholder="Your name">
-            <span class="form-error">Please enter your name</span>
-          </div>
-
-          <!-- Email Field -->
-          <div class="form-group">
-            <label for="email" class="form-label">
-              Email <span class="required">*</span>
-            </label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              class="form-input" 
-              required
-              placeholder="your.email@example.com">
-            <span class="form-help">So we can reply to you</span>
-            <span class="form-error">Please enter a valid email address</span>
-          </div>
-
-          <!-- Message Field -->
-          <div class="form-group">
-            <label for="message" class="form-label">
-              Message <span class="required">*</span>
-            </label>
-            <textarea 
-              id="message" 
-              name="message" 
-              class="form-textarea" 
-              required
-              minlength="20"
-              maxlength="2000"
-              placeholder="What's on your mind? (Business inquiry, question about the grow, collaboration opportunity, etc.)"></textarea>
-            <span class="form-help">Please note: requests for flower will not receive a response at this time</span>
-            <span class="form-error">Please enter at least 20 characters</span>
-          </div>
-
-          <!-- Submit Button -->
-          <button type="submit" class="btn-submit" id="submitBtn">
-            Send Message
-          </button>
-        </form>
-
-        <!-- What to Expect Notice -->
-        <div class="expect-notice">
-          <h3>💬 What happens after you submit</h3>
-          <p>
-            <strong>If your message is about business, collaboration, or genuine questions about the operation:</strong> 
-            I'll do my best to respond within a few days.
-          </p>
-          <p>
-            <strong>If your message is requesting to become a recipient:</strong> You won't receive a response. 
-            I'm not able to help new people right now, and I'm not tracking names for future availability.
-          </p>
-          <p style="margin-top: 1.25rem;">
-            This isn't meant to be cold—it's just the reality of running a small, personal operation. 
-            I have to be honest about my limits rather than creating false hope or burning myself out trying to help everyone.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section section-alt">
-      <div class="container narrow">
-        <h2 style="text-align: center; margin-bottom: 1rem;">Common Questions</h2>
-        
-        <div class="faq-grid">
-          <article class="faq-card">
-            <h3>
-              <span class="faq-icon" aria-hidden="true">🚫</span>
-              <span>Are you accepting new recipients?</span>
-            </h3>
-            <p>
-              No. I'm at capacity and not taking on new people. I'm also not keeping a waitlist or tracking names 
-              for future availability. This status could change eventually, but I can't make promises about when or if that'll happen.
-            </p>
-          </article>
-
-          <article class="faq-card">
-            <h3>
-              <span class="faq-icon" aria-hidden="true">🌿</span>
-              <span>What strains do you grow?</span>
-            </h3>
-            <p>
-              It varies by season and seed availability. Check the Plants page for current runs. I prioritize genetics 
-              from reputable breeders over specific strain requests.
-            </p>
-          </article>
-
-          <article class="faq-card">
-            <h3>
-              <span class="faq-icon" aria-hidden="true">💼</span>
-              <span>Do you accept business inquiries?</span>
-            </h3>
-            <p>
-              Yes. If you have a legitimate business proposal, collaboration opportunity, or professional question about 
-              the operation, feel free to use this form. I can't respond to everything, but I do read business-related messages.
-            </p>
-          </article>
-
-          <article class="faq-card">
-            <h3>
-              <span class="faq-icon" aria-hidden="true">⚖️</span>
-              <span>Is this legal?</span>
-            </h3>
-            <p>
-              Yes. NY allows adults 21+ to gift cannabis to other adults without compensation under personal cultivation 
-              laws (NY Penal Law § 222.05). This isn't a business—it's a personal garden.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year">2025</span> Rochester Flower Company | <a href="privacy.html" style="color: var(--color-accent); text-decoration: none;">Privacy Policy</a></p>
-      <p class="footer-small">
-        Rochester Flower Company is a personal, small-scale home grow operating in Rochester, NY and surrounding areas. 
-        All cannabis is gifted at no cost and only to adults 21+, consistent with New York personal cultivation laws 
-        (NY Penal Law § 222.05). Recipients must also be compliant with local possession laws. No sales, transactions, 
-        or commercial activity occur. All information is for educational and entertainment purposes only and should not 
-        be interpreted as medical or professional advice.
-      </p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <script src="contact-form.js"></script>
+    <script src="js/contact-form.js"></script>
 </body>
 </html>

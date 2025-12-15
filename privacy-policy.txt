@@ -1,0 +1,51 @@
+PRIVACY POLICY UPDATE - CONTACT FORM SECTION
+============================================
+
+Replace the old FormSubmit section with this:
+
+---
+
+## Contact Form
+
+When you submit a message through our contact form, your information is processed as follows:
+
+**What We Collect:**
+- Name
+- Email address
+- Subject line
+- Message content
+
+**How We Process It:**
+We use Cloudflare Workers to process contact form submissions. Cloudflare Workers act as a secure intermediary that:
+- Validates your form data
+- Sends the email to our business email address
+- Does not store your submission data
+
+Your message is sent directly to our inbox and is not retained by any third-party form processing service.
+
+**Email Delivery:**
+Form submissions are delivered via MailChannels, a transactional email service. MailChannels processes the email only for delivery purposes and does not store message content beyond what's necessary for delivery (typically a few minutes).
+
+**Your Data:**
+- Contact form submissions are received in our email inbox
+- We retain emails according to normal business email retention practices
+- We do not share contact form submissions with third parties
+- You can request deletion of your contact form submission by emailing us
+
+---
+
+REMOVE THESE LINES (if they exist in your current privacy policy):
+- Any mention of "FormSubmit"
+- Any mention of "FormSubmit.co"
+- Any references to FormSubmit's privacy policy
+
+---
+
+OPTIONAL: Add this to your Third-Party Services section:
+
+**Cloudflare Workers:**
+We use Cloudflare Workers to process contact form submissions securely. Workers run on Cloudflare's edge network and do not store form data. See Cloudflare's privacy policy at https://www.cloudflare.com/privacypolicy/
+
+**MailChannels:**
+Contact form emails are delivered using MailChannels' transactional email service. MailChannels processes emails only for delivery and does not store message content. See MailChannels' privacy policy at https://www.mailchannels.com/privacy-policy/
+

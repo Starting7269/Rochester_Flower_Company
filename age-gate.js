@@ -105,7 +105,7 @@
     if (!isVerified) {
       // Store intended destination
       sessionStorage.setItem('intendedDestination', window.location.pathname);
-      window.location.href = 'age-gate.html';
+      window.location.href = '/age-gate.html'; // FIXED: Added leading slash for absolute path
     }
   }
   
@@ -150,7 +150,7 @@
         const intended = sessionStorage.getItem('intendedDestination');
         const destination = intended && intended !== '/age-gate.html' 
           ? intended 
-          : 'index.html';
+          : '/index.html'; // FIXED: Changed to absolute path
         
         // Clear intended destination
         sessionStorage.removeItem('intendedDestination');

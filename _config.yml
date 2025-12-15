@@ -9,12 +9,6 @@ future: true
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
 
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /blog/:year/:month/:day/:title/
-
 # Pagination
 paginate: 6
 paginate_path: "/plants/page/:num/"

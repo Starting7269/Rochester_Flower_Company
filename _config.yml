@@ -1,0 +1,56 @@
+# Site settings
+title: Rochester Flower Company
+description: Craft cannabis cultivation in Rochester, NY
+url: "https://rochesterflowercompany.com"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Pagination
+paginate: 6
+paginate_path: "/plants/page:num/"
+
+# Exclude files from Jekyll processing
+exclude:
+  - README.md
+  - LICENSE
+  - CNAME
+  - .gitignore
+  - admin/config.yml
+
+# Include files that start with underscore
+include:
+  - _pages
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+# Keep existing HTML files as-is
+keep_files:
+  - index.html
+  - about.html
+  - craft.html
+  - contact.html
+  - support.html
+  - assets
+
+# Category definitions (for display names)
+category_names:
+  grow-tips: "Grow Tips"
+  winter-2025: "Winter 2025"
+  spring-2025: "Spring 2025"
+  summer-2025: "Summer 2025"
+  fall-2025: "Fall 2025"
+  harvest: "Harvest"
+  genetics: "Genetics"
+  updates: "Updates"

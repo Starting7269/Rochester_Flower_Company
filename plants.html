@@ -1,156 +1,326 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Plants – Rochester Flower Company</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark light">
-  <meta name="description" content="A loose grow diary: current runs, past harvests, and the plants that kept me up at night (in a good way).">
-  
-  <!-- Enhanced Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
-  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://rochesterflowercompany.com/plants.html">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <div class="bg-animation" aria-hidden="true"></div>
+---
+layout: default
+title: Plants Blog
+description: Stories, tips, and updates from the grow room
+permalink: /plants.html
+---
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="Rochester Flower Company Home">
-        <img src="RFCLogo.png" alt="Rochester Flower Company logo featuring cannabis leaf design" class="brand-logo" width="56" height="56" loading="eager">
-        <span class="brand-text">
-          <span class="brand-title">Rochester Flower Company</span>
-          <span class="brand-tagline">We're Different, By Design.</span>
-        </span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="plants.html" class="active" aria-current="page">Plants</a></li>
-          <li><a href="craft.html">Craft Process</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<style>
+    .blog-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid rgba(255, 105, 180, 0.3);
+    }
 
-  <main class="page-main" id="main-content">
-    <section class="page-hero" aria-labelledby="page-title">
-      <div class="container">
-        <h1 id="page-title">Plants &amp; Harvests</h1>
-        <p>
-          Think of this page as a casual grow diary: snapshots, little notes,
-          and the occasional "look at this pheno!" moment. Right now it's empty but I'm working
-          on it. More to come soon.
-        </p>
-      </div>
-    </section>
+    .blog-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, var(--pink), var(--teal));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 
-    <!-- Grow Timeline -->
-    <section class="section">
-      <div class="container narrow">
-        <h2>Understanding the Timeline</h2>
-        <p>
-          Cannabis cultivation takes time. Here's what a typical grow cycle looks like, so you understand 
-          why there might be gaps between harvests:
-        </p>
-        <div class="notice" style="margin-top: 1rem;">
-          <p style="margin-bottom: 0.75rem;"><strong>Typical Grow Timeline:</strong></p>
-          <p style="font-size: 0.9rem; line-height: 1.7;">
-            <strong>Seedling:</strong> 1-2 weeks<br>
-            <strong>Vegetative:</strong> 4-8 weeks<br>
-            <strong>Flowering:</strong> 8-10 weeks<br>
-            <strong>Drying:</strong> 10-14 days<br>
-            <strong>Curing:</strong> 3-8 weeks minimum<br>
-            <strong>Total:</strong> 4-6 months from seed to ready flower
-          </p>
-          <p style="font-size: 0.85rem; margin-top: 0.75rem; opacity: 0.9;">
-            This is a garden, not a dispensary. Real craft takes real time.
-          </p>
-        </div>
-      </div>
-    </section>
+    .blog-description {
+        font-size: 1.2rem;
+        color: var(--grey);
+    }
 
-    <section class="section section-alt">
-      <div class="container narrow">
-        <h2>Current Grow Status</h2>
-        <p>
-          When there's a run in progress, you'll see it show up here—usually with a few photos,
-          some nerd notes, and at least one "I didn't expect it to do <em>that</em>" comment.
-        </p>
-        <div class="notice" style="margin-top: 1rem; background: rgba(79, 209, 197, 0.1); border-color: rgba(79, 209, 197, 0.6);">
-          <p style="font-size: 0.95rem; margin: 0;">
-            <strong>🌱 Status:</strong> Winter 2025 content coming soon
-          </p>
-        </div>
-      </div>
+    .category-filter {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        background: rgba(255, 105, 180, 0.05);
+        border-radius: 12px;
+    }
 
-      <!-- Gallery grid -->
-      <div class="container gallery">
-        <article class="gallery-item">
-          <div class="gallery-image-wrap">
-            <img src="https://via.placeholder.com/600x400?text=Plant+Photo+Coming+Soon" alt="Placeholder for upcoming Winter 2025 cannabis grow" class="gallery-image" width="600" height="400" loading="lazy">
-          </div>
-          <div class="gallery-body">
-            <h3>Winter 2025</h3>
-            <p class="gallery-meta">Indoor • Coco/perlite • Home grow</p>
-            <p>
-              I'm working on documenting this grow properly. Check back soon for updates, photos, and all the nerdy details.
-            </p>
-          </div>
+    .category-filter-btn {
+        padding: 0.5rem 1.25rem;
+        background: transparent;
+        border: 2px solid rgba(255, 105, 180, 0.3);
+        color: var(--light-text);
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 0.95rem;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .category-filter-btn:hover {
+        background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(32, 178, 170, 0.2));
+        border-color: var(--pink);
+        transform: translateY(-2px);
+    }
+
+    .category-filter-btn.active {
+        background: linear-gradient(135deg, var(--pink), var(--teal));
+        border-color: var(--pink);
+        font-weight: 600;
+    }
+
+    .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .post-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid rgba(255, 105, 180, 0.2);
+    }
+
+    .post-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    }
+
+    .post-card-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .post-card-content {
+        padding: 1.5rem;
+    }
+
+    .post-card-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: var(--light-text);
+    }
+
+    .post-card-title a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .post-card-title a:hover {
+        color: var(--pink);
+    }
+
+    .post-card-meta {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.85rem;
+        color: var(--grey);
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .post-card-categories {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .post-card-category {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+        background: rgba(255, 105, 180, 0.2);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 105, 180, 0.4);
+        color: var(--light-text);
+        text-decoration: none;
+    }
+
+    .post-card-excerpt {
+        color: var(--light-text);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .post-card-link {
+        display: inline-block;
+        color: var(--teal);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    .post-card-link:hover {
+        color: var(--pink);
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 3rem 0;
+        flex-wrap: wrap;
+    }
+
+    .pagination a,
+    .pagination span {
+        padding: 0.75rem 1.25rem;
+        background: rgba(255, 105, 180, 0.1);
+        border: 1px solid rgba(255, 105, 180, 0.3);
+        border-radius: 8px;
+        color: var(--light-text);
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .pagination a:hover {
+        background: linear-gradient(135deg, rgba(255, 105, 180, 0.3), rgba(32, 178, 170, 0.3));
+        transform: translateY(-2px);
+    }
+
+    .pagination .active {
+        background: linear-gradient(135deg, var(--pink), var(--teal));
+        border-color: var(--pink);
+        font-weight: 600;
+    }
+
+    .pagination .disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+
+    .no-posts {
+        text-align: center;
+        padding: 3rem;
+        color: var(--grey);
+        font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+        .blog-title {
+            font-size: 2rem;
+        }
+
+        .posts-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .category-filter {
+            padding: 1rem;
+        }
+
+        .category-filter-btn {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+        }
+    }
+</style>
+
+<div class="blog-header">
+    <h1 class="blog-title">Plants Blog</h1>
+    <p class="blog-description">Stories, tips, and updates from the grow room</p>
+</div>
+
+<div class="category-filter">
+    <a href="/plants.html" class="category-filter-btn" id="filter-all">All Posts</a>
+    {% assign all_categories = site.posts | map: 'categories' | join: ',' | split: ',' | uniq | sort %}
+    {% for category in all_categories %}
+    <a href="/plants.html?category={{ category }}" class="category-filter-btn" data-category="{{ category }}">
+        {{ site.category_names[category] | default: category }}
+    </a>
+    {% endfor %}
+</div>
+
+<div class="posts-grid" id="posts-container">
+    {% if paginator.posts.size > 0 %}
+        {% for post in paginator.posts %}
+        <article class="post-card" data-categories="{{ post.categories | join: ',' }}">
+            {% if post.featured_image %}
+            <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="post-card-image">
+            {% endif %}
+            
+            <div class="post-card-content">
+                <h2 class="post-card-title">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                </h2>
+                
+                <div class="post-card-meta">
+                    <span>📅 {{ post.date | date: "%b %d, %Y" }}</span>
+                </div>
+
+                {% if post.categories %}
+                <div class="post-card-categories">
+                    {% for category in post.categories %}
+                    <a href="/plants.html?category={{ category }}" class="post-card-category">
+                        {{ site.category_names[category] | default: category }}
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <p class="post-card-excerpt">
+                    {{ post.excerpt | strip_html | truncatewords: 30 }}
+                </p>
+
+                <a href="{{ post.url }}" class="post-card-link">Read More →</a>
+            </div>
         </article>
-      </div>
-    </section>
+        {% endfor %}
+    {% else %}
+        <div class="no-posts">
+            <p>No posts yet. Check back soon for updates from the grow room!</p>
+        </div>
+    {% endif %}
+</div>
 
-    <section class="section">
-      <div class="container narrow">
-        <h2>Past Harvests</h2>
-        <p>
-          Over time, this space becomes a little museum of good smells and hard lessons.
-          Not a flex wall—just a record of plants that helped real people on real days.
-        </p>
-        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-muted);">
-          Archive coming as I build out this section properly. Each past grow will include strain info, 
-          breeder details, grow notes, and lessons learned.
-        </p>
-      </div>
-    </section>
-  </main>
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+    {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}">← Previous</a>
+    {% else %}
+        <span class="disabled">← Previous</span>
+    {% endif %}
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year">2025</span> Rochester Flower Company | <a href="privacy.html" style="color: var(--color-accent); text-decoration: none;">Privacy Policy</a></p>
-      <p class="footer-small">
-        Rochester Flower Company is a personal, small-scale home grow operating in Rochester, NY and surrounding areas. 
-        All cannabis is gifted at no cost and only to adults 21+, consistent with New York personal cultivation laws 
-        (NY Penal Law § 222.05). Recipients must also be compliant with local possession laws. No sales, transactions, 
-        or commercial activity occur. All information is for educational and entertainment purposes only and should not 
-        be interpreted as medical or professional advice.
-      </p>
-    </div>
-  </footer>
+    {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+            <span class="active">{{ page }}</span>
+        {% elsif page == 1 %}
+            <a href="/plants.html">{{ page }}</a>
+        {% else %}
+            <a href="{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a>
+        {% endif %}
+    {% endfor %}
 
-  <script src="script.js"></script>
-</body>
-</html>
+    {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}">Next →</a>
+    {% else %}
+        <span class="disabled">Next →</span>
+    {% endif %}
+</div>
+{% endif %}
+
+<script>
+    // Category filtering via URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const activeCategory = urlParams.get('category');
+    
+    if (activeCategory) {
+        // Highlight active filter button
+        document.querySelectorAll('.category-filter-btn').forEach(btn => {
+            if (btn.dataset.category === activeCategory) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Filter posts
+        document.querySelectorAll('.post-card').forEach(card => {
+            const categories = card.dataset.categories.split(',');
+            if (!categories.includes(activeCategory)) {
+                card.style.display = 'none';
+            }
+        });
+    } else {
+        // Show "All Posts" as active when no filter
+        document.getElementById('filter-all').classList.add('active');
+    }
+</script>

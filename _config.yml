@@ -3,6 +3,7 @@ title: Rochester Flower Company
 description: Craft cannabis cultivation in Rochester, NY
 url: "https://rochesterflowercompany.com"
 baseurl: ""
+future: true
 
 # Build settings
 markdown: kramdown

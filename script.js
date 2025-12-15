@@ -55,11 +55,11 @@
   if (typeof window.ageGateLoaded === 'undefined') {
     // Dynamically load age-gate.js
     var script = document.createElement('script');
-    script.src = 'age-gate.js';
+    script.src = '/age-gate.js'; // FIXED: Added leading slash for absolute path
     script.async = false; // Load synchronously to block page
     script.onerror = function() {
       console.error('Failed to load age-gate.js - redirecting to age gate');
-      window.location.href = 'age-gate.html';
+      window.location.href = '/age-gate.html'; // FIXED: Added leading slash for absolute path
     };
     document.head.appendChild(script);
   }
@@ -155,60 +155,23 @@
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           var img = entry.target;
-          var src = img.getAttribute('data-src');
-          if (src) {
-            img.src = src;
-            img.removeAttribute('data-src');
-            imageObserver.unobserve(img);
-          }
+          img.src = img.dataset.src;
+          img.classList.remove('lazy');
+          imageObserver.unobserve(img);
         }
       });
     });
-    
-    document.querySelectorAll('img[data-src]').forEach(function(img) {
+
+    var lazyImages = document.querySelectorAll('img.lazy[data-src]');
+    lazyImages.forEach(function(img) {
       imageObserver.observe(img);
     });
   } else {
     // Fallback for browsers without IntersectionObserver
-    document.querySelectorAll('img[data-src]').forEach(function(img) {
-      var src = img.getAttribute('data-src');
-      if (src) {
-        img.src = src;
-        img.removeAttribute('data-src');
-      }
+    var lazyImages = document.querySelectorAll('img.lazy[data-src]');
+    lazyImages.forEach(function(img) {
+      img.src = img.dataset.src;
+      img.classList.remove('lazy');
     });
   }
 })();
-
-// Add loading indicator class when page is loading
-(function pageLoadingState() {
-  'use strict';
-  
-  // Remove loading class when page is fully loaded
-  window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-  });
-})();
-
-// GDPR-friendly analytics placeholder
-// Replace with your analytics code if needed
-(function analyticsSetup() {
-  'use strict';
-  
-  // Placeholder for future analytics
-  // Only track if user hasn't opted out
-  var analyticsOptOut = localStorage.getItem('analyticsOptOut');
-  
-  if (analyticsOptOut !== 'true') {
-    // Add your analytics code here
-    // Example: Google Analytics, Plausible, etc.
-    
-    // For now, just basic page view tracking to console in dev mode
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      console.log('Page view:', window.location.pathname);
-    }
-  }
-})();
-
-// Export for age-gate.js to set
-window.ageGateLoaded = false;

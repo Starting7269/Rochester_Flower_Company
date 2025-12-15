@@ -1,185 +1,197 @@
 ---
 layout: default
----
+custom_css: |
+  /* Blog post styles using existing design system */
+  .post-header {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
 
-<style>
-    .post-header {
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 2px solid rgba(255, 105, 180, 0.3);
-    }
+  .post-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    margin-bottom: var(--space-md);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
+  .post-meta {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+  }
+
+  .post-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .post-categories {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .category-tag {
+    background: rgba(79, 209, 197, 0.15);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(79, 209, 197, 0.4);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: var(--color-accent);
+  }
+
+  .category-tag:hover {
+    background: rgba(79, 209, 197, 0.25);
+    transform: translateY(-1px);
+  }
+
+  .post-featured-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-lg);
+    border: 1px solid var(--color-border);
+  }
+
+  .post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    max-width: 720px;
+  }
+
+  .post-content h2 {
+    color: var(--color-primary);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+    font-size: 1.8rem;
+  }
+
+  .post-content h3 {
+    color: var(--color-accent);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    font-size: 1.4rem;
+  }
+
+  .post-content p {
+    margin-bottom: var(--space-md);
+  }
+
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin: var(--space-lg) 0;
+    border: 1px solid var(--color-border);
+  }
+
+  .post-content ul,
+  .post-content ol {
+    margin-left: var(--space-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .post-content li {
+    margin-bottom: var(--space-xs);
+  }
+
+  .post-content blockquote {
+    border-left: 3px solid var(--color-primary);
+    padding-left: var(--space-md);
+    margin: var(--space-lg) 0;
+    font-style: italic;
+    color: var(--color-muted);
+  }
+
+  .post-content code {
+    background: rgba(79, 209, 197, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+
+  .post-content pre {
+    background: rgba(15, 23, 42, 0.9);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    margin: var(--space-lg) 0;
+    border: 1px solid var(--color-border);
+  }
+
+  .post-content pre code {
+    background: none;
+    padding: 0;
+  }
+
+  .back-to-blog {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: var(--space-xl);
+    padding: 0.7rem 1.3rem;
+    background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+    color: #020617;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .back-to-blog:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  @media (max-width: 768px) {
     .post-title {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        background: linear-gradient(135deg, var(--pink), var(--teal));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    .post-meta {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        color: var(--grey);
-        font-size: 0.95rem;
-    }
-
-    .post-date {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .post-categories {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-    }
-
-    .category-tag {
-        background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(32, 178, 170, 0.2));
-        padding: 0.25rem 0.75rem;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        border: 1px solid rgba(255, 105, 180, 0.5);
-        transition: all 0.3s;
-        text-decoration: none;
-        color: var(--light-text);
-    }
-
-    .category-tag:hover {
-        background: linear-gradient(135deg, rgba(255, 105, 180, 0.4), rgba(32, 178, 170, 0.4));
-        transform: translateY(-2px);
-    }
-
-    .post-featured-image {
-        width: 100%;
-        max-height: 500px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-bottom: 2rem;
+      font-size: 1.8rem;
     }
 
     .post-content {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--light-text);
+      font-size: 1rem;
     }
 
-    .post-content h2 {
-        color: var(--pink);
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+    .post-meta {
+      flex-direction: column;
+      gap: var(--space-xs);
     }
+  }
+---
 
-    .post-content h3 {
-        color: var(--teal);
-        margin-top: 1.5rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .post-content p {
-        margin-bottom: 1.5rem;
-    }
-
-    .post-content img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        margin: 2rem 0;
-    }
-
-    .post-content ul, .post-content ol {
-        margin-left: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .post-content li {
-        margin-bottom: 0.5rem;
-    }
-
-    .post-content blockquote {
-        border-left: 4px solid var(--pink);
-        padding-left: 1.5rem;
-        margin: 2rem 0;
-        font-style: italic;
-        color: var(--grey);
-    }
-
-    .post-content code {
-        background: rgba(255, 105, 180, 0.1);
-        padding: 0.2rem 0.4rem;
-        border-radius: 4px;
-        font-family: 'Courier New', monospace;
-    }
-
-    .post-content pre {
-        background: rgba(0, 0, 0, 0.3);
-        padding: 1rem;
-        border-radius: 8px;
-        overflow-x: auto;
-        margin: 2rem 0;
-    }
-
-    .post-content pre code {
-        background: none;
-        padding: 0;
-    }
-
-    .back-to-blog {
-        display: inline-block;
-        margin-top: 3rem;
-        padding: 0.75rem 1.5rem;
-        background: linear-gradient(135deg, var(--pink), var(--teal));
-        color: white;
-        text-decoration: none;
-        border-radius: 25px;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .back-to-blog:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
-    }
-
-    @media (max-width: 768px) {
-        .post-title {
-            font-size: 2rem;
-        }
-
-        .post-content {
-            font-size: 1rem;
-        }
-
-        .post-meta {
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-    }
-</style>
-
-<article class="post">
+<div class="page-hero">
+  <article class="post">
     <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
+      <h1 class="post-title">{{ page.title }}</h1>
+      
+      <div class="post-meta">
+        <span class="post-date">
+          📅 {{ page.date | date: "%B %d, %Y" }}
+        </span>
         
-        <div class="post-meta">
-            <span class="post-date">
-                📅 {{ page.date | date: "%B %d, %Y" }}
-            </span>
-            
-            {% if page.categories %}
-            <div class="post-categories">
-                🏷️
-                {% for category in page.categories %}
-                <a href="/plants.html?category={{ category }}" class="category-tag">
-                    {{ site.category_names[category] | default: category }}
-                </a>
-                {% endfor %}
-            </div>
-            {% endif %}
+        {% if page.categories %}
+        <div class="post-categories">
+          🏷️
+          {% for category in page.categories %}
+          <a href="/plants.html?category={{ category }}" class="category-tag">
+            {{ site.category_names[category] | default: category }}
+          </a>
+          {% endfor %}
         </div>
+        {% endif %}
+      </div>
     </header>
 
     {% if page.featured_image %}
@@ -187,8 +199,9 @@ layout: default
     {% endif %}
 
     <div class="post-content">
-        {{ content }}
+      {{ content }}
     </div>
 
     <a href="/plants.html" class="back-to-blog">← Back to Plants Blog</a>
-</article>
+  </article>
+</div>

@@ -16,7 +16,7 @@ collections:
 
 # Pagination
 paginate: 6
-paginate_path: "/plants/page:num/"
+paginate_path: "/plants/page/:num/"
 
 # Exclude files from Jekyll processing
 exclude:

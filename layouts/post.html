@@ -1,0 +1,194 @@
+---
+layout: default
+---
+
+<style>
+    .post-header {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid rgba(255, 105, 180, 0.3);
+    }
+
+    .post-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, var(--pink), var(--teal));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .post-meta {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        color: var(--grey);
+        font-size: 0.95rem;
+    }
+
+    .post-date {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .post-categories {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .category-tag {
+        background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(32, 178, 170, 0.2));
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        border: 1px solid rgba(255, 105, 180, 0.5);
+        transition: all 0.3s;
+        text-decoration: none;
+        color: var(--light-text);
+    }
+
+    .category-tag:hover {
+        background: linear-gradient(135deg, rgba(255, 105, 180, 0.4), rgba(32, 178, 170, 0.4));
+        transform: translateY(-2px);
+    }
+
+    .post-featured-image {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+    }
+
+    .post-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--light-text);
+    }
+
+    .post-content h2 {
+        color: var(--pink);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .post-content h3 {
+        color: var(--teal);
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .post-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 2rem 0;
+    }
+
+    .post-content ul, .post-content ol {
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content li {
+        margin-bottom: 0.5rem;
+    }
+
+    .post-content blockquote {
+        border-left: 4px solid var(--pink);
+        padding-left: 1.5rem;
+        margin: 2rem 0;
+        font-style: italic;
+        color: var(--grey);
+    }
+
+    .post-content code {
+        background: rgba(255, 105, 180, 0.1);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+    }
+
+    .post-content pre {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 2rem 0;
+    }
+
+    .post-content pre code {
+        background: none;
+        padding: 0;
+    }
+
+    .back-to-blog {
+        display: inline-block;
+        margin-top: 3rem;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(135deg, var(--pink), var(--teal));
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .back-to-blog:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .post-title {
+            font-size: 2rem;
+        }
+
+        .post-content {
+            font-size: 1rem;
+        }
+
+        .post-meta {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+</style>
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        
+        <div class="post-meta">
+            <span class="post-date">
+                📅 {{ page.date | date: "%B %d, %Y" }}
+            </span>
+            
+            {% if page.categories %}
+            <div class="post-categories">
+                🏷️
+                {% for category in page.categories %}
+                <a href="/plants.html?category={{ category }}" class="category-tag">
+                    {{ site.category_names[category] | default: category }}
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    {% if page.featured_image %}
+    <img src="{{ page.featured_image }}" alt="{{ page.title }}" class="post-featured-image">
+    {% endif %}
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+    <a href="/plants.html" class="back-to-blog">← Back to Plants Blog</a>
+</article>

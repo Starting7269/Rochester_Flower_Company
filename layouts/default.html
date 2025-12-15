@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pink: #FF69B4;
+            --teal: #20B2AA;
+            --dark-bg: #1a1a1a;
+            --light-text: #f5f5f5;
+            --grey: #888;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--light-text);
+            background-color: var(--dark-bg);
+        }
+
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            padding: 1rem 2rem;
+            border-bottom: 2px solid var(--pink);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--pink), var(--teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--pink);
+        }
+
+        .nav-links a.active {
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            min-height: calc(100vh - 200px);
+        }
+
+        footer {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-top: 2px solid var(--teal);
+            padding: 2rem;
+            text-align: center;
+            color: var(--grey);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            main {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+
+    {% if page.custom_css %}
+    <style>
+        {{ page.custom_css }}
+    </style>
+    {% endif %}
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Rochester Flower Company</div>
+            <ul class="nav-links">
+                <li><a href="/index.html" {% if page.url == '/index.html' %}class="active"{% endif %}>Home</a></li>
+                <li><a href="/about.html" {% if page.url == '/about.html' %}class="active"{% endif %}>About</a></li>
+                <li><a href="/craft.html" {% if page.url == '/craft.html' %}class="active"{% endif %}>Craft</a></li>
+                <li><a href="/plants.html" {% if page.url == '/plants.html' or page.layout == 'post' %}class="active"{% endif %}>Plants</a></li>
+                <li><a href="/contact.html" {% if page.url == '/contact.html' %}class="active"{% endif %}>Contact</a></li>
+                <li><a href="/support.html" {% if page.url == '/support.html' %}class="active"{% endif %}>Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <p>
+            © {{ 'now' | date: "%Y" }} Rochester Flower Company. 
+            Operating under NY state personal cultivation laws. 
+            For adults 21+ only. Not accepting new recipients at this time.
+        </p>
+    </footer>
+</body>
+</html>

@@ -2,6 +2,8 @@ backend:
   name: github
   repo: Starting7269/Rochester_Flower_Company
   branch: main
+  auth_type: oauth2
+  base_url: https://api.netlify.com
 
 # Publish mode: require editorial workflow (drafts)
 publish_mode: editorial_workflow

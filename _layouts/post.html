@@ -173,7 +173,7 @@ layout: default
             <div class="post-categories">
                 🏷️
                 {% for category in page.categories %}
-                <a href="/plants.html?category={{ category }}" class="category-tag">
+                <a href="/plants/?category={{ category }}" class="category-tag">
                     {{ site.category_names[category] | default: category }}
                 </a>
                 {% endfor %}
@@ -190,5 +190,5 @@ layout: default
         {{ content }}
     </div>
 
-    <a href="/plants.html" class="back-to-blog">← Back to Plants Blog</a>
+    <a href="/plants/" class="back-to-blog">← Back to Plants Blog</a>
 </article>

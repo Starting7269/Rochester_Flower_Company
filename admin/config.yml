@@ -3,7 +3,7 @@ backend:
   repo: Starting7269/Rochester_Flower_Company
   branch: main
   auth_type: oauth2
-  base_url: https://decap-oauth-server-redo.vercel.app/
+  base_url: https://decap-oauth-server-redo.vercel.app
   auth_endpoint: auth
 
 # Publish mode: require editorial workflow (drafts)

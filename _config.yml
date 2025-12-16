@@ -10,7 +10,7 @@ collections:
     output: true
 description: Craft cannabis cultivation in Rochester, NY
 url: https://rochesterflowercompany.com
-baseurl: ''
+baseurl: 
 future: true
 markdown: kramdown
 permalink: "/blog/:year/:month/:day/:title/"

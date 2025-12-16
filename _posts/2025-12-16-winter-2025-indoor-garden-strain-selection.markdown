@@ -17,15 +17,15 @@ Below are the cultivars we’ve chosen for the winter 2025 Indoor Garden, each s
 
 **Breeder:** [Night Owl Seeds](https://nightowlseeds.com/)
 
-**Description:** Head Zeppelin is Night Owl doing what they do best: isolating a very specific expression and pushing it forward with intent. This cultivar pulls a classic Headband profile out of the Whistlin’ Diesel project line, and it’s aimed squarely at old-school OG fans.
+**Description:** Head Zeppelin is Night Owl doing what they do best: isolating a very specific expression and pushing it forward with intent. This cultivar pulls a classic Headband profile out of the Whistlin’ Diesel project line, and it’s aimed squarely at old school OG fans.
 
-Growth is expected to be medium to large, with a bushy structure and thick branches capable of holding dense, golf-ball-sized colas. The flowers are described as tight, firm, and heavily frosted—like they’ve been left out in an ice storm.
+Growth is expected to be medium to large, with a bushy structure and thick branches capable of holding dense, golf ball sized colas. The flowers are described as tight, firm, and heavily frosted like they’ve been left out in an ice storm.
 
 The terpene profile is loud and unapologetic: heavy diesel fumes, sour lemon peel, warm rubber, and deep, earthy chem. This is not a subtle plant. Carbon filtration is highly recommended.
 
-Flavor follows aroma, sharp, sour, gassy, and classic. The effects come on fast and live mostly above the shoulders at first, with that familiar headband pressure and a strong cerebral lift. In higher doses, it can get intense—borderline disorienting in the best (or worst) way—before settling into a heavy body stone.
+Flavor follows aroma, sharp, sour, gassy, and classic. The effects come on fast and live mostly above the shoulders at first, with that familiar headband pressure and a strong cerebral lift. In higher doses, it can get intense borderline disorienting in the best (or worst) way before settling into a heavy body stone.
 
-This is a nostalgia pick. A deliberate chase for classic flavors and old-school effects.
+This is a nostalgia pick. A deliberate chase for classic flavors and old school effects.
 
 **Photo:** This cultivar is brand new, so no official photos exist yet. A generic plant image is shown as a placeholder.
 ![4239736-1c5af0.png](/uploads/4239736-1c5af0.png)
@@ -40,7 +40,7 @@ There’s no official description for this cross yet, and it isn’t currently a
 
 Banjo is a Sonoma County heirloom often referred to as “the champagne of weed.” Bright citrus aromatics, purple stalks, frosty white colas, and a terpene profile that naturally resists mold. It’s a standout in Atlas’ lineup.
 
-Papaya Bomb, from Purple City Genetics, combines Papaya with THC Bomb into a pungent, hard-hitting hybrid. It placed second in the 2022 Emerald Cup solventless concentrate category and is known for loud fruit, skunk, and pine aromas paired with electric-green buds.
+Papaya Bomb, from Purple City Genetics, combines Papaya with THC Bomb into a pungent, hard hitting hybrid. It placed second in the 2022 Emerald Cup solventless concentrate category and is known for loud fruit, skunk, and pine aromas paired with electric green buds.
 
 This cross feels like a collision of refinement and raw power. No expectations, just curiosity and trust in the genetics.
 
@@ -52,11 +52,11 @@ This cross feels like a collision of refinement and raw power. No expectations, 
 
 **Breeder:** [Speedrun Seeds](https://www.speedrunseeds.com/)
 
-**Description:** SlamBerry exists because something special happened once—and Speedrun Seeds went back to find it again.
+**Description:** SlamBerry exists because something special happened once and Speedrun Seeds went back to find it again.
 
 The original spark came from a 2022 tester run that included a single Slapple plant mixed into Sapphyre females, all pollinated by a Frosted Cherry’Os male. That Slapple didn’t produce enough seeds for a full release, but the plants grown from that batch were reportedly exceptional.
 
-SlamBerry is the result of revisiting that moment. It’s a reminder that some of the best cultivars aren’t planned—they’re discovered.
+SlamBerry is the result of revisiting that moment. It’s a reminder that some of the best cultivars aren’t planned, they’re discovered.
 
 We’re running this one to see if that lightning strikes twice.
 
@@ -69,11 +69,11 @@ We’re running this one to see if that lightning strikes twice.
 
 **Description:**  Chocolate Thai Auto is a nod to the past. An autoflowering interpretation of a legendary sativa, built for modern indoor growing while keeping that classic energy intact.
 
-Expect bright lemon, sweet, and tropical notes paired with an uplifting, energetic high. This is a strain selected for daytime use, creative headspace, and momentum—not couchlock.
+Expect bright lemon, sweet, and tropical notes paired with an uplifting, energetic high. This is a strain selected for daytime use, creative headspace, and momentum not couchlock.
 
 With reported THC levels north of 20%, it’s no lightweight, and it’s often associated with relief from pain, insomnia, and inflammation while still keeping the mind alert.
 
-This one rounds out the garden—bringing balance, history, and a very different kind of experience.
+This one rounds out the garden bringing balance, history, and a very different kind of experience.
 
 **Photo:**  ![2025-12-16 15_44_00-chocolate thai autoflower - Google Search — Mozilla Firefox.png](/uploads/2025-12-16%2015_44_00-chocolate%20thai%20autoflower%20-%20Google%20Search%20%E2%80%94%20Mozilla%20Firefox.png)
 

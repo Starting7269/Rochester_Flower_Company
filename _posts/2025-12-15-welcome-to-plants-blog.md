@@ -1,8 +1,9 @@
 ---
+title: Welcome to the Plants Blog
+date: 2025-12-15 10:00:00 Z
+categories:
+- updates
 layout: post
-title: "Welcome to the Plants Blog"
-date: 2025-12-15 10:00:00
-categories: [updates]
 featured_image: 
 ---
 

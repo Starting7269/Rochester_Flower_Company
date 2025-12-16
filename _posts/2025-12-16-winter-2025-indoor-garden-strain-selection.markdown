@@ -7,6 +7,7 @@ categories:
 ---
 
 # Winter 2025 Indoor Garden: Strain Selection
+
 Choosing a strain is one of the best parts of growing but it’s also a serious commitment. Once a seed goes into the medium, you’re locked in for months. Time spent growing, drying, curing, and eventually consuming. There’s no rushing it, and there’s no changing your mind halfway through.
 
 That’s why strain selection matters so much here.
@@ -75,8 +76,8 @@ With reported THC levels north of 20%, it’s no lightweight, and it’s often a
 
 This one rounds out the garden bringing balance, history, and a very different kind of experience.
 
-**Photo:**  ![2025-12-16 15_44_00-chocolate thai autoflower - Google Search — Mozilla Firefox.png](/uploads/2025-12-16%2015_44_00-chocolate%20thai%20autoflower%20-%20Google%20Search%20%E2%80%94%20Mozilla%20Firefox.png)
-
+**Photo:**  
+![2025-12-16 15_44_00-chocolate thai autoflower - Google Search — Mozilla Firefox.png](/uploads/2025-12-16%2015_44_00-chocolate%20thai%20autoflower%20-%20Google%20Search%20%E2%80%94%20Mozilla%20Firefox.png)
 
 **Closing Thoughts**\
 That’s the lineup for the 2025 Indoor Garden. Each of these strains was chosen with purpose, curiosity, and respect for the process. From seed to harvest, there’s nothing rushed here, just time, attention, and letting the plants tell their story.

@@ -19,7 +19,6 @@ exclude:
   - LICENSE
   - CNAME
   - .gitignore
-  - admin/config.yml
 
 # Include files that start with underscore
 include:

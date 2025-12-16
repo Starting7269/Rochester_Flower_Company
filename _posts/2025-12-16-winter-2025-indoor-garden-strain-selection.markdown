@@ -1,6 +1,6 @@
 ---
 title: 'Winter 2025 Indoor Garden: Strain Selection'
-date: 2025-12-16 19:58:00 Z
+date: 2025-12-16 14:58:00 -05:00
 categories:
 - Winter 2025
 - Genetics
@@ -16,6 +16,7 @@ Below are the cultivars we’ve chosen for the winter 2025 Indoor Garden, each s
 ## Autopot #1 - Head Zepplin F4
 
 **Breeder:** [Night Owl Seeds](https://nightowlseeds.com/)
+
 **Description:** Head Zeppelin is Night Owl doing what they do best: isolating a very specific expression and pushing it forward with intent. This cultivar pulls a classic Headband profile out of the Whistlin’ Diesel project line, and it’s aimed squarely at old-school OG fans.
 
 Growth is expected to be medium to large, with a bushy structure and thick branches capable of holding dense, golf-ball-sized colas. The flowers are described as tight, firm, and heavily frosted—like they’ve been left out in an ice storm.
@@ -32,7 +33,7 @@ This is a nostalgia pick. A deliberate chase for classic flavors and old-school 
 ## Autopot #2 - Papaya Bomb x Banjo
 
 **Breeder:** A collab between [Atlas Seeds](https://atlasseed.com/) with the Banjo and Purple City Genetics with Papaya Bomb
-**Cultivar:** Papaya Bomb x Banjo
+
 **Description:** This one is a bit of a wildcard and that’s exactly why it made the cut.
 
 There’s no official description for this cross yet, and it isn’t currently available for sale. What is known are the parents, and both bring serious credentials.
@@ -42,6 +43,7 @@ Banjo is a Sonoma County heirloom often referred to as “the champagne of weed.
 Papaya Bomb, from Purple City Genetics, combines Papaya with THC Bomb into a pungent, hard-hitting hybrid. It placed second in the 2022 Emerald Cup solventless concentrate category and is known for loud fruit, skunk, and pine aromas paired with electric-green buds.
 
 This cross feels like a collision of refinement and raw power. No expectations, just curiosity and trust in the genetics.
+
 **Photo:** Photos courtesy of [floundern45 on Reddit](https://www.reddit.com/r/Autoflowers/comments/1pm2tmo/papaya_bomb_x_banjo_atlas_seed/)
 ![papaya bomb x banjo 2.png](/uploads/papaya%20bomb%20x%20banjo%202.png)
 ![pap bomb bank 1.png](/uploads/pap%20bomb%20bank%201.png)
@@ -49,6 +51,7 @@ This cross feels like a collision of refinement and raw power. No expectations, 
 ## Autopot #3 - SlamBerry
 
 **Breeder:** [Speedrun Seeds](https://www.speedrunseeds.com/)
+
 **Description:** SlamBerry exists because something special happened once—and Speedrun Seeds went back to find it again.
 
 The original spark came from a 2022 tester run that included a single Slapple plant mixed into Sapphyre females, all pollinated by a Frosted Cherry’Os male. That Slapple didn’t produce enough seeds for a full release, but the plants grown from that batch were reportedly exceptional.
@@ -56,12 +59,14 @@ The original spark came from a 2022 tester run that included a single Slapple pl
 SlamBerry is the result of revisiting that moment. It’s a reminder that some of the best cultivars aren’t planned—they’re discovered.
 
 We’re running this one to see if that lightning strikes twice.
+
 **Photo:**
 ![2025-12-16 15_37_21-SPEEDRUN SEEDS – SLAMBERRY – AUTO FEM – 3 PACK - SeedsLocker.com — Mozilla Firef.png](/uploads/2025-12-16%2015_37_21-SPEEDRUN%20SEEDS%20%E2%80%93%20SLAMBERRY%20%E2%80%93%20AUTO%20FEM%20%E2%80%93%203%20PACK%20-%20SeedsLocker.com%20%E2%80%94%20Mozilla%20Firef.png)
 
 ## Autopot #4 - Chocolate Thai Auto
 
 **Breeder:** [Blimburn ](https://blimburnseeds.com/)
+
 **Description:**  Chocolate Thai Auto is a nod to the past. An autoflowering interpretation of a legendary sativa, built for modern indoor growing while keeping that classic energy intact.
 
 Expect bright lemon, sweet, and tropical notes paired with an uplifting, energetic high. This is a strain selected for daytime use, creative headspace, and momentum—not couchlock.
@@ -69,6 +74,7 @@ Expect bright lemon, sweet, and tropical notes paired with an uplifting, energet
 With reported THC levels north of 20%, it’s no lightweight, and it’s often associated with relief from pain, insomnia, and inflammation while still keeping the mind alert.
 
 This one rounds out the garden—bringing balance, history, and a very different kind of experience.
+
 **Photo:**  ![2025-12-16 15_44_00-chocolate thai autoflower - Google Search — Mozilla Firefox.png](/uploads/2025-12-16%2015_44_00-chocolate%20thai%20autoflower%20-%20Google%20Search%20%E2%80%94%20Mozilla%20Firefox.png)
 
 

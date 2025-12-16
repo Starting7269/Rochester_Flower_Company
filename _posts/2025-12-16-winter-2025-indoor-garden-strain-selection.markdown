@@ -6,6 +6,7 @@ categories:
 - Genetics
 ---
 
+# Winter 2025 Indoor Garden: Strain Selection
 Choosing a strain is one of the best parts of growing but it’s also a serious commitment. Once a seed goes into the medium, you’re locked in for months. Time spent growing, drying, curing, and eventually consuming. There’s no rushing it, and there’s no changing your mind halfway through.
 
 That’s why strain selection matters so much here.

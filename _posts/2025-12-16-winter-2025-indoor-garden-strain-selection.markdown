@@ -36,7 +36,7 @@ This is a nostalgia pick. A deliberate chase for classic flavors and old school 
 **Breeder:** A collab between [Atlas Seeds](https://atlasseed.com/) with the Banjo and Purple City Genetics with Papaya Bomb
 
 **Photo:** Photos courtesy of [floundern45 on Reddit](https://www.reddit.com/r/Autoflowers/comments/1pm2tmo/papaya_bomb_x_banjo_atlas_seed/)
-<img src="https://rochesterflowercompany.com/_uploads/papaya%20bomb%20x%20banjo%202.webp" alt="Papaya Bomb x Banjo">
+<img src="https://rochesterflowercompany.com/uploads/papaya%20bomb%20x%20banjo%202.webp" alt="Papaya Bomb x Banjo">
 
 
 **Description:** This one is a bit of a wildcard and that’s exactly why it made the cut.

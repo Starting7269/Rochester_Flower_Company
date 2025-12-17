@@ -31,7 +31,6 @@ Flavor follows aroma, sharp, sour, gassy, and classic. The effects come on fast 
 
 This is a nostalgia pick. A deliberate chase for classic flavors and old school effects.
 
-
 ## Autopot #2 - Papaya Bomb x Banjo
 
 **Breeder:** A collab between [Atlas Seeds](https://atlasseed.com/) with the Banjo and Purple City Genetics with Papaya Bomb
@@ -39,6 +38,13 @@ This is a nostalgia pick. A deliberate chase for classic flavors and old school 
 **Photo:** Photos courtesy of [floundern45 on Reddit](https://www.reddit.com/r/Autoflowers/comments/1pm2tmo/papaya_bomb_x_banjo_atlas_seed/)
 [papaya bomb x banjo 2.webp](/uploads/papaya%20bomb%20x%20banjo%202.webp)
 [pap bomb bank 1.webp](/uploads/pap%20bomb%20bank%201.webp)
+<img
+src="/_uploads/papaya%20bomb%20x%20banjo%202.webp"
+alt="Papaya Bomb x Banjo"
+loading="lazy"
+style="max-width:100%; height:auto;"
+
+> 
 
 **Description:** This one is a bit of a wildcard and that’s exactly why it made the cut.
 
@@ -49,7 +55,6 @@ Banjo is a Sonoma County heirloom often referred to as “the champagne of weed.
 Papaya Bomb, from Purple City Genetics, combines Papaya with THC Bomb into a pungent, hard hitting hybrid. It placed second in the 2022 Emerald Cup solventless concentrate category and is known for loud fruit, skunk, and pine aromas paired with electric green buds.
 
 This cross feels like a collision of refinement and raw power. No expectations, just curiosity and trust in the genetics.
-
 
 ## Autopot #3 - SlamBerry
 
@@ -66,12 +71,11 @@ SlamBerry is the result of revisiting that moment. It’s a reminder that some o
 
 We’re running this one to see if that lightning strikes twice.
 
-
 ## Autopot #4 - Chocolate Thai Auto
 
 **Breeder:** [Blimburn ](https://blimburnseeds.com/)
 
-**Photo:**  
+**Photo:**\
 [2025-12-16 15_44_00-chocolate thai autoflower - Google Search — Mozilla Firefox.webp](/uploads/2025-12-16%2015_44_00-chocolate%20thai%20autoflower%20-%20Google%20Search%20%E2%80%94%20Mozilla%20Firefox.webp)
 
 **Description:**  Chocolate Thai Auto is a nod to the past. An autoflowering interpretation of a legendary sativa, built for modern indoor growing while keeping that classic energy intact.
@@ -81,7 +85,6 @@ Expect bright lemon, sweet, and tropical notes paired with an uplifting, energet
 With reported THC levels north of 20%, it’s no lightweight, and it’s often associated with relief from pain, insomnia, and inflammation while still keeping the mind alert.
 
 This one rounds out the garden bringing balance, history, and a very different kind of experience.
-  
 
 **Closing Thoughts**\
 That’s the lineup for the 2025 Indoor Garden. Each of these strains was chosen with purpose, curiosity, and respect for the process. From seed to harvest, there’s nothing rushed here, just time, attention, and letting the plants tell their story.

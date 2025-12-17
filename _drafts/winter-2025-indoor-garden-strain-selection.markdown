@@ -18,6 +18,9 @@ Below are the cultivars we’ve chosen for the winter 2025 Indoor Garden, each s
 
 **Breeder:** [Night Owl Seeds](https://nightowlseeds.com/)
 
+**Photo:** This cultivar is brand new, so no official photos exist yet. A generic plant image is shown as a placeholder.
+
+
 **Description:** Head Zeppelin is Night Owl doing what they do best: isolating a very specific expression and pushing it forward with intent. This cultivar pulls a classic Headband profile out of the Whistlin’ Diesel project line, and it’s aimed squarely at old school OG fans.
 
 Growth is expected to be medium to large, with a bushy structure and thick branches capable of holding dense, golf ball sized colas. The flowers are described as tight, firm, and heavily frosted like they’ve been left out in an ice storm.
@@ -28,8 +31,6 @@ Flavor follows aroma, sharp, sour, gassy, and classic. The effects come on fast 
 
 This is a nostalgia pick. A deliberate chase for classic flavors and old school effects.
 
-**Photo:** This cultivar is brand new, so no official photos exist yet. A generic plant image is shown as a placeholder.
-![4239736-1c5af0.png](/uploads/4239736-1c5af0.png)
 
 ## Autopot #2 - Papaya Bomb x Banjo
 

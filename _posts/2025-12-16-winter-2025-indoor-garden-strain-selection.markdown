@@ -56,7 +56,7 @@ This cross feels like a collision of refinement and raw power. No expectations, 
 **Breeder:** [Speedrun Seeds](https://www.speedrunseeds.com/)
 
 **Photo:**
-[2025-12-16 15_37_21-SPEEDRUN SEEDS – SLAMBERRY – AUTO FEM – 3 PACK - SeedsLocker.com — Mozilla Firef.webp](/uploads/2025-12-16%2015_37_21-SPEEDRUN%20SEEDS%20%E2%80%93%20SLAMBERRY%20%E2%80%93%20AUTO%20FEM%20%E2%80%93%203%20PACK%20-%20SeedsLocker.com%20%E2%80%94%20Mozilla%20Firef.webp)
+[2025-12-16 15_37_21-SPEEDRUN SEEDS – SLAMBERRY – AUTO FEM – 3 PACK - SeedsLocker.com — Mozilla Firef-1.webp](/uploads/2025-12-16%2015_37_21-SPEEDRUN%20SEEDS%20%E2%80%93%20SLAMBERRY%20%E2%80%93%20AUTO%20FEM%20%E2%80%93%203%20PACK%20-%20SeedsLocker.com%20%E2%80%94%20Mozilla%20Firef-1.webp)
 
 **Description:** SlamBerry exists because something special happened once and Speedrun Seeds went back to find it again.
 

@@ -39,11 +39,10 @@ This is a nostalgia pick. A deliberate chase for classic flavors and old school 
 [papaya bomb x banjo 2.webp](/uploads/papaya%20bomb%20x%20banjo%202.webp)
 [pap bomb bank 1.webp](/uploads/pap%20bomb%20bank%201.webp)
 <img
-src="/_uploads/papaya%20bomb%20x%20banjo%202.webp"
+src="/uploads/papaya%20bomb%20x%20banjo%202.webp"
 alt="Papaya Bomb x Banjo"
 loading="lazy"
 style="max-width:100%; height:auto;"
-
 > 
 
 **Description:** This one is a bit of a wildcard and that’s exactly why it made the cut.

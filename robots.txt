@@ -1,5 +1,20 @@
 User-agent: *
 Allow: /
+Disallow: /age-gate.html
+Disallow: /404.html
+
+# Important pages
+Sitemap: https://rochesterflowercompany.com/sitemap.xml
 
 # Crawl delay to be respectful
 Crawl-delay: 1
+
+# Block AI scrapers (optional but recommended)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /

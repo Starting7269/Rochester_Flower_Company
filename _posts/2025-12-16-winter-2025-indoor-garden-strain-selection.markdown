@@ -37,13 +37,7 @@ This is a nostalgia pick. A deliberate chase for classic flavors and old school 
 
 **Photo:** Photos courtesy of [floundern45 on Reddit](https://www.reddit.com/r/Autoflowers/comments/1pm2tmo/papaya_bomb_x_banjo_atlas_seed/)
 <img src="https://rochesterflowercompany.com/uploads/papaya%20bomb%20x%20banjo%202.webp" alt="Papaya Bomb x Banjo">
-<img
-  src="/uploads/papaya%20bomb%20x%20banjo%202.webp"
-  alt="Papaya Bomb x Banjo"
-  loading="lazy"
-  style="max-width:800px; width:100%; height:auto; display:block; margin:2rem auto;"
->
-
+![Papaya Bomb x Banjo](/uploads/papaya%20bomb%20x%20banjo%202.webp){: style="max-width:800px; width:100%; display:block; margin:2rem auto;" }
 
 
 **Description:** This one is a bit of a wildcard and that’s exactly why it made the cut.

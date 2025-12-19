@@ -112,13 +112,6 @@
         isValid = false;
       }
       
-      // Validate location
-      var locationInput = document.getElementById('location');
-      if (!locationInput.value.trim()) {
-        locationInput.closest('.form-group').classList.add('error');
-        isValid = false;
-      }
-      
       // Validate message (minimum 20 characters)
       var messageInput = document.getElementById('message');
       if (messageInput.value.trim().length < 20) {

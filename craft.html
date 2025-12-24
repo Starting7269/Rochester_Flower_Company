@@ -23,7 +23,184 @@ permalink: "/craft.html"
   <meta property="og:image:height" content="1024">
   <meta property="og:image:alt" content="Rochester Flower Company logo">
   
-  
+  <style>
+    /* Card-based layout for craft sections */
+    .craft-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: var(--space-lg, 2rem);
+      margin-top: var(--space-xl, 3rem);
+    }
+
+    .craft-card {
+      background: radial-gradient(circle at top left, rgba(79, 209, 197, 0.08), rgba(15, 23, 42, 0.95));
+      border-radius: var(--radius-lg, 12px);
+      padding: var(--space-lg, 2rem);
+      border: 1px solid rgba(79, 209, 197, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .craft-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-primary, #ff7ac4), var(--color-accent, #4fd1c5));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .craft-card:hover {
+      border-color: rgba(79, 209, 197, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(79, 209, 197, 0.15);
+    }
+
+    .craft-card:hover::before {
+      opacity: 1;
+    }
+
+    .craft-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1;
+      display: block;
+    }
+
+    .craft-card h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: var(--color-heading, #fff);
+    }
+
+    .craft-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .craft-card li {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .craft-card li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent, #4fd1c5);
+      font-weight: bold;
+    }
+
+    .craft-card p {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(79, 209, 197, 0.15);
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Two-column layout for drying/curing section */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: var(--space-lg, 2rem);
+      margin-top: var(--space-xl, 3rem);
+    }
+
+    .process-card {
+      background: radial-gradient(circle at top right, rgba(255, 122, 196, 0.08), rgba(15, 23, 42, 0.95));
+      border-radius: var(--radius-lg, 12px);
+      padding: var(--space-lg, 2rem);
+      border: 1px solid rgba(255, 122, 196, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .process-card:hover {
+      border-color: rgba(255, 122, 196, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(255, 122, 196, 0.15);
+    }
+
+    .process-card h2 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    .process-card-icon {
+      font-size: 1.75rem;
+    }
+
+    .process-card strong {
+      color: var(--color-primary, #ff7ac4);
+    }
+
+    /* Highlight callout for genetics */
+    .genetics-highlight {
+      background: linear-gradient(135deg, rgba(255, 122, 196, 0.1), rgba(79, 209, 197, 0.1));
+      border: 2px solid rgba(255, 122, 196, 0.3);
+      border-radius: var(--radius-lg, 12px);
+      padding: var(--space-lg, 2rem);
+      margin: var(--space-xl, 3rem) 0;
+    }
+
+    .genetics-highlight h2 {
+      margin-top: 0;
+      font-size: 1.75rem;
+      color: var(--color-primary, #ff7ac4);
+    }
+
+    /* Final section styling */
+    .why-bother {
+      background: radial-gradient(circle at center, rgba(79, 209, 197, 0.05), transparent);
+      padding: var(--space-xl, 3rem) 0;
+      text-align: center;
+    }
+
+    .why-bother h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, var(--color-primary, #ff7ac4), var(--color-accent, #4fd1c5));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .why-bother p {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .craft-card, .process-card {
+        padding: 1.5rem;
+      }
+
+      .craft-card-icon {
+        font-size: 2rem;
+      }
+
+      .craft-card h2, .process-card h2 {
+        font-size: 1.25rem;
+      }
+
+      .why-bother h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>

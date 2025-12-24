@@ -24,9 +24,349 @@ permalink: "/contact.html"
   <meta property="og:image:alt" content="Rochester Flower Company logo">
   
   <!-- NEW: Schema.org Structured Data for ContactPage -->
-  <script type="application/ld+json" src="/assets/jsonld/contact.json"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Rochester Flower Company",
+    "url": "https://rochesterflowercompany.com/contact.html",
+    "description": "Contact Rochester Flower Company for business inquiries, questions, or collaboration opportunities",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Rochester Flower Company",
+      "@id": "https://rochesterflowercompany.com/#organization",
+      "url": "https://rochesterflowercompany.com",
+      "description": "Personal cannabis home grow operation gifting small-batch craft cannabis to adults 21+ in Rochester, NY",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rochester",
+        "addressRegion": "NY",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "General Inquiries",
+        "availableLanguage": "English",
+        "url": "https://rochesterflowercompany.com/contact.html"
+      }
+    }
+  }
+  </script>
   
-  
+  <style>
+    /* Enhanced form styling to match brand */
+    .contact-form {
+      background: radial-gradient(circle at top left, rgba(244, 114, 182, 0.12), rgba(15, 23, 42, 0.98));
+      border-radius: var(--radius-lg, 12px);
+      padding: var(--space-xl, 3rem);
+      border: 1px solid rgba(255, 122, 196, 0.2);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      max-width: 700px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form:hover {
+      border-color: rgba(255, 122, 196, 0.3);
+    }
+    
+    .form-group {
+      margin-bottom: 1.75rem;
+    }
+    
+    .form-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-text, #fff);
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+    }
+    
+    .form-label .required {
+      color: var(--color-primary, #ff7ac4);
+    }
+    
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: 0.875rem 1.125rem;
+      background: rgba(15, 23, 42, 0.6);
+      border: 2px solid rgba(129, 140, 248, 0.4);
+      border-radius: var(--radius-md, 8px);
+      color: var(--color-text, #fff);
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--color-primary, #ff7ac4);
+      background: rgba(15, 23, 42, 0.8);
+      box-shadow: 0 0 0 3px rgba(255, 122, 196, 0.1);
+    }
+    
+    .form-textarea {
+      min-height: 180px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+    
+    .form-help {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 0.5rem;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .form-error {
+      display: none;
+      font-size: 0.85rem;
+      color: #f87171;
+      margin-top: 0.5rem;
+    }
+
+    .form-group.error .form-error {
+      display: block;
+    }
+
+    .form-group.error .form-input,
+    .form-group.error .form-textarea {
+      border-color: #f87171;
+    }
+
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 1.125rem 2rem;
+      background: linear-gradient(135deg, var(--color-primary, #ff7ac4), rgba(255, 122, 196, 0.85));
+      color: white;
+      border: none;
+      border-radius: var(--radius-md, 8px);
+      font-size: 1.125rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(255, 122, 196, 0.3);
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 122, 196, 0.45);
+    }
+
+    .btn-submit:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* Success/Error Messages */
+    .alert-message {
+      display: none;
+      background: radial-gradient(circle at top left, rgba(79, 209, 197, 0.2), rgba(15, 23, 42, 0.95));
+      border: 2px solid rgba(79, 209, 197, 0.5);
+      border-radius: var(--radius-lg, 12px);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .alert-message.show {
+      display: block;
+    }
+
+    .alert-message h2 {
+      margin-bottom: 0.75rem;
+      color: var(--color-accent, #4fd1c5);
+      font-size: 1.5rem;
+    }
+
+    .alert-message p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    #errorMessage {
+      background: radial-gradient(circle at top left, rgba(239, 68, 68, 0.2), rgba(15, 23, 42, 0.95));
+      border-color: rgba(239, 68, 68, 0.5);
+    }
+
+    #errorMessage h2 {
+      color: #f87171;
+    }
+
+    #rateLimitMessage {
+      background: radial-gradient(circle at top left, rgba(251, 191, 36, 0.2), rgba(15, 23, 42, 0.95));
+      border-color: rgba(251, 191, 36, 0.5);
+    }
+
+    #rateLimitMessage h2 {
+      color: #fbbf24;
+    }
+
+    /* Status Notice - NOT ACCEPTING NEW RECIPIENTS */
+    .status-notice {
+      background: radial-gradient(circle at top left, rgba(251, 191, 36, 0.15), rgba(15, 23, 42, 0.98));
+      border: 2px solid rgba(251, 191, 36, 0.4);
+      border-radius: var(--radius-lg, 12px);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .status-notice h2 {
+      color: #fbbf24;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .status-notice p {
+      margin-bottom: 0.75rem;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .status-notice p:last-child {
+      margin-bottom: 0;
+    }
+
+    .status-notice strong {
+      color: #fbbf24;
+    }
+
+    /* What to Expect Notice */
+    .expect-notice {
+      background: radial-gradient(circle at top right, rgba(79, 209, 197, 0.1), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(79, 209, 197, 0.3);
+      border-radius: var(--radius-lg, 12px);
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    .expect-notice h3 {
+      color: var(--color-accent, #4fd1c5);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .expect-notice p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .expect-notice p:last-child {
+      margin-bottom: 0;
+    }
+
+    .expect-notice ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .expect-notice li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    /* FAQ Cards */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .faq-card {
+      background: radial-gradient(circle at top left, rgba(79, 209, 197, 0.08), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(79, 209, 197, 0.2);
+      border-radius: var(--radius-lg, 12px);
+      padding: 1.75rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .faq-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-accent, #4fd1c5), var(--color-primary, #ff7ac4));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .faq-card:hover {
+      border-color: rgba(79, 209, 197, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(79, 209, 197, 0.15);
+    }
+
+    .faq-card:hover::before {
+      opacity: 1;
+    }
+
+    .faq-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+      color: var(--color-heading, #fff);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .faq-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .faq-card p {
+      margin-bottom: 0;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    @media (max-width: 768px) {
+      .contact-form {
+        padding: 2rem 1.5rem;
+      }
+
+      .status-notice,
+      .expect-notice {
+        padding: 1.5rem;
+      }
+
+      .faq-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -58,7 +398,7 @@ permalink: "/contact.html"
             If you're reaching out about becoming a recipient, I won't be able to respond—I simply don't have the bandwidth 
             to help everyone who asks, and I can't make promises about future availability.
           </p>
-          <p class="mt-125 pt-125 border-top-gold-soft">
+          <p style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(251, 191, 36, 0.2);">
             <strong>This form is still active for:</strong> business discussions, collaboration opportunities, 
             grow questions, or general inquiries about the operation.
           </p>
@@ -170,7 +510,7 @@ permalink: "/contact.html"
             <strong>If your message is requesting to become a recipient:</strong> You won't receive a response. 
             I'm not able to help new people right now, and I'm not tracking names for future availability.
           </p>
-          <p class="mt-125">
+          <p style="margin-top: 1.25rem;">
             This isn't meant to be cold—it's just the reality of running a small, personal operation. 
             I have to be honest about my limits rather than creating false hope or burning myself out trying to help everyone.
           </p>
@@ -181,7 +521,7 @@ permalink: "/contact.html"
     <!-- FAQ Section -->
     <section class="section section-alt">
       <div class="container narrow">
-        <h2 class="text-center mb-md">Common Questions</h2>
+        <h2 style="text-align: center; margin-bottom: 1rem;">Common Questions</h2>
         
         <div class="faq-grid">
           <!-- IMPROVED: Added aria-label to make icons more accessible -->

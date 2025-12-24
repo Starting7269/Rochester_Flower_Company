@@ -11,7 +11,42 @@ permalink: "/404.html"
   <meta name="description" content="Page not found on Rochester Flower Company">
   <meta name="robots" content="noindex, nofollow">
   
-  
+  <style>
+    .error-container {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    
+    .error-content {
+      max-width: 500px;
+    }
+    
+    .error-code {
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(120deg, var(--color-primary), var(--color-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    
+    .error-message {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--color-text);
+    }
+    
+    .error-description {
+      color: var(--color-muted);
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -19,7 +54,7 @@ permalink: "/404.html"
 
   {% include header.html %}
 
-  <main id="main-content" tabindex="-1">
+  <main id="main-content">
     <div class="error-container">
       <div class="error-content">
         <div class="error-code" aria-label="Error 404">404</div>

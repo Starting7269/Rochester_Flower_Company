@@ -2,18 +2,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark light">
 
-<!-- REMOVED: Content-Security-Policy meta tag - handled exclusively by Cloudflare -->
-<!-- This prevents conflicts between HTML and HTTP headers -->
+<!-- SECURITY NOTICE: All security headers are configured in Cloudflare -->
+<!-- Meta http-equiv security headers are unreliable and can conflict with HTTP headers -->
+<!-- CSP, HSTS, X-Frame-Options, etc. are all handled via Cloudflare Transform Rules -->
 
-<!-- Enhanced Security Headers -->
-<meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="X-Frame-Options" content="DENY">
-<!-- REMOVED: X-XSS-Protection (deprecated, CSP provides better protection) -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
-<!-- NEW: Resource Hints for Performance -->
+<!-- Resource Hints for Performance -->
 <link rel="dns-prefetch" href="https://formsubmit.co">
 <link rel="dns-prefetch" href="https://cloudflareinsights.com">
 <link rel="preconnect" href="https://formsubmit.co" crossorigin>
@@ -23,7 +18,7 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
 
-<!-- NEW: Twitter Card Meta Tags for Better Social Sharing -->
+<!-- Twitter Card Meta Tags for Better Social Sharing -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Rochester Flower Company — Small Batch Craft Cannabis">
 <meta name="twitter:description" content="Small-batch craft cannabis grown in Rochester, NY and gifted to people who need the medicine.">

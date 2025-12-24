@@ -1,28 +1,14 @@
+---
+permalink: /404.html
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  {% include head-common.html %}
+  
   <title>Page Not Found – Rochester Flower Company</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark light">
   <meta name="description" content="Page not found on Rochester Flower Company">
   <meta name="robots" content="noindex, nofollow">
-  
-  <!-- Enhanced Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
-  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  
-  <link rel="stylesheet" href="style.css">
   
   <style>
     .error-container {
@@ -65,29 +51,7 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="bg-animation" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="Rochester Flower Company Home">
-        <img src="RFCLogo.png" alt="Rochester Flower Company logo featuring cannabis leaf design" class="brand-logo" width="56" height="56" loading="eager">
-        <span class="brand-text">
-          <span class="brand-title">Rochester Flower Company</span>
-          <span class="brand-tagline">We're Different, By Design.</span>
-        </span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="craft.html">Craft Process</a></li>
-          <li><a href="/plants/">Plants</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  {% include header.html %}
 
   <main id="main-content">
     <div class="error-container">
@@ -103,18 +67,6 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year">2025</span> Rochester Flower Company | <a href="privacy.html" style="color: var(--color-accent); text-decoration: none;">Privacy Policy</a></p>
-      <p class="footer-small">
-        Rochester Flower Company is a personal, small-scale home grow. All cannabis is gifted 
-        at no cost and only to adults 21+, consistent with New York personal cultivation laws. 
-        No sales, transactions, or commercial activity occur. All information is for educational 
-        and entertainment purposes only and should not be interpreted as medical or professional advice.
-      </p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  {% include footer.html %}
 </body>
 </html>

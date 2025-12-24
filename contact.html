@@ -1,29 +1,16 @@
+---
+permalink: /contact.html
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact — Rochester Flower Company</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark light">
-  <meta name="description" content="Contact Rochester Flower Company for business inquiries, questions, or partnerships.">
+  {% include head-common.html %}
   
-  <!-- Enhanced Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formsubmit.co https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Contact — Rochester Flower Company</title>
+  <meta name="description" content="Contact Rochester Flower Company for business inquiries, questions, or partnerships.">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://rochesterflowercompany.com/contact.html">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  
-  <link rel="stylesheet" href="style.css">
   
   <style>
     /* Enhanced form styling to match brand */
@@ -98,64 +85,22 @@
       gap: 0.5rem;
     }
 
-    .form-help::before {
-      content: "ℹ️";
-      font-style: normal;
-    }
-    
     .form-error {
-      color: var(--color-primary, #ff7ac4);
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-top: 0.5rem;
       display: none;
-      align-items: center;
-      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: #f87171;
+      margin-top: 0.5rem;
     }
 
-    .form-error::before {
-      content: "⚠️";
-    }
-    
     .form-group.error .form-error {
-      display: flex;
+      display: block;
     }
-    
+
     .form-group.error .form-input,
-    .form-group.error .form-textarea,
-    .form-group.error .form-select {
-      border-color: var(--color-primary, #ff7ac4);
-      border-width: 2px;
-      background: rgba(255, 122, 196, 0.08);
+    .form-group.error .form-textarea {
+      border-color: #f87171;
     }
-    
-    .btn-submit {
-      width: 100%;
-      padding: 1.125rem;
-      background: linear-gradient(135deg, var(--color-primary, #ff7ac4), rgba(255, 122, 196, 0.8));
-      border: none;
-      border-radius: 999px;
-      color: #111827;
-      font-size: 1.05rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(255, 122, 196, 0.3);
-      letter-spacing: 0.02em;
-    }
-    
-    .btn-submit:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(255, 122, 196, 0.4);
-    }
-    
-    .btn-submit:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-    
-    /* Honeypot - hide from humans, visible to bots */
+
     .honeypot {
       position: absolute;
       left: -9999px;
@@ -163,37 +108,58 @@
       height: 1px;
     }
 
-    /* Message alerts */
+    .btn-submit {
+      width: 100%;
+      padding: 1.125rem 2rem;
+      background: linear-gradient(135deg, var(--color-primary, #ff7ac4), rgba(255, 122, 196, 0.85));
+      color: white;
+      border: none;
+      border-radius: var(--radius-md, 8px);
+      font-size: 1.125rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(255, 122, 196, 0.3);
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 122, 196, 0.45);
+    }
+
+    .btn-submit:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* Success/Error Messages */
     .alert-message {
+      display: none;
+      background: radial-gradient(circle at top left, rgba(79, 209, 197, 0.2), rgba(15, 23, 42, 0.95));
+      border: 2px solid rgba(79, 209, 197, 0.5);
       border-radius: var(--radius-lg, 12px);
-      padding: 1.5rem 2rem;
+      padding: 2rem;
       margin-bottom: 2rem;
       text-align: center;
-      border: 2px solid;
-      display: none;
+    }
+
+    .alert-message.show {
+      display: block;
     }
 
     .alert-message h2 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--color-accent, #4fd1c5);
       font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
     }
 
     .alert-message p {
-      margin-bottom: 0;
-      font-size: 1rem;
-    }
-
-    #successMessage {
-      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.2), rgba(15, 23, 42, 0.95));
-      border-color: rgba(34, 197, 94, 0.5);
-    }
-
-    #successMessage h2 {
-      color: #4ade80;
+      margin: 0;
+      line-height: 1.6;
     }
 
     #errorMessage {
@@ -365,30 +331,7 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="bg-animation" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="Rochester Flower Company Home">
-        <img src="RFCLogo.png" alt="Rochester Flower Company logo featuring cannabis leaf design" class="brand-logo" width="56" height="56" loading="eager">
-        <span class="brand-text">
-          <span class="brand-title">Rochester Flower Company</span>
-          <span class="brand-tagline">We're Different, By Design.</span>
-        </span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="/plants/">Plants</a></li>
-          <li><a href="craft.html">Craft Process</a></li>
-          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  {% include header.html %}
 
   <main class="page-main" id="main-content">
     <section class="page-hero" aria-labelledby="page-title">
@@ -579,19 +522,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year">2025</span> Rochester Flower Company | <a href="privacy.html" style="color: var(--color-accent); text-decoration: none;">Privacy Policy</a></p>
-      <p class="footer-small">
-        Rochester Flower Company is a personal, small-scale home grow. All cannabis is gifted 
-        at no cost and only to adults 21+, consistent with New York personal cultivation laws. 
-        No sales, transactions, or commercial activity occur. All information is for educational 
-        and entertainment purposes only and should not be interpreted as medical or professional advice.
-      </p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  {% include footer.html %}
   <script src="contact-form.js"></script>
 </body>
 </html>

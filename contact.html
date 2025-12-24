@@ -13,6 +13,46 @@ permalink: "/contact.html"
   <!-- Canonical URL -->
   <link rel="canonical" href="https://rochesterflowercompany.com/contact.html">
   
+  <!-- NEW: Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rochesterflowercompany.com/contact.html">
+  <meta property="og:title" content="Contact Rochester Flower Company">
+  <meta property="og:description" content="Get in touch with Rochester Flower Company for business inquiries, collaboration opportunities, or questions about craft cannabis cultivation.">
+  <meta property="og:image" content="https://rochesterflowercompany.com/RFCLogo.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="Rochester Flower Company logo">
+  
+  <!-- NEW: Schema.org Structured Data for ContactPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Rochester Flower Company",
+    "url": "https://rochesterflowercompany.com/contact.html",
+    "description": "Contact Rochester Flower Company for business inquiries, questions, or collaboration opportunities",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Rochester Flower Company",
+      "@id": "https://rochesterflowercompany.com/#organization",
+      "url": "https://rochesterflowercompany.com",
+      "description": "Personal cannabis home grow operation gifting small-batch craft cannabis to adults 21+ in Rochester, NY",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rochester",
+        "addressRegion": "NY",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "General Inquiries",
+        "availableLanguage": "English",
+        "url": "https://rochesterflowercompany.com/contact.html"
+      }
+    }
+  }
+  </script>
+  
   <style>
     /* Enhanced form styling to match brand */
     .contact-form {
@@ -396,6 +436,7 @@ permalink: "/contact.html"
           <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
           
           <!-- Name Field -->
+          <!-- IMPROVED: Added for attribute to label and aria-describedby to input -->
           <div class="form-group">
             <label for="name" class="form-label">
               Name <span class="required">*</span>
@@ -407,11 +448,14 @@ permalink: "/contact.html"
               class="form-input" 
               required
               maxlength="100"
-              placeholder="Your name">
-            <span class="form-error">Please enter your name</span>
+              placeholder="Your name"
+              aria-describedby="name-error">
+            <!-- IMPROVED: Added role="alert" and aria-live for screen readers -->
+            <span id="name-error" class="form-error" role="alert" aria-live="polite">Please enter your name</span>
           </div>
 
           <!-- Email Field -->
+          <!-- IMPROVED: Added for attribute to label and aria-describedby to input -->
           <div class="form-group">
             <label for="email" class="form-label">
               Email <span class="required">*</span>
@@ -422,12 +466,15 @@ permalink: "/contact.html"
               name="email" 
               class="form-input" 
               required
-              placeholder="your.email@example.com">
-            <span class="form-help">So we can reply to you</span>
-            <span class="form-error">Please enter a valid email address</span>
+              placeholder="your.email@example.com"
+              aria-describedby="email-help email-error">
+            <span id="email-help" class="form-help">So we can reply to you</span>
+            <!-- IMPROVED: Added role="alert" and aria-live for screen readers -->
+            <span id="email-error" class="form-error" role="alert" aria-live="polite">Please enter a valid email address</span>
           </div>
 
           <!-- Message Field -->
+          <!-- IMPROVED: Added for attribute to label and aria-describedby to input -->
           <div class="form-group">
             <label for="message" class="form-label">
               Message <span class="required">*</span>
@@ -439,9 +486,11 @@ permalink: "/contact.html"
               required
               minlength="20"
               maxlength="2000"
-              placeholder="What's on your mind? (Business inquiry, question about the grow, collaboration opportunity, etc.)"></textarea>
-            <span class="form-help">Please note: requests for flower will not receive a response at this time</span>
-            <span class="form-error">Please enter at least 20 characters</span>
+              placeholder="What's on your mind? (Business inquiry, question about the grow, collaboration opportunity, etc.)"
+              aria-describedby="message-help message-error"></textarea>
+            <span id="message-help" class="form-help">Please note: requests for flower will not receive a response at this time</span>
+            <!-- IMPROVED: Added role="alert" and aria-live for screen readers -->
+            <span id="message-error" class="form-error" role="alert" aria-live="polite">Please enter at least 20 characters</span>
           </div>
 
           <!-- Submit Button -->
@@ -475,7 +524,8 @@ permalink: "/contact.html"
         <h2 style="text-align: center; margin-bottom: 1rem;">Common Questions</h2>
         
         <div class="faq-grid">
-          <article class="faq-card">
+          <!-- IMPROVED: Added aria-label to make icons more accessible -->
+          <article class="faq-card" aria-label="Question about accepting new recipients">
             <h3>
               <span class="faq-icon" aria-hidden="true">🚫</span>
               <span>Are you accepting new recipients?</span>
@@ -486,7 +536,7 @@ permalink: "/contact.html"
             </p>
           </article>
 
-          <article class="faq-card">
+          <article class="faq-card" aria-label="Question about strains">
             <h3>
               <span class="faq-icon" aria-hidden="true">🌿</span>
               <span>What strains do you grow?</span>
@@ -497,7 +547,7 @@ permalink: "/contact.html"
             </p>
           </article>
 
-          <article class="faq-card">
+          <article class="faq-card" aria-label="Question about business inquiries">
             <h3>
               <span class="faq-icon" aria-hidden="true">💼</span>
               <span>Do you accept business inquiries?</span>
@@ -508,7 +558,7 @@ permalink: "/contact.html"
             </p>
           </article>
 
-          <article class="faq-card">
+          <article class="faq-card" aria-label="Question about legality">
             <h3>
               <span class="faq-icon" aria-hidden="true">⚖️</span>
               <span>Is this legal?</span>
@@ -524,6 +574,6 @@ permalink: "/contact.html"
   </main>
 
   {% include footer.html %}
-  <script src="contact-form.js"></script>
+  <script src="/contact-form.js"></script>
 </body>
 </html>

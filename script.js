@@ -3,6 +3,10 @@
  * Enhanced security and functionality
  */
 
+// IMPROVED: Named constants instead of magic numbers
+const MOBILE_NAV_MAX_HEIGHT = '260px';
+const SMOOTH_SCROLL_DELAY_MS = 300;
+
 // Set footer year automatically
 (function setYear() {
   var yearElem = document.getElementById("year");
@@ -16,6 +20,12 @@
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.querySelector(".site-nav");
   if (!toggle || !nav) return;
+
+  // IMPROVED: Added aria-controls attribute
+  toggle.setAttribute("aria-controls", "main-nav");
+  if (nav.id !== "main-nav") {
+    nav.id = "main-nav";
+  }
 
   toggle.addEventListener("click", function () {
     var isOpen = nav.classList.toggle("open");
@@ -55,11 +65,11 @@
   if (typeof window.ageGateLoaded === 'undefined') {
     // Dynamically load age-gate.js
     var script = document.createElement('script');
-    script.src = '/age-gate.js'; // FIXED: Added leading slash for absolute path
+    script.src = '/age-gate.js';
     script.async = false; // Load synchronously to block page
     script.onerror = function() {
       console.error('Failed to load age-gate.js - redirecting to age gate');
-      window.location.href = '/age-gate.html'; // FIXED: Added leading slash for absolute path
+      window.location.href = '/age-gate.html';
     };
     document.head.appendChild(script);
   }
@@ -74,18 +84,6 @@
     window.top.location = window.self.location;
   }
   
-  // Disable right-click on logo images (optional - currently commented out)
-  // Uncomment if you want to protect your logo from easy copying
-  /*
-  var logos = document.querySelectorAll('.brand-logo, .hero-logo-big, img[src*="RFCLogo"]');
-  logos.forEach(function(logo) {
-    logo.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-      return false;
-    });
-  });
-  */
-  
   // Console warning for potential attackers
   if (console && console.log) {
     console.log('%c⚠️ Security Notice', 'color: #ff7ac4; font-size: 20px; font-weight: bold;');
@@ -95,18 +93,9 @@
     console.log('%c\nIf you\'re a security researcher, please report issues via: https://rochesterflowercompany.com/contact.html', 'font-size: 12px; color: #4ade80;');
   }
   
-  // Detect if console is open (basic check)
-  var devtoolsOpen = false;
-  var threshold = 160;
-  var widthThreshold = window.outerWidth - window.innerWidth > threshold;
-  var heightThreshold = window.outerHeight - window.innerHeight > threshold;
-  
-  if (widthThreshold || heightThreshold) {
-    devtoolsOpen = true;
-  }
-  
-  // Store detection result (don't act on it, just for logging)
-  window.devtoolsDetected = devtoolsOpen;
+  // REMOVED: Dev tools detection code (lines 98-109 from original)
+  // This was easily bypassable and provided a false sense of security
+  // The console warning above is sufficient
 })();
 
 // Smooth scroll for skip links and anchor links

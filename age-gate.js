@@ -6,6 +6,7 @@
  * - Checksum verification
  * - Enhanced timestamp validation
  * - Rate limiting
+ * - Crypto.subtle fallback for older browsers
  */
 
 (function() {
@@ -14,8 +15,14 @@
   // Set flag to prevent double-loading
   window.ageGateLoaded = true;
   
-  const SECRET_SALT = 'rfc-age-verify-v2-' + window.location.hostname;
+  // IMPROVED: More dynamic salt generation
+  const SECRET_SALT = 'rfc-age-verify-v2-' + window.location.hostname + '-' + btoa(window.navigator.userAgent.substring(0, 20));
+  
+  // IMPROVED: Named constants instead of magic numbers
   const MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 hours
+  const MAX_VERIFICATION_ATTEMPTS = 5;
+  const VERIFICATION_BUTTON_DELAY_MS = 300;
+  
   const STORAGE_KEYS = {
     verified: 'ageVerified',
     timestamp: 'ageTimestamp',
@@ -23,15 +30,28 @@
   };
   
   /**
-   * Generate checksum for verification
+   * IMPROVED: Generate checksum with fallback for browsers without SubtleCrypto
    */
   async function generateChecksum(verified, timestamp) {
     const data = verified + timestamp + SECRET_SALT;
-    const encoder = new TextEncoder();
-    const dataBuffer = encoder.encode(data);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', dataBuffer);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    
+    // Check if SubtleCrypto is available (modern browsers)
+    if (window.crypto && window.crypto.subtle) {
+      try {
+        const encoder = new TextEncoder();
+        const dataBuffer = encoder.encode(data);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', dataBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      } catch (error) {
+        console.warn('SubtleCrypto failed, using fallback hash:', error);
+        // Fall through to fallback
+      }
+    }
+    
+    // Fallback for older browsers or if SubtleCrypto fails
+    // Simple but sufficient hash for client-side age verification
+    return btoa(data).split('').reverse().join('');
   }
   
   /**
@@ -108,7 +128,7 @@
     if (!isVerified) {
       // Store intended destination
       sessionStorage.setItem('intendedDestination', window.location.pathname);
-      window.location.href = '/age-gate.html'; // ABSOLUTE PATH
+      window.location.href = '/age-gate.html';
     }
   }
   
@@ -129,12 +149,11 @@
     }
     
     let clickCount = 0;
-    const MAX_CLICKS = 5;
     
     btnYes.addEventListener('click', async function() {
       // Rate limiting
       clickCount++;
-      if (clickCount > MAX_CLICKS) {
+      if (clickCount > MAX_VERIFICATION_ATTEMPTS) {
         alert('Too many attempts. Please refresh the page.');
         btnYes.disabled = true;
         return;
@@ -153,13 +172,13 @@
         const intended = sessionStorage.getItem('intendedDestination');
         const destination = intended && intended !== '/age-gate.html' 
           ? intended 
-          : '/index.html'; // ABSOLUTE PATH
+          : '/index.html';
         
         // Clear intended destination
         sessionStorage.removeItem('intendedDestination');
         
         window.location.href = destination;
-      }, 300);
+      }, VERIFICATION_BUTTON_DELAY_MS);
     });
     
     btnNo.addEventListener('click', function() {

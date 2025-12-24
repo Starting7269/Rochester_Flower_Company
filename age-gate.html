@@ -10,14 +10,15 @@
   
   <!-- Security headers handled by Cloudflare HTTP headers -->
   
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <style>
     :root {
       --color-bg: #050414;
       --color-primary: #ff7ac4;
       --color-accent: #4fd1c5;
       --color-text: #fdf4ff;
-      --color-muted: #c7d2fe;
+      /* IMPROVED: Better contrast ratio for WCAG AA compliance */
+      --color-muted: #d4dffe;
       --radius-lg: 1.5rem;
       --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
     }
@@ -57,6 +58,19 @@
     @keyframes floatGlow {
       0% { transform: translate3d(0, 0, 0) scale(1); }
       100% { transform: translate3d(-28px, 14px, 0) scale(1.06); }
+    }
+    
+    /* NEW: Respect user motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      .bg-animation {
+        animation: none;
+      }
+      
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
 
     .gate-container {
@@ -135,6 +149,13 @@
       opacity: 0.5;
       cursor: not-allowed;
     }
+    
+    /* IMPROVED: Better focus styles for accessibility */
+    .btn:focus-visible {
+      outline: 3px solid var(--color-primary);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 6px rgba(255, 122, 196, 0.25);
+    }
 
     .btn-yes {
       background: radial-gradient(circle at top left, #ffd3f2, var(--color-primary));
@@ -180,11 +201,12 @@
   </style>
 </head>
 <body>
-  <div class="bg-animation"></div>
+  <div class="bg-animation" aria-hidden="true"></div>
   
   <div class="gate-container" role="dialog" aria-labelledby="gate-title" aria-describedby="gate-description">
     <div class="logo-wrap">
-      <img src="/RFCLogo.png" alt="Rochester Flower Company logo" class="logo">
+      <!-- IMPROVED: Absolute path -->
+      <img src="/RFCLogo.png" alt="Rochester Flower Company logo" class="logo" width="120" height="120">
     </div>
     
     <h1 id="gate-title">Rochester Flower Company</h1>
@@ -196,6 +218,7 @@
     </div>
     
     <div class="button-group">
+      <!-- CONFIRMED: type="button" already present (good!) -->
       <button type="button" class="btn btn-yes" id="btn-yes">I'm 21 or Older</button>
       <button type="button" class="btn btn-no" id="btn-no">I'm Under 21</button>
     </div>

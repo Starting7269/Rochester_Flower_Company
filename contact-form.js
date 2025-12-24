@@ -6,6 +6,15 @@
 (function() {
   'use strict';
   
+  // IMPROVED: Named constants instead of magic numbers
+  const RATE_LIMIT_KEY = 'rfc_form_submissions';
+  const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+  const MAX_SUBMISSIONS = 3;
+  const MIN_MESSAGE_LENGTH = 20;
+  
+  // IMPROVED: More robust email validation regex
+  const EMAIL_PATTERN = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+  
   // Wait for DOM to be ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initContactForm);
@@ -25,11 +34,6 @@
       return;
     }
     
-    // Rate limiting configuration
-    var RATE_LIMIT_KEY = 'rfc_form_submissions';
-    var RATE_LIMIT_WINDOW = 3600000; // 1 hour in milliseconds
-    var MAX_SUBMISSIONS = 3;
-    
     /**
      * Check if user has exceeded rate limit
      */
@@ -40,7 +44,7 @@
         var submissions = submissionsJson ? JSON.parse(submissionsJson) : [];
         
         var recentSubmissions = submissions.filter(function(timestamp) {
-          return now - timestamp < RATE_LIMIT_WINDOW;
+          return now - timestamp < RATE_LIMIT_WINDOW_MS;
         });
         
         return recentSubmissions.length < MAX_SUBMISSIONS;
@@ -62,7 +66,7 @@
         submissions.push(now);
         
         var recentSubmissions = submissions.filter(function(timestamp) {
-          return now - timestamp < RATE_LIMIT_WINDOW;
+          return now - timestamp < RATE_LIMIT_WINDOW_MS;
         });
         
         localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(recentSubmissions));
@@ -104,17 +108,16 @@
         isValid = false;
       }
       
-      // Validate email
+      // IMPROVED: Use more robust email validation
       var emailInput = document.getElementById('email');
-      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(emailInput.value)) {
+      if (!EMAIL_PATTERN.test(emailInput.value)) {
         emailInput.closest('.form-group').classList.add('error');
         isValid = false;
       }
       
-      // Validate message (minimum 20 characters)
+      // Validate message (minimum length defined in constant)
       var messageInput = document.getElementById('message');
-      if (messageInput.value.trim().length < 20) {
+      if (messageInput.value.trim().length < MIN_MESSAGE_LENGTH) {
         messageInput.closest('.form-group').classList.add('error');
         isValid = false;
       }
@@ -181,14 +184,14 @@
         var group = this.closest('.form-group');
         
         if (this.id === 'email') {
-          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailPattern.test(this.value)) {
+          // IMPROVED: Use more robust email pattern
+          if (!EMAIL_PATTERN.test(this.value)) {
             group.classList.add('error');
           } else {
             group.classList.remove('error');
           }
         } else if (this.id === 'message') {
-          if (this.value.trim().length < 20) {
+          if (this.value.trim().length < MIN_MESSAGE_LENGTH) {
             group.classList.add('error');
           } else {
             group.classList.remove('error');

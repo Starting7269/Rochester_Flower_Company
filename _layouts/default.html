@@ -1,30 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>{% if page.title %}{{ page.title }} - {% endif %}Rochester Flower Company</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark light">
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Small-batch craft cannabis grown in Rochester, NY and gifted to people who actually need the medicine.{% endif %}">
+  {% include head-common.html %}
   
-  <!-- Enhanced Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
-  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=()">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}Rochester Flower Company</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Small-batch craft cannabis grown in Rochester, NY and gifted to people who actually need the medicine.{% endif %}">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://rochesterflowercompany.com{{ page.url }}">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="shortcut icon" type="image/png" href="/favicon.png">
-  <link rel="apple-touch-icon" href="/favicon.png">
-  
-  <link rel="stylesheet" href="/style.css">
   
   {% if page.custom_css %}
   <style>
@@ -36,51 +19,15 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="bg-animation" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/index.html" class="brand" aria-label="Rochester Flower Company Home">
-        <img src="/RFCLogo.png" alt="Rochester Flower Company logo featuring cannabis leaf design" class="brand-logo" width="56" height="56" loading="eager">
-        <span class="brand-text">
-          <span class="brand-title">Rochester Flower Company</span>
-          <span class="brand-tagline">We're Different, By Design.</span>
-        </span>
-      </a>
+  {% include header.html %}
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-
-      <nav class="site-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="/index.html" {% if page.url == '/index.html' %}class="active" aria-current="page"{% endif %}>Home</a></li>
-          <li><a href="/about.html" {% if page.url == '/about.html' %}class="active" aria-current="page"{% endif %}>About</a></li>
-          <li><a href="/plants/" {% if page.url contains '/plants' or page.layout == 'post' %}class="active" aria-current="page"{% endif %}>Plants</a></li>
-          <li><a href="/craft.html" {% if page.url == '/craft.html' %}class="active" aria-current="page"{% endif %}>Craft Process</a></li>
-          <li><a href="/contact.html" {% if page.url == '/contact.html' %}class="active" aria-current="page"{% endif %}>Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
     <div class="container">
       {{ content }}
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; {{ 'now' | date: "%Y" }} Rochester Flower Company | <a href="/privacy.html" style="color: var(--color-accent); text-decoration: none;">Privacy Policy</a></p>
-      <p class="footer-small">
-        Rochester Flower Company is a personal, small-scale home grow operating in Rochester, NY and surrounding areas. 
-        All cannabis is gifted at no cost and only to adults 21+, consistent with New York personal cultivation laws 
-        (NY Penal Law § 222.05). Recipients must also be compliant with local possession laws. No sales, transactions, 
-        or commercial activity occur. All information is for educational and entertainment purposes only and should not 
-        be interpreted as medical or professional advice.
-      </p>
-    </div>
-  </footer>
+  {% include footer.html %}
 
   <script src="/script.js"></script>
 </body>

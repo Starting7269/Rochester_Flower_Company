@@ -50,40 +50,9 @@ const SMOOTH_SCROLL_DELAY_MS = 300;
   });
 })();
 
-// Age gate verification - handled by age-gate.js
-// This ensures age-gate.js is loaded on all pages
-(function ensureAgeGate() {
-  'use strict';
-  
-  // Don't run on the age gate page itself
-  if (window.location.pathname.endsWith('age-gate.html') || 
-      window.location.pathname.endsWith('age-gate')) {
-    return;
-  }
-  
-  // Check if age-gate.js is already loaded
-  if (typeof window.ageGateLoaded === 'undefined') {
-    // Dynamically load age-gate.js
-    var script = document.createElement('script');
-    script.src = '/age-gate.js';
-    script.async = false; // Load synchronously to block page
-    script.onerror = function() {
-      console.error('Failed to load age-gate.js - redirecting to age gate');
-      window.location.href = '/age-gate.html';
-    };
-    document.head.appendChild(script);
-  }
-})();
-
 // Security: Prevent common attacks
 (function securityMeasures() {
   'use strict';
-  
-  // Prevent frame embedding (defense in depth beyond X-Frame-Options)
-  if (window.self !== window.top) {
-    window.top.location = window.self.location;
-  }
-  
   // Console warning for potential attackers
   if (console && console.log) {
     console.log('%c⚠️ Security Notice', 'color: #ff7ac4; font-size: 20px; font-weight: bold;');

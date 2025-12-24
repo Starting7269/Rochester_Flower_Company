@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Rochester Flower Company Home">
+      <img src="RFCLogo.png" alt="Rochester Flower Company logo featuring cannabis leaf design" class="brand-logo" width="56" height="56" loading="eager">
+      <span class="brand-text">
+        <span class="brand-title">Rochester Flower Company</span>
+        <span class="brand-tagline">We're Different, By Design.</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html" {% if page.url == '/' or page.url == '/index.html' %}class="active" aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="about.html" {% if page.url == '/about.html' %}class="active" aria-current="page"{% endif %}>About</a></li>
+        <li><a href="/plants/" {% if page.url contains '/plants' or layout == 'post' %}class="active" aria-current="page"{% endif %}>Plants</a></li>
+        <li><a href="craft.html" {% if page.url == '/craft.html' %}class="active" aria-current="page"{% endif %}>Craft Process</a></li>
+        <li><a href="contact.html" {% if page.url == '/contact.html' %}class="active" aria-current="page"{% endif %}>Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

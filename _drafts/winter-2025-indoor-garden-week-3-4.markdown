@@ -32,7 +32,7 @@ So where did I go wrong and what will I do about it? Good question. As with most
 
 * Make sure I'm using fresh CalMag. I noticed my FloraFlex Cal \+ Mag \+ Iron is a couple years old. I attribute this to FloraFlex's minimum container size being one gallon. It takes a long time for a small home grower to use a gallon of CalMag. I'm going back to [General Hydroponics CALiMAGic](https://amzn.to/4stc26C) which comes in a quart, which should help ensure freshness.
 
-I can't travel back in time so the first bullet is for the next grow and the second bullet has already been implemented. Otherwise they look great. That Papaya Bomb X Banjo from Atlas Seeds is incredibly leggy with great structure while the other three are dense and squat. Looking forward to seeing how they develop over the next week.
+I can't travel back in time so the first bullet is for the next grow and the second bullet has already been implemented. Otherwise they look great. That Papaya Bomb X Banjo from Atlas Seeds is incredibly leggy with great structure while the other three are dense and squat. Looking forward to seeing how they develop over the next weekas this should be a good growth week.
 
 ---
 

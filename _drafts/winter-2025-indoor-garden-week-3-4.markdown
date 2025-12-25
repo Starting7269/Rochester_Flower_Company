@@ -1,5 +1,6 @@
 ---
-title: 'Winter 2025 Indoor Garden: Week 3-4'
+title: 'Winter 2025 Indoor Garden: Week Three Update - Managing Magnesium and Early
+  Growth'
 date: 2025-12-25 14:11:00 -05:00
 categories:
 - Grow-Journal

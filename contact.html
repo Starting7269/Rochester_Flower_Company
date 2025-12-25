@@ -405,19 +405,19 @@ permalink: "/contact.html"
         </div>
 
         <!-- Success Message -->
-        <div id="successMessage" class="alert-message">
+        <div id="successMessage" class="alert-message" role="status" aria-live="polite">
           <h2>🎉 Message Sent Successfully!</h2>
           <p>Thank you for reaching out. We'll review your message and get back to you as soon as possible.</p>
         </div>
 
         <!-- Error Message -->
-        <div id="errorMessage" class="alert-message">
+        <div id="errorMessage" class="alert-message" role="alert" aria-live="assertive">
           <h2>❌ Oops! Something went wrong</h2>
           <p>Please try again later. If the problem persists, the contact form will be restored as soon as possible.</p>
         </div>
 
         <!-- Rate Limit Message -->
-        <div id="rateLimitMessage" class="alert-message">
+        <div id="rateLimitMessage" class="alert-message" role="alert" aria-live="assertive">
           <h2>⚠️ Too Many Submissions</h2>
           <p>You've reached the submission limit (3 per hour). Please wait before trying again.</p>
         </div>
@@ -447,11 +447,12 @@ permalink: "/contact.html"
               name="name" 
               class="form-input" 
               required
+              aria-required="true"
               maxlength="100"
               placeholder="Your name"
               aria-describedby="name-error">
             <!-- IMPROVED: Added role="alert" and aria-live for screen readers -->
-            <span id="name-error" class="form-error" role="alert" aria-live="polite">Please enter your name</span>
+            <span id="name-error" class="form-error" role="alert" aria-live="assertive">Please enter your name</span>
           </div>
 
           <!-- Email Field -->
@@ -466,11 +467,12 @@ permalink: "/contact.html"
               name="email" 
               class="form-input" 
               required
+              aria-required="true"
               placeholder="your.email@example.com"
               aria-describedby="email-help email-error">
             <span id="email-help" class="form-help">So we can reply to you</span>
             <!-- IMPROVED: Added role="alert" and aria-live for screen readers -->
-            <span id="email-error" class="form-error" role="alert" aria-live="polite">Please enter a valid email address</span>
+            <span id="email-error" class="form-error" role="alert" aria-live="assertive">Please enter a valid email address</span>
           </div>
 
           <!-- Message Field -->
@@ -484,13 +486,14 @@ permalink: "/contact.html"
               name="message" 
               class="form-textarea" 
               required
+              aria-required="true"
               minlength="20"
               maxlength="2000"
               placeholder="What's on your mind? (Business inquiry, question about the grow, collaboration opportunity, etc.)"
               aria-describedby="message-help message-error"></textarea>
             <span id="message-help" class="form-help">Please note: requests for flower will not receive a response at this time</span>
             <!-- IMPROVED: Added role="alert" and aria-live for screen readers -->
-            <span id="message-error" class="form-error" role="alert" aria-live="polite">Please enter at least 20 characters</span>
+            <span id="message-error" class="form-error" role="alert" aria-live="assertive">Please enter at least 20 characters</span>
           </div>
 
           <!-- Submit Button -->

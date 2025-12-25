@@ -313,28 +313,6 @@ custom_css: |
 </div>
 {% endif %}
 
-<script>
-  // Category filtering via URL parameters
-  const urlParams = new URLSearchParams(window.location.search);
-  const activeCategory = urlParams.get('category');
-  
-  if (activeCategory) {
-    // Highlight active filter button
-    document.querySelectorAll('.category-filter-btn').forEach(btn => {
-      if (btn.dataset.category === activeCategory) {
-        btn.classList.add('active');
-      }
-    });
-    
-    // Filter posts
-    document.querySelectorAll('.post-card').forEach(card => {
-      const categories = card.dataset.categories.split(',');
-      if (!categories.includes(activeCategory)) {
-        card.style.display = 'none';
-      }
-    });
-  } else {
-    // Show "All Posts" as active when no filter
-    document.getElementById('filter-all').classList.add('active');
-  }
-</script>
+
+<!-- Plants category filtering - now external for CSP compliance -->
+<script src="/plants-filter.js" defer></script>

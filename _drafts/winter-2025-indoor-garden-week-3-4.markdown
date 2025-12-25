@@ -26,7 +26,7 @@ I was following all the rules to address this prior to it becoming an issue, or 
 
 * Buffer your coco coir or purchase [pre-buffered coco](https://amzn.to/3MRXywG). I purchase pre-buffered coco.
 
-So where did I go wrong and what will I do about it? Good question. With most things with this plant I'll try my best to address it and if I miss the mark, I'll try again. Here's my plan:
+So where did I go wrong and what will I do about it? Good question. As with most things with this plant I'll try my best to address it and if I miss the mark, I'll try again. Here's my plan:
 
 * Going to buffer my own coco even though it's pre-buffered. This is a simple task. When I buy coco it's a compact brick and I put it in a five-gallon bucket with one gallon of water to expand. Next grow I'll add 4ml CalMag to that water as a safeguard.
 

@@ -22,7 +22,7 @@ I also raised my Daily Light Integral to 30. DLI is a unit of measurement for th
 
 I also confirmed a [magnesium deficiency](https://www.growweedeasy.com/cannabis-plant-problems/magnesium-deficiency). Magnesium is a mobile nutrient which means it'll affect older or lower growth first. I noticed some chlorosis on older leaves—a fading of the leaf color from bright green to pale green or yellow, specifically between the veins and along the edges of the leaves, while the veins remain dark green.
 
-**Photo:** Winter 2025 Indoor overhead.
+**Photo:** Winter 2025 Indoor Horizontal.
 
 <img src="/uploads/Indoor_Winter_2025_Week_3_horizontal.webp" alt="No Image Available" width="512" height="512" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 

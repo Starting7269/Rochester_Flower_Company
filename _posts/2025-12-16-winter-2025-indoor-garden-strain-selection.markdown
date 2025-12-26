@@ -18,7 +18,7 @@ Below are the cultivars we've chosen for the winter 2025 Indoor Garden, each sel
 
 **Photo:** This cultivar is brand new, so no official photos exist yet. A generic plant image is shown as a placeholder.
 
-<img src="/uploads/4239736.webp" alt="Generic Plant" width="512" height="512" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
+<img src="/uploads/Generic_Plant.webp" alt="Generic Plant" width="512" height="512" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
 **Description:** Head Zeppelin is Night Owl doing what they do best: isolating a very specific expression and pushing it forward with intent. This cultivar pulls a classic Headband profile out of the Whistlin' Diesel project line, and it's aimed squarely at old school OG fans.
 
@@ -57,7 +57,7 @@ This cross feels like a collision of refinement and raw power. No expectations, 
 
 **Photo:**
 
-<img src="/uploads/2025-12-16%2015_37_21-SPEEDRUN%20SEEDS%20%E2%80%93%20SLAMBERRY%20%E2%80%93%20AUTO%20FEM%20%E2%80%93%203%20PACK%20-%20SeedsLocker.com%20%E2%80%94%20Mozilla%20Firef-1.webp" alt="SlamBerry cannabis plant" width="652" height="874" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
+<img src="/uploads/SPEEDRUN_SEEDS_SLAMBERRY.webp" alt="SlamBerry cannabis plant" width="652" height="874" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
 **Description:** SlamBerry exists because something special happened once and Speedrun Seeds went back to find it again.
 
@@ -73,7 +73,7 @@ We're running this one to see if that lightning strikes twice.
 
 **Photo:**
 
-<img src="/uploads/2025-12-16%2015_44_00-chocolate%20thai%20autoflower%20-%20Google%20Search%20%E2%80%94%20Mozilla%20Firefox.webp" alt="Chocolate Thai" width="475" height="521" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
+<img src="/uploads/chocolate_thai.webp" alt="Chocolate Thai" width="475" height="521" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
 **Description:**  Chocolate Thai Auto is a nod to the past. An autoflowering interpretation of a legendary sativa, built for modern indoor growing while keeping that classic energy intact.
 

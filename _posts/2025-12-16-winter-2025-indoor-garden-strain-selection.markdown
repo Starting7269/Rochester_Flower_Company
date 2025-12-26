@@ -18,7 +18,7 @@ Below are the cultivars we've chosen for the winter 2025 Indoor Garden, each sel
 
 **Photo:** This cultivar is brand new, so no official photos exist yet. A generic plant image is shown as a placeholder.
 
-<img src="/uploads/4239736.webp" alt="No Image Available" width="512" height="512" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
+<img src="/uploads/4239736.webp" alt="Generic Plant" width="512" height="512" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
 **Description:** Head Zeppelin is Night Owl doing what they do best: isolating a very specific expression and pushing it forward with intent. This cultivar pulls a classic Headband profile out of the Whistlin' Diesel project line, and it's aimed squarely at old school OG fans.
 
@@ -36,7 +36,7 @@ This is a nostalgia pick. A deliberate chase for classic flavors and old school 
 
 **Photo:** Photos courtesy of [floundern45 on Reddit](https://www.reddit.com/r/Autoflowers/comments/1pm2tmo/papaya_bomb_x_banjo_atlas_seed/)
 
-<img src="/uploads/papaya%20bomb%20x%20banjo%202.webp" alt="Papaya Bomb x Banjo" width="678" height="847" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
+<img src="/uploads/papaya%20bomb%20x%20banjo%202.webp" alt="Papaya Bomb x Banjo cannabis plant" width="678" height="847" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
 <img src="/uploads/pap%20bomb%20bank%201.webp" alt="Papaya Bomb x Banjo flower closeup" width="681" height="862" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
@@ -57,7 +57,7 @@ This cross feels like a collision of refinement and raw power. No expectations, 
 
 **Photo:**
 
-<img src="/uploads/2025-12-16%2015_37_21-SPEEDRUN%20SEEDS%20%E2%80%93%20SLAMBERRY%20%E2%80%93%20AUTO%20FEM%20%E2%80%93%203%20PACK%20-%20SeedsLocker.com%20%E2%80%94%20Mozilla%20Firef-1.webp" alt="SlamBerry" width="652" height="874" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
+<img src="/uploads/2025-12-16%2015_37_21-SPEEDRUN%20SEEDS%20%E2%80%93%20SLAMBERRY%20%E2%80%93%20AUTO%20FEM%20%E2%80%93%203%20PACK%20-%20SeedsLocker.com%20%E2%80%94%20Mozilla%20Firef-1.webp" alt="SlamBerry cannabis plant" width="652" height="874" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
 **Description:** SlamBerry exists because something special happened once and Speedrun Seeds went back to find it again.
 

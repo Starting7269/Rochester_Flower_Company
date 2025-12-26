@@ -14,7 +14,7 @@ December 24th marked 21 days since the seeds sprouted. Well, three of them anywa
 
 **Photo:** Winter 2025 Indoor overhead.
 
-<img src="/uploads/Indoor_Winter_2025_Week_3_Overhead.webp" alt="No Image Available" width="512" height="512" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
+<img src="/uploads/Indoor_Winter_2025_Week_3_Overhead.webp" alt="Overhead shot of 4 cannabis plants in a grow tent" width="512" height="512" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
 **During week three (Dec 17-24)** - I turned on the [airpump](https://amzn.to/4pTWerN) to the roots of the plants. I'm currently using an [AutoPot system](https://amzn.to/4qog6D0) so I use the [AirBase](https://amzn.to/4ax0Tev) and [AirDome](https://amzn.to/3LdpkTI). You normally turn this on 2 or 3 weeks after enabling water feeding from the reservoir.
 
@@ -24,7 +24,7 @@ I also confirmed a [magnesium deficiency](https://www.growweedeasy.com/cannabis-
 
 **Photo:** Winter 2025 Indoor Horizontal.
 
-<img src="/uploads/Indoor_Winter_2025_Week_3_horizontal.webp" alt="No Image Available" width="512" height="512" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
+<img src="/uploads/Indoor_Winter_2025_Week_3_horizontal.webp" alt="Horizontal shot of 4 cannabis plants in a grow tent" width="512" height="512" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
 If you grow in [coco coir](https://amzn.to/4pX8k3s) then you know to look for calcium and magnesium issues. Coco coir has a high cation exchange capacity (CEC), which causes it to bind calcium (Ca) and magnesium (Mg) cations, making them unavailable to plants.
 

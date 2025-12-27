@@ -2,10 +2,11 @@
 title: Welcome to the Plants Blog
 date: 2025-12-15 05:00:00 -05:00
 categories:
-  - updates
+- updates
 layout: post
-featured_image: /uploads/Indoor_Winter_2025_Week_3_Overhead.webp
-excerpt: "Starting a blog to document what actually happens in the grow tents. The wins, the deficiencies, and everything in between."
+featured_image: "/uploads/Indoor_Winter_2025_Week_3_Overhead.webp"
+excerpt: Starting a blog to document what actually happens in the grow tents. The
+  wins, the deficiencies, and everything in between.
 ---
 
 So I'm starting this blog thing.

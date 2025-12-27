@@ -1,15 +1,17 @@
 ---
-title: 'Winter 2025 Indoor Garden: Week Three Update - Managing Magnesium and Early Growth'
+title: 'Winter 2025 Indoor Garden: Week Three Update - Managing Magnesium and Early
+  Growth'
 date: 2025-12-25 14:11:00 -05:00
 categories:
-  - winter-2025
-  - grow-journal
+- winter-2025
+- grow-journal
 tags:
-  - week-3
-  - nutrients
-  - troubleshooting
-featured_image: /uploads/Indoor_Winter_2025_Week_3_Overhead.webp
-excerpt: "Three weeks in and I'm already dealing with magnesium deficiency. Here's what went wrong and how I'm fixing it."
+- week-3
+- nutrients
+- troubleshooting
+featured_image: "/uploads/Indoor_Winter_2025_Week_3_Overhead.webp"
+excerpt: Three weeks in and I'm already dealing with magnesium deficiency. Here's
+  what went wrong and how I'm fixing it.
 ---
 
 Three weeks in. Well, three weeks for three of the plants. The SlamBerry is running a few days behind after I had to replace a dud seed, but it's catching up.

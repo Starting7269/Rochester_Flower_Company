@@ -25,7 +25,7 @@ permalink: "/privacy.html"
       <div class="container narrow">
         <h1 id="page-title">Privacy Policy</h1>
         <p>
-          Last updated: December 14, 2025
+          Last updated: December 27, 2025
         </p>
         <p>
           This isn't a data harvesting operation. I'm just one person with some tents and plants. 
@@ -43,16 +43,15 @@ permalink: "/privacy.html"
         <ul>
           <li>Your name</li>
           <li>Your email address</li>
-          <li>Your phone number (if provided)</li>
-          <li>Your location (general area)</li>
           <li>Whatever you write in the message field</li>
+          <li>Technical information: Your IP address and browser user agent (collected automatically for security and record-keeping)</li>
         </ul>
         <p>
           I also use sessionStorage (browser-based, temporary) to remember that you've verified your age. 
           This clears automatically when you close your browser.
         </p>
         <p>
-          That's it. I don't use cookies, tracking pixels, analytics scripts, or any of that stuff.
+          That's it. I don't use cookies, tracking pixels, or analytics scripts beyond basic Cloudflare security features.
         </p>
       </div>
     </section>
@@ -61,44 +60,83 @@ permalink: "/privacy.html"
       <div class="container narrow">
         <h2>How I Use Your Information</h2>
         <p>
-          Your contact information is used for exactly one thing: responding to your message.
+          Your contact information is used for:
         </p>
+        <ul>
+          <li><strong>Responding to your message</strong> - the primary purpose</li>
+          <li><strong>Legal compliance and record-keeping</strong> - contact form submissions are stored for business record-keeping purposes and potential legal compliance in the cannabis industry</li>
+          <li><strong>Security</strong> - IP addresses help identify spam and abuse</li>
+        </ul>
         <p>
           I don't:
         </p>
         <ul>
           <li>Sell your information</li>
-          <li>Share it with third parties (except the ones mentioned below)</li>
+          <li>Share it with third parties (except the services mentioned below that process the form)</li>
           <li>Use it for marketing</li>
-          <li>Add you to email lists</li>
-          <li>Store it in databases</li>
+          <li>Add you to email lists without permission</li>
         </ul>
-        <p>
-          Once I've responded to your inquiry, I delete your information unless there's a specific 
-          reason to keep it (like ongoing conversation or a business relationship).
-        </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container narrow">
+        <h2>How Your Data is Stored</h2>
+        <p>
+          When you submit the contact form, here's what happens:
+        </p>
+        <ol>
+          <li><strong>Submission processing:</strong> Your form data is processed by a Cloudflare Worker (a secure serverless function running on Cloudflare's network)</li>
+          <li><strong>Email notification:</strong> I receive an email notification via Resend (email delivery service)</li>
+          <li><strong>Permanent storage:</strong> Your submission is stored in a private GitHub repository as a CSV record for business and legal record-keeping purposes</li>
+        </ol>
+        <p>
+          <strong>Important:</strong> Unlike typical contact forms that delete data after sending an email, 
+          your submission is permanently stored in a private repository. This is for legal protection and business 
+          record-keeping in the cannabis industry, where documentation of communications can be important.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container narrow">
         <h2>Third-Party Services</h2>
         <p>
-          I use a few services to make the website work:
+          I use these services to make the contact form work:
         </p>
         
-        <h3>FormSubmit (Form Processing)</h3>
+        <h3>Cloudflare Workers (Form Processing)</h3>
         <p>
-          When you submit the contact form, it goes through FormSubmit.co to reach my email. 
-          They handle the submission and send it to me. I don't control their servers or their practices.
+          Contact form submissions are processed through Cloudflare Workers, a serverless computing platform. 
+          The Worker runs on Cloudflare's secure network and handles form validation, email sending, and data storage.
         </p>
         <p>
-          <a href="https://formsubmit.co/privacy" target="_blank" rel="noopener noreferrer">FormSubmit Privacy Policy</a>
+          <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Privacy Policy</a>
+        </p>
+
+        <h3>Resend (Email Delivery)</h3>
+        <p>
+          Email notifications are sent using Resend, a transactional email service. 
+          Resend processes your name, email, and message to deliver the notification to me, 
+          but does not permanently store your data.
+        </p>
+        <p>
+          <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Resend Privacy Policy</a>
+        </p>
+
+        <h3>GitHub (Data Storage)</h3>
+        <p>
+          Contact form submissions are stored in a private GitHub repository for record-keeping purposes. 
+          GitHub provides the storage infrastructure, but only I have access to this private repository. 
+          Your data is stored as structured CSV records.
+        </p>
+        <p>
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>
         </p>
 
         <h3>Cloudflare (Security & DNS)</h3>
         <p>
-          My site uses Cloudflare for security, DDoS protection, and DNS management. 
+          The entire site uses Cloudflare for security, DDoS protection, and DNS management. 
           They may collect technical information like IP addresses for security purposes.
         </p>
         <p>
@@ -115,63 +153,70 @@ permalink: "/privacy.html"
       </div>
     </section>
 
-    <section class="section section-alt">
+    <section class="section">
       <div class="container narrow">
         <h2>Data Retention</h2>
         <p>
-          Contact form submissions: I keep them until your inquiry is resolved, then delete them. 
-          Usually that's a few days or weeks at most.
+          <strong>Contact form submissions:</strong> Stored indefinitely in a private GitHub repository for business 
+          record-keeping and legal compliance purposes. This is intentional and necessary for operating in the cannabis 
+          industry where documentation of communications may be legally relevant.
         </p>
         <p>
-          Age verification: Stored in your browser's sessionStorage only. Automatically deleted when you close your browser.
+          <strong>Age verification:</strong> Stored in your browser's sessionStorage only. Automatically deleted when 
+          you close your browser. Not transmitted or stored on any server.
         </p>
         <p>
-          Everything else: There is no "everything else." I'm not running analytics or storing logs beyond 
-          what my hosting provider does for basic operations.
+          <strong>Email notifications:</strong> Retained in my email inbox according to my email retention practices. 
+          Typically deleted or archived after the inquiry is resolved.
+        </p>
+        <p>
+          If you want your contact form submission deleted from the GitHub repository, see "Your Rights" below.
         </p>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-alt">
       <div class="container narrow">
         <h2>Your Rights</h2>
         <p>
           You have the right to:
         </p>
         <ul>
-          <li><strong>Request deletion:</strong> Email me and I'll delete your information immediately</li>
-          <li><strong>Request access:</strong> Ask what information I have about you (probably just an email thread)</li>
-          <li><strong>Correct information:</strong> If I got something wrong, let me know</li>
-          <li><strong>Opt out:</strong> Just don't use the contact form</li>
+          <li><strong>Request deletion:</strong> Email me and I'll delete your information from the GitHub repository and my email. Note that I may need to retain certain records for legal compliance.</li>
+          <li><strong>Request access:</strong> Ask what information I have about you (your contact form submission stored in CSV format)</li>
+          <li><strong>Request a copy:</strong> I can provide a copy of your stored data in CSV or plain text format</li>
+          <li><strong>Correct information:</strong> If I have incorrect information about you, let me know and I'll update the record</li>
+          <li><strong>Opt out:</strong> Simply don't use the contact form</li>
         </ul>
         <p>
-          Since I'm not storing information in databases or using it for ongoing purposes, 
-          these rights are pretty straightforward.
+          To exercise any of these rights, use the contact form (for non-deletion requests) or email me directly.
         </p>
       </div>
     </section>
 
-    <section class="section section-alt">
+    <section class="section">
       <div class="container narrow">
         <h2>Security</h2>
         <p>
           I take reasonable precautions to protect your information:
         </p>
         <ul>
-          <li>HTTPS encryption (your connection to the site is secure)</li>
-          <li>Cloudflare's security features (DDoS protection, WAF)</li>
-          <li>FormSubmit's security measures (for form processing)</li>
-          <li>No plain text storage of sensitive information</li>
+          <li><strong>HTTPS encryption:</strong> Your connection to the site is secure</li>
+          <li><strong>Cloudflare security:</strong> DDoS protection, Web Application Firewall, and security headers</li>
+          <li><strong>Private repository:</strong> Contact form data is stored in a private GitHub repository with access restricted to me only</li>
+          <li><strong>API key authentication:</strong> All connections between services use secure API keys</li>
+          <li><strong>Spam protection:</strong> Honeypot fields and rate limiting to prevent abuse</li>
+          <li><strong>Minimal data collection:</strong> I only collect what's necessary</li>
         </ul>
         <p>
           That said, no method of transmission over the internet is 100% secure. 
-          Don't send me your Social Security number, credit card info, or anything like that. 
-          The contact form is for basic inquiries, not sensitive data.
+          Don't send me your Social Security number, credit card info, passwords, or other sensitive personal data. 
+          The contact form is for basic business inquiries, not sensitive information.
         </p>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-alt">
       <div class="container narrow">
         <h2>Children's Privacy</h2>
         <p>
@@ -179,6 +224,28 @@ permalink: "/privacy.html"
         </p>
         <p>
           If you're under 21, you shouldn't be here, and you definitely shouldn't be filling out the contact form.
+        </p>
+        <p>
+          If I become aware that someone under 21 has submitted the contact form, I will delete their information immediately.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <h2>Why I Store Contact Form Data</h2>
+        <p>
+          You might wonder why I permanently store contact form submissions when many websites don't. Here's why:
+        </p>
+        <ul>
+          <li><strong>Legal protection:</strong> In the cannabis industry, having records of all communications can be important for demonstrating compliance with gifting laws and responding to any legal inquiries</li>
+          <li><strong>Business records:</strong> Documentation of inquiries, partnerships, and business communications</li>
+          <li><strong>Transparency:</strong> I'd rather be upfront about keeping records than pretend I delete everything</li>
+          <li><strong>Spam tracking:</strong> Identifying patterns of abuse or spam attempts</li>
+        </ul>
+        <p>
+          This is a small personal operation, not a corporation. The data is stored in a private repository 
+          that only I can access. I'm not analyzing it, selling it, or doing anything with it beyond what's described here.
         </p>
       </div>
     </section>
@@ -190,8 +257,8 @@ permalink: "/privacy.html"
           If I make changes to this privacy policy, I'll update the "Last updated" date at the top of this page.
         </p>
         <p>
-          I'm not planning on making this more complicated than it needs to be, 
-          but if something changes with how the site works, I'll update this accordingly.
+          Significant changes (like adding new third-party services or changing data retention practices) 
+          will be noted with a brief summary of what changed.
         </p>
       </div>
     </section>
@@ -201,10 +268,12 @@ permalink: "/privacy.html"
         <h2>Contact About Privacy</h2>
         <p>
           If you have questions about this privacy policy or how I handle your information, 
-          you can reach me through the <a href="contact.html">contact form</a>.
+          you can reach me through the <a href="contact.html">contact form</a> (yes, the irony is noted) 
+          or find another way to reach me if you prefer not to use the form.
         </p>
         <p>
-          I'm just one person running a home grow, not a legal department, but I'll do my best to answer your questions.
+          I'm just one person running a home grow, not a legal department, but I'll do my best to answer your questions 
+          and handle your data responsibly.
         </p>
       </div>
     </section>

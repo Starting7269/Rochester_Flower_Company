@@ -10,7 +10,7 @@ tags:
 - troubleshooting
 ---
 
-December 24th marked 21 days since the seeds sprouted. Well, three of them anyway. One of the original seeds I selected was old and not viable, so it never sprouted. This means the SpeedRun Seeds SlamBerry is three days younger than the other three plants, as this was the strain I opted to use instead. It turned 21 days old on December 27th. Moving forward when I reference a specific week, I'll be speaking generally as it applies to the three plants, just keep in mind the SpeedRun is slightly behind.
+Three weeks in (well, three weeks for three of the plants - the SlamBerry is running a few days behind after I had to replace a dud seed). Here's what happened during week three.
 
 **Photo:** Winter 2025 Indoor overhead.
 
@@ -18,7 +18,7 @@ December 24th marked 21 days since the seeds sprouted. Well, three of them anywa
 
 **During week three (Dec 17-24)** - I turned on the [airpump](https://amzn.to/4pTWerN) to the roots of the plants. I'm currently using an [AutoPot system](https://amzn.to/4qog6D0) so I use the [AirBase](https://amzn.to/4ax0Tev) and [AirDome](https://amzn.to/3LdpkTI). You normally turn this on 2 or 3 weeks after enabling water feeding from the reservoir.
 
-I also raised my Daily Light Integral to 30. DLI is a unit of measurement for the amount of photons the plant can absorb relative to the time you have the light on. I raised it from 20 to 30.
+I also raised my Daily Light Integral to 30. DLI is basically 'total daily light dose' - I bumped it from 20 to 30 to support faster growth.
 
 I also confirmed a [magnesium deficiency](https://www.growweedeasy.com/cannabis-plant-problems/magnesium-deficiency). Magnesium is a mobile nutrient which means it'll affect older or lower growth first. I noticed some chlorosis on older leaves—a fading of the leaf color from bright green to pale green or yellow, specifically between the veins and along the edges of the leaves, while the veins remain dark green.
 

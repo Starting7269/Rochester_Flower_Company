@@ -1,6 +1,6 @@
 ---
 title: Welcome to the Plants Blog
-date: 2025-12-15 10:00:00 Z
+date: 2025-12-15 05:00:00 -05:00
 categories:
 - updates
 layout: post

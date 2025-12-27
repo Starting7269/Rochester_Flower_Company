@@ -2,10 +2,11 @@
 title: 'Winter 2025 Indoor Garden: Strain Selection'
 date: 2025-12-16 14:58:00 -05:00
 categories:
-  - winter-2025
-  - genetics
-featured_image: /uploads/papaya%20bomb%20x%20banjo%202.webp
-excerpt: "Four strains, four autopots, one winter grow. Here's what made the cut and why each one earned its spot."
+- winter-2025
+- genetics
+featured_image: "/uploads/papaya%20bomb%20x%20banjo%202.webp"
+excerpt: Four strains, four autopots, one winter grow. Here's what made the cut and
+  why each one earned its spot.
 ---
 
 Choosing a strain is one of the best parts of growing, but it's also a serious commitment. Once a seed goes into the medium, you're locked in for months. Time spent growing, drying, curing, and eventually consuming. There's no rushing it, and there's no changing your mind halfway through.

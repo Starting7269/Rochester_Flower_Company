@@ -2,9 +2,10 @@
 title: Welcome to the Plants Blog
 date: 2025-12-15 05:00:00 -05:00
 categories:
-- updates
+  - updates
 layout: post
-featured_image: 
+featured_image: /uploads/Indoor_Winter_2025_Week_3_Overhead.webp
+excerpt: "Starting a blog to document what actually happens in the grow tents. The wins, the deficiencies, and everything in between."
 ---
 
 So I'm starting this blog thing.
@@ -15,4 +16,6 @@ This is where I'll post grow updates, strain reports, things that worked (and th
 
 No content calendar. No posting schedule. Just real updates when there's something worth sharing.
 
-More to come soon from the grow room.
+First real post is already up - strain selection for the winter 2025 indoor garden. Four autopots, four very different cultivars, and a lot of curiosity about how this is going to play out.
+
+Check back whenever. Or don't. The plants don't care either way, and honestly, neither do I. This is just documentation that happens to be public.

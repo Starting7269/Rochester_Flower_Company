@@ -1,20 +1,139 @@
+# Rochester Flower Company - robots.txt
+# Updated: December 27, 2025
+
+# =============================================================================
+# DEFAULT POLICY - Allow legitimate search engines with restrictions
+# =============================================================================
+
 User-agent: *
 Allow: /
+Crawl-delay: 2
+
+# Block utility/administrative pages from indexing
 Disallow: /age-gate.html
 Disallow: /404.html
+Disallow: /privacy.html
+Disallow: /_includes/
+Disallow: /_layouts/
+Disallow: /_posts/
+Disallow: /_uploads/
+Disallow: /.well-known/
 
-# Important pages
-Sitemap: https://rochesterflowercompany.com/sitemap.xml
+# Block private/development files if they exist
+Disallow: /test/
+Disallow: /dev/
+Disallow: /admin/
+Disallow: /.git/
 
-# Crawl delay to be respectful
-Crawl-delay: 1
+# =============================================================================
+# AI SCRAPERS & TRAINING BOTS - Comprehensive Block List
+# =============================================================================
 
-# Block AI scrapers (optional but recommended)
+# OpenAI
 User-agent: GPTBot
 Disallow: /
 
 User-agent: ChatGPT-User
 Disallow: /
 
+# Anthropic (Claude)
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Google AI/Bard (Gemini)
+User-agent: Google-Extended
+Disallow: /
+
+# Common Crawl (used for AI training datasets)
 User-agent: CCBot
 Disallow: /
+
+# Meta/Facebook AI
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+# Bytedance (TikTok)
+User-agent: Bytespider
+Disallow: /
+
+# Amazon (Alexa, AWS AI)
+User-agent: Amazonbot
+Disallow: /
+
+# Apple (AppleBot-Extended for AI training)
+User-agent: Applebot-Extended
+Disallow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Disallow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Disallow: /
+
+# You.com AI search
+User-agent: YouBot
+Disallow: /
+
+# Diffbot (data extraction for AI)
+User-agent: Diffbot
+Disallow: /
+
+# Omgili/Webz.io (data aggregation)
+User-agent: omgili
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+# iCjobs (scraper)
+User-agent: iCjobs
+Disallow: /
+
+# Generic scrapers and bad bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: Mediatoolkitbot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# =============================================================================
+# SITEMAPS
+# =============================================================================
+
+Sitemap: https://rochesterflowercompany.com/sitemap.xml
+
+# =============================================================================
+# NOTES
+# =============================================================================
+
+# This robots.txt aggressively blocks AI training scrapers while allowing
+# legitimate search engines (Google, Bing, DuckDuckGo, etc.) to index the site.
+# 
+# Cannabis industry considerations:
+# - Privacy page blocked from indexing (contains business practices)
+# - Age verification page blocked (should not be directly accessible via search)
+# - Crawl delay set to prevent server load
+# - AI scrapers blocked to prevent unauthorized use of content
+#
+# Legitimate search engine crawlers (Googlebot, Bingbot, etc.) are still
+# allowed to index public pages for search visibility.

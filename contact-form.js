@@ -1,6 +1,6 @@
 /**
  * Rochester Flower Company - Contact Form
- * Form validation, AJAX submission, and rate limiting
+ * Form validation and submission to Cloudflare Worker
  */
 
 (function() {
@@ -11,6 +11,11 @@
   const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
   const MAX_SUBMISSIONS = 3;
   const MIN_MESSAGE_LENGTH = 20;
+  
+  // IMPORTANT: Update this to your Cloudflare Worker URL after deployment
+  // It will be something like: https://contact-form.yourusername.workers.dev
+  // OR if you set up a route: https://rochesterflowercompany.com/api/contact
+  const WORKER_ENDPOINT = 'https://rochesterflowercompany.com/api/contact';
   
   // IMPROVED: More robust email validation regex
   const EMAIL_PATTERN = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -135,17 +140,17 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
       
-      // Submit form via AJAX
+      // Submit form via AJAX to Cloudflare Worker
       try {
-        var response = await fetch(form.action, {
+        var response = await fetch(WORKER_ENDPOINT, {
           method: 'POST',
           body: new FormData(form),
-          headers: {
-            'Accept': 'application/json'
-          }
+          // No need for extra headers - FormData sets the right content-type
         });
         
-        if (response.ok) {
+        var result = await response.json();
+        
+        if (response.ok && result.success) {
           // Record submission for rate limiting
           recordSubmission();
           
@@ -160,7 +165,7 @@
           submitBtn.disabled = false;
           submitBtn.textContent = 'Send Message';
         } else {
-          throw new Error('Form submission failed');
+          throw new Error(result.error || 'Form submission failed');
         }
       } catch (error) {
         console.error('Form submission error:', error);

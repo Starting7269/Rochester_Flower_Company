@@ -1,46 +1,52 @@
 ---
-title: 'Winter 2025 Indoor Garden: Week Three Update - Managing Magnesium and Early
-  Growth'
+title: 'Winter 2025 Indoor Garden: Week Three Update - Managing Magnesium and Early Growth'
 date: 2025-12-25 14:11:00 -05:00
 categories:
-- Grow-Journal
+  - winter-2025
+  - grow-journal
 tags:
-- week-3
-- nutrients
-- troubleshooting
+  - week-3
+  - nutrients
+  - troubleshooting
+featured_image: /uploads/Indoor_Winter_2025_Week_3_Overhead.webp
+excerpt: "Three weeks in and I'm already dealing with magnesium deficiency. Here's what went wrong and how I'm fixing it."
 ---
 
-Three weeks in (well, three weeks for three of the plants - the SlamBerry is running a few days behind after I had to replace a dud seed). Here's what happened during week three.
+Three weeks in. Well, three weeks for three of the plants. The SlamBerry is running a few days behind after I had to replace a dud seed, but it's catching up.
 
 **Photo:** Winter 2025 Indoor overhead.
 
 <img src="/uploads/Indoor_Winter_2025_Week_3_Overhead.webp" alt="Overhead shot of 4 cannabis plants in a grow tent" width="512" height="512" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
-**During week three (Dec 17-24)** - I turned on the [airpump](https://amzn.to/4pTWerN) to the roots of the plants. I'm currently using an [AutoPot system](https://amzn.to/4qog6D0) so I use the [AirBase](https://amzn.to/4ax0Tev) and [AirDome](https://amzn.to/3LdpkTI). You normally turn this on 2 or 3 weeks after enabling water feeding from the reservoir.
+Week three was all about ramping things up. I turned on the [airpump](https://amzn.to/4pTWerN) to the roots. I'm running [AutoPots](https://amzn.to/4qog6D0) with [AirBase](https://amzn.to/4ax0Tev) and [AirDome](https://amzn.to/3LdpkTI) setups, and you typically fire up the air 2-3 weeks after the reservoir starts feeding. The plants were ready for it.
 
-I also raised my Daily Light Integral to 30. DLI is basically 'total daily light dose' - I bumped it from 20 to 30 to support faster growth.
+I also bumped the Daily Light Integral from 20 to 30. DLI is basically "total daily light dose" - more photons, more growth potential. They're big enough to handle it now.
 
-I also confirmed a [magnesium deficiency](https://www.growweedeasy.com/cannabis-plant-problems/magnesium-deficiency). Magnesium is a mobile nutrient which means it'll affect older or lower growth first. I noticed some chlorosis on older leaves—a fading of the leaf color from bright green to pale green or yellow, specifically between the veins and along the edges of the leaves, while the veins remain dark green.
+Then there was the magnesium issue.
+
+## The Magnesium Problem
+
+I noticed [magnesium deficiency](https://www.growweedeasy.com/cannabis-plant-problems/magnesium-deficiency) showing up on the older leaves. Chlorosis between the veins - that telltale fade from green to pale yellow while the veins stay dark green. Magnesium is a mobile nutrient, so when the plant needs it elsewhere, it pulls from the older growth first. Classic symptom.
 
 **Photo:** Winter 2025 Indoor Horizontal.
 
 <img src="/uploads/Indoor_Winter_2025_Week_3_horizontal.webp" alt="Horizontal shot of 4 cannabis plants in a grow tent" width="512" height="512" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
-If you grow in [coco coir](https://amzn.to/4pX8k3s) then you know to look for calcium and magnesium issues. Coco coir has a high cation exchange capacity (CEC), which causes it to bind calcium (Ca) and magnesium (Mg) cations, making them unavailable to plants.
+If you grow in [coco coir](https://amzn.to/4pX8k3s), calcium and magnesium issues are part of the deal. Coco has a high cation exchange capacity (CEC), which means it binds Ca and Mg, making them unavailable to the plants even if they're in your nutrient solution.
 
-I was following all the rules to address this prior to it becoming an issue, or so I thought:
+I thought I was doing everything right. I use tap water and I know exactly what's in it thanks to the county water survey. My tap isn't particularly hard, so I've been adding 4ml per gallon of FloraFlex Cal + Mag + Iron as insurance. I also buy [pre-buffered coco](https://amzn.to/3MRXywG) to avoid this exact problem.
 
-* Use tap water and know its contents, or use RO water and add it back. I use tap water and know the exact contents thanks to an annual county water survey provided by my water company. I also add 4ml per gallon of FloraFlex Cal \+ Mag \+ Iron out of an abundance of precaution because my tap water is not particularly hard.
+So what went wrong?
 
-* Buffer your coco coir or purchase [pre-buffered coco](https://amzn.to/3MRXywG). I purchase pre-buffered coco.
+## The Fix
 
-So where did I go wrong and what will I do about it? Good question. As with most things with this plant I'll try my best to address it and if I miss the mark, I'll try again. Here's my plan:
+Two things. First, I'm going to buffer my own coco from now on, even if it's sold as pre-buffered. When I rehydrate a coco brick, I put it in a five-gallon bucket with one gallon of water. Next grow, I'll add 4ml of CalMag to that gallon as a safeguard. Can't rely on the manufacturer alone.
 
-* Going to buffer my own coco even though it's pre-buffered. This is a simple task. When I buy coco it's a compact brick and I put it in a five-gallon bucket with one gallon of water to expand. Next grow I'll add 4ml CalMag to that water as a safeguard.
+Second, I realized my FloraFlex Cal + Mag + Iron is a couple years old. That's the problem with buying nutrients in gallon jugs when you're a small home grower - it takes forever to use them up, and by the time you're halfway through, they're past their prime. I've already switched to [General Hydroponics CALiMAGic](https://amzn.to/4stc26C) in a quart size. Fresher product, smaller container, better shelf life for my scale.
 
-* Make sure I'm using fresh CalMag. I noticed my FloraFlex Cal \+ Mag \+ Iron is a couple years old. I attribute this to FloraFlex's minimum container size being one gallon. It takes a long time for a small home grower to use a gallon of CalMag. I'm going back to [General Hydroponics CALiMAGic](https://amzn.to/4stc26C) which comes in a quart, which should help ensure freshness.
+Obviously I can't go back in time and buffer this grow's coco differently, but the CalMag swap is already in effect. We'll see if it stabilizes things.
 
-I can't travel back in time so the first bullet is for the next grow and the second bullet has already been implemented. Otherwise they look great. That Papaya Bomb X Banjo from Atlas Seeds is incredibly leggy with great structure while the other three are dense and squat. Looking forward to seeing how they develop over the next weekas this should be a good growth week.
+Otherwise, the plants look great. That Papaya Bomb x Banjo from Atlas Seeds is incredibly leggy with excellent structure, while the other three are staying dense and squat. Should be an interesting contrast as they develop. Week four is typically when growth really explodes, so I'm looking forward to the next update.
 
 ---
 

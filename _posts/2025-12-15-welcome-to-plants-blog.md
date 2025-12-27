@@ -7,19 +7,12 @@ layout: post
 featured_image: 
 ---
 
-Welcome to the Rochester Flower Company blog. This is where I'll share stories from the grow room, cultivation tips, and updates on current plants.
+So I'm starting this blog thing.
 
-## What to Expect
+I've been growing in Rochester for a while now, documenting everything in spreadsheets and voice memos that nobody sees. Figured it was time to actually share what's happening in the tents - the good, the magnesium deficiencies, all of it.
 
-This blog will cover topics like:
+This is where I'll post grow updates, strain reports, things that worked (and the many things that didn't), and whatever else comes up when you're trying to grow clean craft cannabis in upstate New York winters.
 
-- Grow techniques and tips learned along the way
-- Seasonal updates on current plants
-- Genetics information and strain details
-- Harvest reports and observations
-
-## Staying Connected
-
-Check back regularly for new posts, or reach out through the contact page if you have questions.
+No content calendar. No posting schedule. Just real updates when there's something worth sharing.
 
 More to come soon from the grow room.

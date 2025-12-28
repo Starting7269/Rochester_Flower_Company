@@ -250,7 +250,12 @@ custom_css: |
     {% for post in paginator.posts %}
     <article class="post-card" data-categories="{{ post.categories | join: ',' }}">
       {% if post.featured_image %}
-      <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="post-card-image">
+      <img src="{{ post.featured_image }}" 
+           alt="{{ post.title }}" 
+           class="post-card-image"
+           loading="lazy"
+           width="600"
+           height="400">
       {% endif %}
       
       <div class="post-card-content">

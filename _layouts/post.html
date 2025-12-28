@@ -3,6 +3,51 @@ layout: default
 ---
 
 <style>
+    /* ENHANCEMENT 2C: Breadcrumb Navigation */
+    .breadcrumb {
+        margin-bottom: 2rem;
+        padding: 0.75rem 0;
+    }
+
+    .breadcrumb ol {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    .breadcrumb li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .breadcrumb li:not(:last-child)::after {
+        content: "→";
+        color: var(--color-muted, #d4dffe);
+        opacity: 0.6;
+    }
+
+    .breadcrumb a {
+        color: var(--color-accent, #4fd1c5);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover {
+        color: var(--color-primary, #ff7ac4);
+        text-decoration: underline;
+    }
+
+    .breadcrumb li[aria-current="page"] {
+        color: var(--color-muted, #d4dffe);
+        opacity: 0.8;
+    }
+
     .post-header {
         margin-bottom: 2rem;
         padding-bottom: 2rem;
@@ -12,7 +57,7 @@ layout: default
     .post-title {
         font-size: 2.5rem;
         margin-bottom: 1rem;
-        background: linear-gradient(135deg, var(--pink), var(--teal));
+        background: linear-gradient(135deg, var(--color-primary, #ff7ac4), var(--color-accent, #4fd1c5));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -22,7 +67,7 @@ layout: default
         display: flex;
         gap: 1.5rem;
         flex-wrap: wrap;
-        color: var(--grey);
+        color: var(--color-muted, #d4dffe);
         font-size: 0.95rem;
     }
 
@@ -39,43 +84,45 @@ layout: default
     }
 
     .category-tag {
-        background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(32, 178, 170, 0.2));
+        background: linear-gradient(135deg, rgba(255, 122, 196, 0.2), rgba(79, 209, 197, 0.2));
         padding: 0.25rem 0.75rem;
         border-radius: 20px;
         font-size: 0.85rem;
-        border: 1px solid rgba(255, 105, 180, 0.5);
+        border: 1px solid rgba(255, 122, 196, 0.5);
         transition: all 0.3s;
         text-decoration: none;
-        color: var(--light-text);
+        color: var(--color-text, #fdf4ff);
     }
 
     .category-tag:hover {
-        background: linear-gradient(135deg, rgba(255, 105, 180, 0.4), rgba(32, 178, 170, 0.4));
+        background: linear-gradient(135deg, rgba(255, 122, 196, 0.4), rgba(79, 209, 197, 0.4));
         transform: translateY(-2px);
     }
 
+    /* ENHANCEMENT 2B: Featured image with lazy loading */
     .post-featured-image {
         width: 100%;
         max-height: 500px;
         object-fit: cover;
         border-radius: 8px;
         margin-bottom: 2rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     }
 
     .post-content {
         font-size: 1.1rem;
         line-height: 1.8;
-        color: var(--light-text);
+        color: var(--color-text, #fdf4ff);
     }
 
     .post-content h2 {
-        color: var(--pink);
+        color: var(--color-primary, #ff7ac4);
         margin-top: 2rem;
         margin-bottom: 1rem;
     }
 
     .post-content h3 {
-        color: var(--teal);
+        color: var(--color-accent, #4fd1c5);
         margin-top: 1.5rem;
         margin-bottom: 0.75rem;
     }
@@ -89,6 +136,7 @@ layout: default
         height: auto;
         border-radius: 8px;
         margin: 2rem 0;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     }
 
     .post-content ul, .post-content ol {
@@ -101,18 +149,19 @@ layout: default
     }
 
     .post-content blockquote {
-        border-left: 4px solid var(--pink);
+        border-left: 4px solid var(--color-primary, #ff7ac4);
         padding-left: 1.5rem;
         margin: 2rem 0;
         font-style: italic;
-        color: var(--grey);
+        color: var(--color-muted, #d4dffe);
     }
 
     .post-content code {
-        background: rgba(255, 105, 180, 0.1);
+        background: rgba(255, 122, 196, 0.1);
         padding: 0.2rem 0.4rem;
         border-radius: 4px;
         font-family: 'Courier New', monospace;
+        font-size: 0.95em;
     }
 
     .post-content pre {
@@ -121,6 +170,7 @@ layout: default
         border-radius: 8px;
         overflow-x: auto;
         margin: 2rem 0;
+        border: 1px solid rgba(129, 140, 248, 0.3);
     }
 
     .post-content pre code {
@@ -129,22 +179,33 @@ layout: default
     }
 
     .back-to-blog {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
         margin-top: 3rem;
         padding: 0.75rem 1.5rem;
-        background: linear-gradient(135deg, var(--pink), var(--teal));
-        color: white;
+        background: linear-gradient(135deg, var(--color-primary, #ff7ac4), var(--color-accent, #4fd1c5));
+        color: #111827;
         text-decoration: none;
-        border-radius: 25px;
+        border-radius: 999px;
+        font-weight: 600;
         transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .back-to-blog:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        box-shadow: 0 8px 24px rgba(255, 122, 196, 0.4);
     }
 
     @media (max-width: 768px) {
+        .breadcrumb {
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb ol {
+            font-size: 0.85rem;
+        }
+
         .post-title {
             font-size: 2rem;
         }
@@ -157,8 +218,21 @@ layout: default
             flex-direction: column;
             gap: 0.5rem;
         }
+
+        .post-featured-image {
+            max-height: 300px;
+        }
     }
 </style>
+
+<!-- ENHANCEMENT 2C: Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="breadcrumb">
+    <ol>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/plants/">Plants</a></li>
+        <li aria-current="page">{{ page.title | truncate: 40 }}</li>
+    </ol>
+</nav>
 
 <article class="post">
     <header class="post-header">
@@ -182,13 +256,21 @@ layout: default
         </div>
     </header>
 
+    <!-- ENHANCEMENT 2B: Lazy loading on featured image -->
     {% if page.featured_image %}
-    <img src="{{ page.featured_image }}" alt="{{ page.title }}" class="post-featured-image">
+    <img src="{{ page.featured_image }}" 
+         alt="{{ page.title }}" 
+         class="post-featured-image"
+         loading="lazy"
+         width="1200"
+         height="800">
     {% endif %}
 
     <div class="post-content">
         {{ content }}
     </div>
 
-    <a href="/plants/" class="back-to-blog">← Back to Plants Blog</a>
+    <a href="/plants/" class="back-to-blog">
+        <span aria-hidden="true">←</span> Back to Plants Blog
+    </a>
 </article>

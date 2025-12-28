@@ -1,0 +1,409 @@
+---
+permalink: "/faq.html"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head-common.html %}
+  
+  <title>FAQ — Rochester Flower Company</title>
+  <meta name="description" content="Frequently asked questions about Rochester Flower Company's craft cannabis growing operation, gifting process, quality standards, and legal framework.">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://rochesterflowercompany.com/faq.html">
+  
+  <!-- Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rochesterflowercompany.com/faq.html">
+  <meta property="og:title" content="FAQ — Rochester Flower Company">
+  <meta property="og:description" content="Common questions about Rochester Flower Company's craft cannabis operation and gifting process.">
+  <meta property="og:image" content="https://rochesterflowercompany.com/RFCLogo.png">
+
+  <style>
+    /* FAQ-specific styles */
+    .faq-intro {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .faq-intro p {
+      font-size: 1.1rem;
+      color: var(--color-muted, #d4dffe);
+      line-height: 1.7;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: radial-gradient(circle at top left, rgba(244, 114, 182, 0.08), rgba(15, 23, 42, 0.95));
+      border: 1px solid var(--color-border, rgba(129, 140, 248, 0.7));
+      border-radius: var(--radius-lg, 12px);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: var(--color-accent, #4fd1c5);
+      box-shadow: 0 8px 24px rgba(79, 209, 197, 0.15);
+    }
+
+    .faq-question {
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      color: var(--color-text, #fdf4ff);
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .faq-question:hover {
+      color: var(--color-primary, #ff7ac4);
+    }
+
+    .faq-icon {
+      font-size: 1.5rem;
+      color: var(--color-accent, #4fd1c5);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(90deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 2rem;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 1000px;
+      padding: 0 2rem 1.5rem;
+    }
+
+    .faq-answer p {
+      color: var(--color-muted, #d4dffe);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .faq-answer p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-answer strong {
+      color: var(--color-text, #fdf4ff);
+    }
+
+    .faq-answer a {
+      color: var(--color-accent, #4fd1c5);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .faq-answer a:hover {
+      color: var(--color-primary, #ff7ac4);
+      text-decoration: underline;
+    }
+
+    .faq-category {
+      margin-top: 3rem;
+    }
+
+    .faq-category:first-of-type {
+      margin-top: 0;
+    }
+
+    .faq-category-title {
+      text-align: center;
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      color: var(--color-primary, #ff7ac4);
+    }
+
+    .faq-contact-cta {
+      max-width: 700px;
+      margin: 4rem auto 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(255, 122, 196, 0.1), rgba(79, 209, 197, 0.1));
+      border: 2px solid rgba(79, 209, 197, 0.3);
+      border-radius: var(--radius-lg, 12px);
+      text-align: center;
+    }
+
+    .faq-contact-cta h2 {
+      margin: 0 0 1rem;
+      font-size: 1.5rem;
+    }
+
+    .faq-contact-cta p {
+      margin-bottom: 1.5rem;
+      color: var(--color-muted, #d4dffe);
+    }
+
+    @media (max-width: 768px) {
+      .faq-question {
+        padding: 1.25rem 1.5rem;
+        font-size: 1.05rem;
+      }
+
+      .faq-answer {
+        padding: 0 1.5rem;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 0 1.5rem 1.25rem;
+      }
+
+      .faq-icon {
+        font-size: 1.25rem;
+      }
+
+      .faq-category-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="bg-animation" aria-hidden="true"></div>
+
+  {% include header.html %}
+
+  <main class="page-main" id="main-content">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <h1 id="page-title">Frequently Asked Questions</h1>
+        <div class="faq-intro">
+          <p>
+            Common questions about how Rochester Flower Company operates, the gifting process, 
+            quality standards, and the legal framework in New York.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- CATEGORY: The Basics -->
+        <div class="faq-category">
+          <h2 class="faq-category-title">The Basics</h2>
+          <div class="faq-grid">
+            
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How does the gifting process work?</span>
+                <span class="faq-icon" aria-hidden="true">→</span>
+              </button>
+              <div class="faq-answer">
+                <p>Rochester Flower Company operates under New York's personal cultivation laws. I grow cannabis for personal use and gift small amounts to adults 21+ who would benefit from it. There's no transaction, no sale, no exchange of money.</p>
+                <p>If you're interested in receiving, you can fill out the contact form. However, <strong>I'm currently at capacity</strong> and not accepting new recipients. When space opens up, I'll reach out to people who've expressed interest.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What strains do you typically grow?</span>
+                <span class="faq-icon" aria-hidden="true">→</span>
+              </button>
+              <div class="faq-answer">
+                <p>I rotate strains based on what reputable breeders are offering and what I think will be interesting to grow. Recent grows have included Chocolate Thai, Slamberry, and Papaya Bomb crosses.</p>
+                <p>I prioritize genetics from well-known, trusted breeders who lab test their seeds. You can follow current grows on the <a href="/plants/">Plants blog</a> to see what's in the tents.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How do you ensure quality?</span>
+                <span class="faq-icon" aria-hidden="true">→</span>
+              </button>
+              <div class="faq-answer">
+                <p>Quality starts with genetics—I only use reputable breeders. From there, it's about environment: controlled temperature, humidity, proper lighting, clean growing medium, and consistent feeding.</p>
+                <p>I dry slowly at 60°F and 60% relative humidity, cure properly in Grove Bags, and track everything. No pesticides, no cutting corners. Check the <a href="/craft.html">Craft Process page</a> for details on how I grow.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- CATEGORY: Growing & Process -->
+        <div class="faq-category">
+          <h2 class="faq-category-title">Growing & Process</h2>
+          <div class="faq-grid">
+            
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What's the difference between your flower and dispensary flower?</span>
+                <span class="faq-icon" aria-hidden="true">→</span>
+              </button>
+              <div class="faq-answer">
+                <p><strong>Scale:</strong> I grow 6-12 plants at a time. Dispensaries grow hundreds or thousands. Small batches mean more attention per plant.</p>
+                <p><strong>Priorities:</strong> Dispensaries optimize for yield and shelf life. I optimize for terpene preservation and proper cure. I'm not trying to maximize profit—I'm trying to grow something I'd actually want to smoke.</p>
+                <p><strong>Transparency:</strong> You can literally read my grow journals and see exactly how your flower was grown. Try getting that from a commercial operation.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do you grow indoors or outdoors?</span>
+                <span class="faq-icon" aria-hidden="true">→</span>
+              </button>
+              <div class="faq-answer">
+                <p>Both, depending on the season. <strong>Indoor</strong> gives me full environmental control—lights, temp, humidity, airflow. This is where I do most of my growing, especially in Rochester's harsh winters.</p>
+                <p><strong>Outdoor</strong> in the summer lets plants get massive and develop unique terpene profiles from natural sunlight. It's also way cheaper (no electricity for lights, AC, fans), but you're at nature's mercy.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How long does a grow take from seed to harvest?</span>
+                <span class="faq-icon" aria-hidden="true">→</span>
+              </button>
+              <div class="faq-answer">
+                <p>It depends on the strain and whether it's photoperiod or autoflower, but generally:</p>
+                <p><strong>Photoperiod strains:</strong> 3-5 months total (3-6 weeks veg, 8-10 weeks flower, 2-3 weeks dry, 2-4 weeks cure minimum)</p>
+                <p><strong>Autoflowers:</strong> 2-3 months total (no veg control—they flower automatically based on age)</p>
+                <p>Then there's the cure. Technically smokable after dry, but <em>good</em> after 2-4 weeks in the jar, and <em>great</em> after 2-3 months.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- CATEGORY: Legal & Compliance -->
+        <div class="faq-category">
+          <h2 class="faq-category-title">Legal & Compliance</h2>
+          <div class="faq-grid">
+            
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Is this legal in New York?</span>
+                <span class="faq-icon" aria-hidden="true">→</span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes. New York's Marijuana Regulation and Taxation Act (MRTA) allows adults 21+ to cultivate up to 6 plants (3 mature, 3 immature) for personal use, or 12 plants per household if multiple adults live there.</p>
+                <p>Personal cultivation for gifting (not selling) to other adults 21+ is permitted under NY Penal Law § 222.05. I don't sell anything—everything is gifted, and I stay well within legal plant counts.</p>
+                <p>That said, <strong>I'm not a lawyer</strong> and this isn't legal advice. Laws vary by jurisdiction. Always verify your local laws before cultivating.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do you have a license or permit?</span>
+                <span class="faq-icon" aria-hidden="true">→</span>
+              </button>
+              <div class="faq-answer">
+                <p>No, and I don't need one for personal home cultivation in New York. This isn't a commercial operation—I'm not selling, I'm not a dispensary, I'm not a licensed grower.</p>
+                <p>I'm a home grower operating within the personal cultivation limits set by New York State law. Think of it like someone brewing beer at home and giving bottles to friends.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- CATEGORY: Getting Flower -->
+        <div class="faq-category">
+          <h2 class="faq-category-title">Getting Flower</h2>
+          <div class="faq-grid">
+            
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How do I get on the list?</span>
+                <span class="faq-icon" aria-hidden="true">→</span>
+              </button>
+              <div class="faq-answer">
+                <p>Right now, you can't—I'm at capacity. The <a href="/contact.html">contact form</a> is still open for general inquiries, but I'm not accepting new recipients until Spring 2025 at the earliest.</p>
+                <p>When I do have availability, priority goes to people who genuinely need cannabis medicinally (pain, sleep, anxiety, etc.) rather than recreational users.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Can I buy from you?</span>
+                <span class="faq-icon" aria-hidden="true">→</span>
+              </button>
+              <div class="faq-answer">
+                <p>No. I don't sell cannabis. Everything is gifted, not sold. There's no transaction, no payment, no exchange of money or services.</p>
+                <p>This is a personal cultivation operation, not a business. If you're looking to purchase cannabis, visit a licensed dispensary.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>How much do you typically gift?</span>
+                <span class="faq-icon" aria-hidden="true">→</span>
+              </button>
+              <div class="faq-answer">
+                <p>It varies based on harvest size and how many people I'm gifting to, but typically 7-14 grams at a time. The goal is to provide enough to be genuinely helpful without exceeding legal gifting limits.</p>
+                <p>New York allows gifting up to 3 ounces (85 grams) to another adult 21+, but I keep individual gifts smaller and more frequent.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Still Have Questions CTA -->
+        <div class="faq-contact-cta">
+          <h2>Still have questions?</h2>
+          <p>If your question isn't answered here, feel free to reach out via the contact form. Note that I'm not currently accepting new recipients, but I'm happy to answer questions about the process, growing techniques, or New York's cannabis laws.</p>
+          <a href="/contact.html" class="btn btn-primary">Contact Me</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  {% include footer.html %}
+
+  <!-- FAQ Accordion JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+              otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            }
+          });
+          
+          // Toggle current item
+          if (isActive) {
+            item.classList.remove('active');
+            question.setAttribute('aria-expanded', 'false');
+          } else {
+            item.classList.add('active');
+            question.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

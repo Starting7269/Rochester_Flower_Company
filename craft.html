@@ -200,6 +200,158 @@ permalink: "/craft.html"
         font-size: 1.5rem;
       }
     }
+
+    /* ENHANCEMENT 3C: Equipment Details Section Styles */
+    .equipment-details {
+      background: radial-gradient(circle at center, rgba(79, 209, 197, 0.05), transparent);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--color-primary, #ff7ac4), var(--color-accent, #4fd1c5));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+      color: var(--color-muted, #d4dffe);
+      line-height: 1.7;
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+      gap: var(--space-lg, 2rem);
+    }
+
+    .equipment-card {
+      background: radial-gradient(circle at top left, rgba(255, 122, 196, 0.08), rgba(15, 23, 42, 0.98));
+      border: 1px solid var(--color-border, rgba(129, 140, 248, 0.7));
+      border-radius: var(--radius-lg, 12px);
+      padding: var(--space-lg, 2rem);
+      transition: all 0.3s ease;
+    }
+
+    .equipment-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(79, 209, 197, 0.2);
+      border-color: var(--color-accent, #4fd1c5);
+    }
+
+    .equipment-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(79, 209, 197, 0.2);
+    }
+
+    .equipment-icon {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+
+    .equipment-header h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--color-text, #fdf4ff);
+    }
+
+    .equipment-details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+      background: rgba(79, 209, 197, 0.05);
+      border-radius: var(--radius-md, 0.75rem);
+      border-left: 3px solid var(--color-accent, #4fd1c5);
+    }
+
+    .detail-item strong {
+      color: var(--color-accent, #4fd1c5);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+
+    .detail-item span {
+      color: var(--color-text, #fdf4ff);
+      line-height: 1.6;
+    }
+
+    .cost-note {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(255, 122, 196, 0.1), rgba(79, 209, 197, 0.1));
+      border: 2px solid rgba(255, 122, 196, 0.3);
+      border-radius: var(--radius-lg, 12px);
+    }
+
+    .cost-note h3 {
+      margin: 0 0 1rem;
+      font-size: 1.5rem;
+      color: var(--color-primary, #ff7ac4);
+    }
+
+    .cost-note p {
+      margin-bottom: 1rem;
+      color: var(--color-muted, #d4dffe);
+      line-height: 1.7;
+    }
+
+    .cost-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cost-note strong {
+      color: var(--color-text, #fdf4ff);
+    }
+
+    @media (max-width: 768px) {
+      .equipment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .equipment-card {
+        padding: 1.5rem;
+      }
+
+      .equipment-icon {
+        font-size: 2rem;
+      }
+
+      .equipment-header h3 {
+        font-size: 1.25rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+
+      .cost-note {
+        padding: 1.5rem;
+      }
+
+      .cost-note h3 {
+        font-size: 1.25rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -316,6 +468,248 @@ permalink: "/craft.html"
             </p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ENHANCEMENT 3C: Detailed Equipment & Process Transparency -->
+    <section class="section equipment-details">
+      <div class="container">
+        <h2 class="section-title">Equipment & Process Details</h2>
+        <p class="section-intro">
+          Transparency matters. Here's exactly what I use, how I use it, and why. 
+          This isn't sponsored content—just what works for me.
+        </p>
+
+        <div class="equipment-grid">
+          
+          <!-- Grow Space -->
+          <article class="equipment-card">
+            <div class="equipment-header">
+              <span class="equipment-icon" aria-hidden="true">🏠</span>
+              <h3>Grow Space</h3>
+            </div>
+            <div class="equipment-details-list">
+              <div class="detail-item">
+                <strong>Grow Tent:</strong>
+                <span>4x4 AC Infinity (growing), 3x3 AC Infinity (drying)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Grow Medium:</strong>
+                <span>50/50 Coco Coir + Perlite mix</span>
+              </div>
+              <div class="detail-item">
+                <strong>Container System:</strong>
+                <span>5-gallon fabric pots with self-watering SIP bases and air domes</span>
+              </div>
+              <div class="detail-item">
+                <strong>Rationale:</strong>
+                <span>The 50/50 mix with air injection allows aggressive oxygenation while maintaining drainage. Traditional 70/30 doesn't work with SIPs + air domes.</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Lighting -->
+          <article class="equipment-card">
+            <div class="equipment-header">
+              <span class="equipment-icon" aria-hidden="true">💡</span>
+              <h3>Lighting</h3>
+            </div>
+            <div class="equipment-details-list">
+              <div class="detail-item">
+                <strong>Primary Lights:</strong>
+                <span>Spider Farmer SE3000 (300W actual draw, Samsung LM301H diodes)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Under-Canopy:</strong>
+                <span>Spider Farmer UL60 LED bars (60W total)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Light Schedule:</strong>
+                <span>18/6 for veg, 12/12 for flower (photoperiod strains)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Daily Light Integral (DLI):</strong>
+                <span>Target 40-50 mol/m²/day in flower, measured with Photone app</span>
+              </div>
+              <div class="detail-item">
+                <strong>Rationale:</strong>
+                <span>Samsung diodes for efficiency and spectrum. Under-canopy lighting reduces larf and increases lower bud development.</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Climate Control -->
+          <article class="equipment-card">
+            <div class="equipment-header">
+              <span class="equipment-icon" aria-hidden="true">🌡️</span>
+              <h3>Climate Control</h3>
+            </div>
+            <div class="equipment-details-list">
+              <div class="detail-item">
+                <strong>Exhaust:</strong>
+                <span>AC Infinity Cloudline T6 (6" inline fan with controller)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Intake:</strong>
+                <span>AC Infinity Cloudline S6 (passive + active as needed)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Circulation:</strong>
+                <span>2x Hurricane Classic oscillating fans</span>
+              </div>
+              <div class="detail-item">
+                <strong>Heating:</strong>
+                <span>Oil-filled space heater (winter only)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Cooling:</strong>
+                <span>Portable AC unit (summer only)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Humidity Control:</strong>
+                <span>Levoit humidifier + Tosot 50-pint dehumidifier</span>
+              </div>
+              <div class="detail-item">
+                <strong>Target Environment:</strong>
+                <span>75-80°F, 60-70% RH in veg | 70-75°F, 45-55% RH in flower</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Nutrients & Feeding -->
+          <article class="equipment-card">
+            <div class="equipment-header">
+              <span class="equipment-icon" aria-hidden="true">🧪</span>
+              <h3>Nutrients & Feeding</h3>
+            </div>
+            <div class="equipment-details-list">
+              <div class="detail-item">
+                <strong>Current Nutrient Line:</strong>
+                <span>Athena Pro Line (Grow, Bloom, Core, Balance)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Previous Tried:</strong>
+                <span>General Hydroponics Flora series, Advanced Nutrients, Jack's 321, Megacrop</span>
+              </div>
+              <div class="detail-item">
+                <strong>Cal-Mag:</strong>
+                <span>Athena Balance (prevents deficiencies in coco)</span>
+              </div>
+              <div class="detail-item">
+                <strong>pH Target:</strong>
+                <span>5.8-6.2 in coco (measured with Apera pH20 meter)</span>
+              </div>
+              <div class="detail-item">
+                <strong>EC Target:</strong>
+                <span>1.2-1.6 in veg, 1.6-2.2 in flower (measured with Apera EC60 meter)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Feeding Schedule:</strong>
+                <span>Daily fertigation via SIP reservoir, following Athena's feeding chart with adjustments based on plant response</span>
+              </div>
+              <div class="detail-item">
+                <strong>Philosophy:</strong>
+                <span>"Less but consistent" - I'd rather underfeed and add more than burn plants with excess nutrients.</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Monitoring & Data -->
+          <article class="equipment-card">
+            <div class="equipment-header">
+              <span class="equipment-icon" aria-hidden="true">📊</span>
+              <h3>Monitoring & Measurement</h3>
+            </div>
+            <div class="equipment-details-list">
+              <div class="detail-item">
+                <strong>Environmental:</strong>
+                <span>AC Infinity Controller 69 Pro (temp, humidity, VPD tracking)</span>
+              </div>
+              <div class="detail-item">
+                <strong>pH Meter:</strong>
+                <span>Apera Instruments pH20 (calibrated weekly)</span>
+              </div>
+              <div class="detail-item">
+                <strong>EC/TDS Meter:</strong>
+                <span>Apera Instruments EC60 (calibrated monthly)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Light Measurement:</strong>
+                <span>Photone app on iPhone (PPFD/DLI measurements)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Data Tracking:</strong>
+                <span>Google Sheets for feed schedules, environmental logs, and grow journals</span>
+              </div>
+              <div class="detail-item">
+                <strong>Why Track Everything:</strong>
+                <span>Can't improve what you don't measure. Detailed records help identify problems early and refine process over time.</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Drying & Curing Specifics -->
+          <article class="equipment-card">
+            <div class="equipment-header">
+              <span class="equipment-icon" aria-hidden="true">❄️</span>
+              <h3>Drying & Curing Process</h3>
+            </div>
+            <div class="equipment-details-list">
+              <div class="detail-item">
+                <strong>Dry Room:</strong>
+                <span>Dedicated 3x3 tent with environmental control</span>
+              </div>
+              <div class="detail-item">
+                <strong>Dry Environment:</strong>
+                <span>Target 60°F / 60% RH (the "60/60 rule")</span>
+              </div>
+              <div class="detail-item">
+                <strong>Hang Method:</strong>
+                <span>Whole plant hang or large branch sections, never individual buds</span>
+              </div>
+              <div class="detail-item">
+                <strong>Dry Time:</strong>
+                <span>10-14 days typically, judged by stem snap test (stems should "almost" snap)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Trimming:</strong>
+                <span>Dry trim (after drying, before cure) for better terpene preservation</span>
+              </div>
+              <div class="detail-item">
+                <strong>Cure Containers:</strong>
+                <span>Grove Bags (TerpLoc) - heat-sealed for set-and-forget curing</span>
+              </div>
+              <div class="detail-item">
+                <strong>Cure Duration:</strong>
+                <span>Minimum 2 weeks, ideally 4-8 weeks, best after 2-3 months</span>
+              </div>
+              <div class="detail-item">
+                <strong>Storage After Cure:</strong>
+                <span>Keep in Grove Bags in cool, dark place (60-70°F, away from light)</span>
+              </div>
+              <div class="detail-item">
+                <strong>Why This Matters:</strong>
+                <span>Slow dry preserves terpenes. Proper cure smooths harshness and develops flavors. Rushing this step ruins months of work.</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Cost Transparency Note -->
+        <div class="cost-note">
+          <h3>💰 On Equipment Costs</h3>
+          <p>
+            You don't need to spend thousands to grow good cannabis. My first grow used a $100 Amazon light, hand-watered fabric pots, and a bathroom fan for exhaust. The flower was fine.
+          </p>
+          <p>
+            The equipment listed above is what I've upgraded to over time as I've learned what actually matters. If you're starting out, prioritize: <strong>(1) good genetics, (2) decent light, (3) proper environment.</strong> Everything else can be basic at first.
+          </p>
+          <p>
+            Total startup cost for a basic 4x4 tent setup: ~$800-1200. My current setup with all upgrades: ~$3000 total invested over 2+ years. Still way cheaper than buying equivalent quality from dispensaries.
+          </p>
+        </div>
+
       </div>
     </section>
 

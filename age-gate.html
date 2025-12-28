@@ -205,8 +205,11 @@
   
   <div class="gate-container" role="dialog" aria-labelledby="gate-title" aria-describedby="gate-description">
     <div class="logo-wrap">
-      <!-- IMPROVED: Absolute path -->
-      <img src="/RFCLogo.png" alt="Rochester Flower Company logo" class="logo" width="120" height="120">
+      <!-- IMPROVED: WebP with PNG fallback -->
+      <picture>
+        <source srcset="/RFCLogo.webp" type="image/webp">
+        <img src="/RFCLogo.png" alt="Rochester Flower Company logo" class="logo" width="120" height="120">
+      </picture>
     </div>
     
     <h1 id="gate-title">Rochester Flower Company</h1>

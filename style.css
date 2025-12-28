@@ -1,3 +1,10 @@
+/* ============================================
+   ENHANCEMENT 1B: Typography Refinement
+   Custom font for headlines while keeping
+   system fonts for body text performance
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
+
 :root {
   --color-bg: #050414;
   --color-bg-alt: #0b1023;
@@ -79,6 +86,11 @@ body {
   position: relative;
   overflow-x: hidden;
   line-height: 1.6;
+}
+
+/* ENHANCEMENT 1B: Apply custom font to all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
 }
 
 /* Make all images responsive by default */
@@ -397,7 +409,10 @@ img {
   background: rgba(15, 23, 42, 0.95);
 }
 
-/* Sections - IMPROVED SPACING */
+/* ============================================
+   ENHANCEMENT 1C: Visual Hierarchy Separators
+   Subtle separators between major sections
+   ============================================ */
 .section {
   padding: var(--space-lg) 0;
 }
@@ -405,6 +420,18 @@ img {
 /* Add more space only between major sections */
 .section + .section {
   padding-top: var(--space-xl);
+}
+
+/* Visual separator between sections */
+.section + .section::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  margin: 0 auto var(--space-xl);
+  opacity: 0.6;
+  border-radius: 2px;
 }
 
 .section-alt {
@@ -441,7 +468,10 @@ p:last-child {
   margin-bottom: 0;
 }
 
-/* Cards */
+/* ============================================
+   ENHANCEMENT 1D: Enhanced Card Interactions
+   Improved depth and micro-interactions
+   ============================================ */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -449,11 +479,38 @@ p:last-child {
 }
 
 .card {
+  position: relative;
   background: radial-gradient(circle at top left, rgba(244, 114, 182, 0.14), rgba(15, 23, 42, 0.98));
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Gradient border effect on hover */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.75);
+}
+
+.card:hover::after {
+  opacity: 0.5;
 }
 
 .card h3 {

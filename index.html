@@ -54,31 +54,47 @@ permalink: "/index.html"
       color: rgba(255, 255, 255, 0.95);
     }
 
-    /* Status banner */
+    /* Status banner - ENHANCED */
     .status-banner {
       background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(251, 146, 60, 0.15));
       border: 2px solid rgba(251, 191, 36, 0.4);
       border-radius: var(--radius-lg, 12px);
-      padding: 1.25rem 1.75rem;
+      padding: 1.5rem 2rem;
       margin-bottom: 2rem;
-      text-align: center;
       backdrop-filter: blur(10px);
     }
 
-    .status-banner p {
-      margin: 0;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fbbf24;
+    .status-content {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
+      align-items: flex-start;
+      gap: 1rem;
+      text-align: left;
     }
 
-    .status-banner p::before {
-      content: "⚠️";
-      font-size: 1.25rem;
+    .status-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .status-text {
+      flex: 1;
+    }
+
+    .status-text strong {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fbbf24;
+      margin-bottom: 0.5rem;
+    }
+
+    .status-text p {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(251, 191, 36, 0.9);
+      line-height: 1.5;
     }
 
     /* Enhanced card styling */
@@ -207,13 +223,23 @@ permalink: "/index.html"
 
     @media (max-width: 768px) {
       .status-banner {
-        padding: 1rem 1.25rem;
+        padding: 1.25rem 1.5rem;
       }
 
-      .status-banner p {
-        font-size: 0.9rem;
-        flex-direction: column;
-        gap: 0.25rem;
+      .status-content {
+        gap: 0.75rem;
+      }
+
+      .status-icon {
+        font-size: 1.25rem;
+      }
+
+      .status-text strong {
+        font-size: 1rem;
+      }
+
+      .status-text p {
+        font-size: 0.875rem;
       }
 
       .card-icon {
@@ -251,9 +277,15 @@ permalink: "/index.html"
             No storefront. No hype. No pressure. No transaction required. Just plants, craft, and community.
           </p>
 
-          <!-- STATUS BANNER -->
+          <!-- STATUS BANNER - ENHANCED -->
           <div class="status-banner">
-            <p>Currently not accepting new recipients — at capacity</p>
+            <div class="status-content">
+              <span class="status-icon" aria-hidden="true">🌱</span>
+              <div class="status-text">
+                <strong>Growing Season: Winter 2025</strong>
+                <p>Currently at capacity — not accepting new recipients. Next availability: Spring 2025</p>
+              </div>
+            </div>
           </div>
 
           <div class="hero-actions">

@@ -4,7 +4,7 @@ date: 2025-12-29 10:00:00 -05:00
 categories:
 - updates
 - reflections
-featured_image: "/uploads/frosty_cannabis.webp"
+featured_image: "/uploads/2025_year_in_review.webp"
 excerpt: Over 15 cultivars, countless lessons learned, and a website that actually
   exists now. Here's what 2025 looked like from the grow room.
 ---

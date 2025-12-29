@@ -2,10 +2,11 @@
 title: '2025: A Year in the Grow Room'
 date: 2025-12-29 10:00:00 -05:00
 categories:
-  - updates
-  - reflections
-featured_image: /uploads/frosty_cannabis.webp
-excerpt: "Over 15 cultivars, countless lessons learned, and a website that actually exists now. Here's what 2025 looked like from the grow room."
+- updates
+- reflections
+featured_image: "/uploads/frosty_cannabis.webp"
+excerpt: Over 15 cultivars, countless lessons learned, and a website that actually
+  exists now. Here's what 2025 looked like from the grow room.
 ---
 
 2025 is almost over, and it feels like a good time to look back at what actually happened in the tents this year.

@@ -16,7 +16,7 @@ excerpt: Magnesium issue mostly resolved, plants got rearranged, and LST has off
 
 Week four is done, and things are moving in the right direction.
 
-The magnesium deficiency from last week appears to be correcting itself. The fresh CalMag is doing its job on three of the four plants. The Papaya Bomb x Banjo is taking a bit longer to bounce back, but the new growth is coming in clean and green. Sometimes you just have to let the plant work through it.
+The magnesium deficiency from last week appears to be correcting itself. The [fresh CalMag](https://amzn.to/49wgpWV) is doing its job on three of the four plants. The Papaya Bomb x Banjo is taking a bit longer to bounce back, but the new growth is coming in clean and green. Sometimes you just have to let the plant work through it.
 
 ## The Height Problem
 
@@ -30,7 +30,7 @@ Solution was simple: move it to autopot #4 at the end of the line. Now it's only
 
 Week four also marked the start of LST - Low-Stress Training. This is where you gently manipulate the plant's structure to create a wider, more even canopy instead of letting it grow straight up like a Christmas tree.
 
-The technique is straightforward: tuck the larger fan leaves under the canopy to expose lower nodes to direct light, then use soft gardening wire and binder clips and LST plastic clips to gently pull branches outward. The goal is to spread everything out horizontally, giving more bud sites access to quality light without snapping or damaging anything.
+The technique is straightforward: tuck the larger fan leaves under the canopy to expose lower nodes to direct light, then use [soft gardening wire](https://amzn.to/49mKAyJ) and [binder clips](https://amzn.to/4q0ccjY) and [LST plastic clips](https://amzn.to/4qsNNU8) to gently pull branches outward. The goal is to spread everything out horizontally, giving more bud sites access to quality light without snapping or damaging anything.
 
 It's called "low-stress" for a reason - you're not aggressively bending or breaking anything like you would with high-stress techniques. Just steady, gentle encouragement to grow wider instead of taller.
 
@@ -42,9 +42,9 @@ The plants responded well. You can already see the lower nodes perking up now th
 
 ## Reservoir and DLI
 
-Added two more gallons to the reservoir this week, bringing the total up to 12 gallons since the grow started. The autopots are feeding steadily, and water uptake is increasing as the plants get bigger. That's expected and right on schedule.
+Added two more gallons to the [reservoir](https://amzn.to/3N77SAY) this week, bringing the total up to 12 gallons since the grow started. The autopots are feeding steadily, and water uptake is increasing as the plants get bigger. That's expected and right on schedule.
 
-DLI stayed at 30 all week. No reason to push it higher yet - they're still in early veg and building structure. I'll ramp it up gradually as they continue to develop.
+[DLI](https://amzn.to/4sh9VTj) stayed at 30 all week. No reason to push it higher yet - they're still in early veg and building structure. I'll ramp it up gradually as they continue to develop.
 
 ## What's Next
 
@@ -58,4 +58,4 @@ More from the tents soon.
 
 ---
 
-*Quick note: Some product links in previous posts are affiliate links. Doesn't change what you pay, just helps keep the lights on.*
+*Quick note: Some product links in this posts are affiliate links. Doesn't change what you pay, just helps keep the lights on.*

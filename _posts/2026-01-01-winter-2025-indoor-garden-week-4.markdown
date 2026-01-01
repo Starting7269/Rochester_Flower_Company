@@ -9,7 +9,7 @@ tags:
 - LST
 - training
 - problem-solving
-featured_image: "/uploads/Indoor_Winter_2025_Week_4_LST.webp"
+featured_image: "/uploads/Indoor_Winter_2025_Week_4_LST_12hrs.webp"
 excerpt: Magnesium issue mostly resolved, plants got rearranged, and LST has officially
   begun. Week four brought some real progress.
 ---

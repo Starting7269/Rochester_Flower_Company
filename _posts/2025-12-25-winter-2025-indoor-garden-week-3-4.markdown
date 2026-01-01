@@ -22,7 +22,7 @@ Three weeks in. Well, three weeks for three of the plants. The SlamBerry is runn
 
 Week three was all about ramping things up. I turned on the [airpump](https://amzn.to/4pTWerN) to the roots. I'm running [AutoPots](https://amzn.to/4qog6D0) with [AirBase](https://amzn.to/4ax0Tev) and [AirDome](https://amzn.to/3LdpkTI) setups, and you typically fire up the air 2-3 weeks after the reservoir starts feeding. The plants were ready for it.
 
-I also bumped the Daily Light Integral from 20 to 30. DLI is basically "total daily light dose" - more photons, more growth potential. They're big enough to handle it now.
+I also bumped the Daily Light Integral from 16 to 20 and used DLI for all of week three. DLI is basically "total daily light dose" - more photons, more growth potential. They're big enough to handle it now.
 
 Then there was the magnesium issue.
 

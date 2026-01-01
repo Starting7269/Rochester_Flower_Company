@@ -34,7 +34,7 @@ Solution was simple: move it to autopot #4 at the end of the line. Now it's only
 
 Week four also marked the start of LST - Low-Stress Training. This is where you gently manipulate the plant's structure to create a wider, more even canopy instead of letting it grow straight up like a Christmas tree.
 
-The technique is straightforward: tuck the larger fan leaves under the canopy to expose lower nodes to direct light, then use soft gardening wire and binder clips to gently pull branches outward. The goal is to spread everything out horizontally, giving more bud sites access to quality light without snapping or damaging anything.
+The technique is straightforward: tuck the larger fan leaves under the canopy to expose lower nodes to direct light, then use soft gardening wire and binder clips and LST plastic clips to gently pull branches outward. The goal is to spread everything out horizontally, giving more bud sites access to quality light without snapping or damaging anything.
 
 It's called "low-stress" for a reason - you're not aggressively bending or breaking anything like you would with high-stress techniques. Just steady, gentle encouragement to grow wider instead of taller.
 

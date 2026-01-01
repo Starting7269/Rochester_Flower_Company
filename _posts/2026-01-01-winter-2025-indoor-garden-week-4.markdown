@@ -28,6 +28,10 @@ Solution was simple: move it to autopot #4 at the end of the line. Now it's only
 
 ## Low-Stress Training Begins
 
+**Photo:** Winter 2025 Indoor Week 4 - Directly after applying LST.
+
+<img src="/uploads/Indoor_Winter_2025_Week_4_LST.webp" alt="Four cannabis plants with LST training showing binder clips and wire" width="1200" height="675" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
+
 Week four also marked the start of LST - Low-Stress Training. This is where you gently manipulate the plant's structure to create a wider, more even canopy instead of letting it grow straight up like a Christmas tree.
 
 The technique is straightforward: tuck the larger fan leaves under the canopy to expose lower nodes to direct light, then use [soft gardening wire](https://amzn.to/49mKAyJ) and [binder clips](https://amzn.to/4q0ccjY) and [LST plastic clips](https://amzn.to/4qsNNU8) to gently pull branches outward. The goal is to spread everything out horizontally, giving more bud sites access to quality light without snapping or damaging anything.
@@ -36,9 +40,9 @@ It's called "low-stress" for a reason - you're not aggressively bending or break
 
 The plants responded well. You can already see the lower nodes perking up now that they're getting direct light instead of living in the shadow of the top canopy.
 
-**Photo:** Winter 2025 Indoor Week 4 - LST in progress.
+**Photo:** 12 hours after LST - you can already see the branches responding.
 
-<img src="/uploads/Indoor_Winter_2025_Week_4_LST.webp" alt="Four cannabis plants with LST training showing binder clips and wire" width="1200" height="675" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
+<img src="/uploads/Indoor_Winter_2025_Week_4_LST_12hrs.webp" alt="Four cannabis plants 12 hours after LST showing spread canopy" width="1200" height="675" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
 ## Reservoir and DLI
 

@@ -1,6 +1,6 @@
 ---
 title: 'Winter 2025 Indoor Garden: Week Four - LST and Strategic Rearranging'
-date: 2025-12-31 14:00:00 -05:00
+date: 2026-01-01 14:00:00 -05:00
 categories:
 - winter-2025
 - grow-journal
@@ -28,10 +28,6 @@ Solution was simple: move it to autopot #4 at the end of the line. Now it's only
 
 ## Low-Stress Training Begins
 
-**Photo:** Winter 2025 Indoor Week 4 - LST in progress.
-
-<img src="/uploads/Indoor_Winter_2025_Week_4_LST.webp" alt="Four cannabis plants with LST training showing binder clips and wire" width="1200" height="675" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
-
 Week four also marked the start of LST - Low-Stress Training. This is where you gently manipulate the plant's structure to create a wider, more even canopy instead of letting it grow straight up like a Christmas tree.
 
 The technique is straightforward: tuck the larger fan leaves under the canopy to expose lower nodes to direct light, then use soft gardening wire and binder clips and LST plastic clips to gently pull branches outward. The goal is to spread everything out horizontally, giving more bud sites access to quality light without snapping or damaging anything.
@@ -39,6 +35,10 @@ The technique is straightforward: tuck the larger fan leaves under the canopy to
 It's called "low-stress" for a reason - you're not aggressively bending or breaking anything like you would with high-stress techniques. Just steady, gentle encouragement to grow wider instead of taller.
 
 The plants responded well. You can already see the lower nodes perking up now that they're getting direct light instead of living in the shadow of the top canopy.
+
+**Photo:** Winter 2025 Indoor Week 4 - LST in progress.
+
+<img src="/uploads/Indoor_Winter_2025_Week_4_LST.webp" alt="Four cannabis plants with LST training showing binder clips and wire" width="1200" height="675" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
 ## Reservoir and DLI
 

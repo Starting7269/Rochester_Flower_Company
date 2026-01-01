@@ -9,7 +9,7 @@ tags:
 - LST
 - training
 - problem-solving
-featured_image: "/uploads/week_4_placeholder.webp"
+featured_image: "/uploads/Indoor_Winter_2025_Week_4_LST.webp"
 excerpt: Magnesium issue mostly resolved, plants got rearranged, and LST has officially
   begun. Week four brought some real progress.
 ---
@@ -27,6 +27,10 @@ The problem was placement. It was sitting in autopot #2, right in the middle-ish
 Solution was simple: move it to autopot #4 at the end of the line. Now it's only shading one plant instead of two, and the Chocolate Thai that took its old spot is much more height-appropriate for that position. Small adjustment, but it makes a real difference in how the light hits everyone.
 
 ## Low-Stress Training Begins
+
+**Photo:** Winter 2025 Indoor Week 4 - LST in progress.
+
+<img src="/uploads/Indoor_Winter_2025_Week_4_LST.webp" alt="Four cannabis plants with LST training showing binder clips and wire" width="1200" height="675" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
 Week four also marked the start of LST - Low-Stress Training. This is where you gently manipulate the plant's structure to create a wider, more even canopy instead of letting it grow straight up like a Christmas tree.
 

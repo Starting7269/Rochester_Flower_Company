@@ -2,15 +2,16 @@
 title: 'Winter 2025 Indoor Garden: Week Four - LST and Strategic Rearranging'
 date: 2025-12-31 14:00:00 -05:00
 categories:
-  - winter-2025
-  - grow-journal
+- winter-2025
+- grow-journal
 tags:
-  - week-4
-  - LST
-  - training
-  - problem-solving
-featured_image: /uploads/week_4_placeholder.webp
-excerpt: "Magnesium issue mostly resolved, plants got rearranged, and LST has officially begun. Week four brought some real progress."
+- week-4
+- LST
+- training
+- problem-solving
+featured_image: "/uploads/week_4_placeholder.webp"
+excerpt: Magnesium issue mostly resolved, plants got rearranged, and LST has officially
+  begun. Week four brought some real progress.
 ---
 
 Week four is done, and things are moving in the right direction.

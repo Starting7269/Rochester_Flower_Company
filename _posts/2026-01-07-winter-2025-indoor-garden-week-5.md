@@ -2,15 +2,16 @@
 title: 'Winter 2025 Indoor Garden: Week Five - Ramping Up and Dialing In'
 date: 2026-01-07 14:00:00 -05:00
 categories:
-  - winter-2025
-  - grow-journal
+- winter-2025
+- grow-journal
 tags:
-  - week-5
-  - VPD
-  - defoliation
-  - training
-featured_image: /uploads/Indoor_Winter_2025_Week_5_Hero.webp
-excerpt: "Week five brought increased light intensity, environmental adjustments, and some strategic defoliation. The plants are responding beautifully."
+- week-5
+- VPD
+- defoliation
+- training
+featured_image: "/uploads/Indoor_Winter_2025_Week_5_Hero.webp"
+excerpt: Week five brought increased light intensity, environmental adjustments, and
+  some strategic defoliation. The plants are responding beautifully.
 ---
 
 Week five is done, and the plants are thriving.

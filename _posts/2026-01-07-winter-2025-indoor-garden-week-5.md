@@ -60,7 +60,7 @@ All four cultivars are developing their own personalities. The Papaya Bomb x Ban
 
 ## What's Next
 
-Week six will likely be the last week of pure vegetative growth before we start seeing early flower signs. Autoflowers transition on their own schedule, and we're right at that window. The plan is to keep the current DLI at 40, continue daily maintenance and leaf tucking, and watch for the first signs of pre-flowers.
+Week six will likely be the last week of pure vegetative growth before we start seeing early flower signs. Autoflowers transition on their own schedule, and we're right at that window. The plan is to bump DLI at 45, continue daily maintenance and leaf tucking, and watch for the first signs of pre-flowers.
 
 Once flowering starts, the real work begins. But for now, we're right where we need to be - healthy plants, dialed environment, and everything trending in the right direction.
 

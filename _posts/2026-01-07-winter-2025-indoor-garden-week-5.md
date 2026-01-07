@@ -16,7 +16,7 @@ excerpt: Week five brought increased light intensity, environmental adjustments,
 
 Week five is done, and the plants are thriving.
 
-This was the week where everything started feeling dialed in. The LST work from last week is paying off, the magnesium issue is completely behind us, and the canopy is developing exactly how it should. Time to push things a bit harder.
+This was the week where everything started feeling dialed in. The LST work from last week is paying off, the [magnesium](https://amzn.to/3Z5zQQc) issue is completely behind us, and the canopy is developing exactly how it should. Time to push things a bit harder.
 
 **Photo:** Winter 2025 Indoor Week 5 overview.
 
@@ -52,7 +52,7 @@ Added 10 gallons to the reservoir this week, bringing the total water consumptio
 
 ## Plant Health and Observations
 
-The plants look exceptional. Beautiful deep green, no signs of deficiency, no signs of toxicity. The new CalMag is doing its job, the schedule is working, and the environmental conditions are right where they need to be.
+The plants look exceptional. Beautiful deep green, no signs of deficiency, no signs of toxicity. The new [CalMag](https://amzn.to/3Z5zQQc) is doing its job, the schedule is working, and the environmental conditions are right where they need to be.
 
 The grow room is starting to smell like plants, that fresh, green, living smell that comes from healthy vegetation actively growing. It's not terpenes yet, just the smell of chlorophyll and plant respiration. It's a good sign. Means everything is functioning the way it should.
 

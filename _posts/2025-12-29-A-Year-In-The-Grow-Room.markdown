@@ -13,13 +13,13 @@ excerpt: Over 15 cultivars, countless lessons learned, and a website that actual
 
 We grew over 15 different cultivars. Some were exceptional, some were fine, and a couple taught me exactly what not to run again. That's the reality of small-batch growing - you don't hit gold every time, but you learn something from every single plant.
 
-The holiday season alone saw us gift out half a pound to people who genuinely needed it. Throughout the year, we probably gifted somewhere between one and two pounds total, though I'll be honest - I don't track it that closely. The spreadsheets track nutrients and DLI and harvest dates, but the actual gifting? That's just part of what happens here.
+The holiday season alone saw us gift out half a pound (8oz) to people who genuinely needed it. Throughout the year, we probably gifted somewhere between one and two pounds total, though I'll be honest - I don't track it that closely. The spreadsheets track nutrients and DLI and harvest dates, but the actual gifting? That's just part of what happens here.
 
-This year also brought the website and this blog into existence. Rochester Flower Company went from being a thing I did quietly to being something documented, shared, and searchable on Google. That felt like a bigger step than I expected it to.
+This year also brought the website and this blog into existence. Rochester Flower Company went from being a thing I did quietly to being something documented, shared, and searchable on Google. That felt like a bigger step than I expected it to and also more work than I anticipated.
 
 ## What Worked
 
-The autopot system continues to be a game changer for consistency. Coco coir has its calcium and magnesium quirks, but the control it gives you is worth the learning curve. I've dialed in the slow dry and cure process to where I'm genuinely proud of what comes out of the jars.
+The [autopot system](https://amzn.to/3Z2uchO) continues to be a game changer for consistency. [Coco coir](https://amzn.to/3NhQYj8) has its [calcium and magnesium](https://amzn.to/3Z5zQQc) quirks, but the control it gives you is worth the learning curve. I've dialed in the slow dry and cure process to where I'm genuinely proud of what comes out of the jars.
 
 Genetics matter. Running quality breeders like Night Owl, Atlas, Speedrun, fastbuds, mephisto, Ethos and others made a noticeable difference. When you start with solid genetics, half the work is already done.
 
@@ -27,7 +27,7 @@ Documenting everything helped more than I thought it would. Writing these posts 
 
 ## What Didn't
 
-I fought magnesium deficiencies more than once this year. Lesson learned: buffer your own coco even if it's sold as pre-buffered, and rotate your CalMag bottles before they sit for two years.
+I fought [magnesium](https://amzn.to/3Z5zQQc) deficiencies more than once this year. Lesson learned: buffer your own [Coco coir](https://amzn.to/3NhQYj8) even if it's sold as pre-buffered, and rotate your [CalMag](https://amzn.to/3Z5zQQc) bottles before they sit for two years.
 
 Some cultivars just didn't perform the way I expected. That's fine. Not every strain is meant for every grower's setup. Part of growing 15+ different cultivars is figuring out what actually works in your specific environment.
 
@@ -35,7 +35,7 @@ Some cultivars just didn't perform the way I expected. That's fine. Not every st
 
 The plan for next year is pretty straightforward: keep growing clean craft cannabis for people who need it, keep documenting the process here, and figure out if there's a legal way to financially support this operation without crossing any lines.
 
-New York's cannabis laws are still evolving, and I'm watching closely to see what options open up for home growers who want to operate above board. The goal has never been to get rich - it's to sustain what's already happening and maybe expand capacity so we can help more people.
+New York's cannabis laws are still evolving, and I'm watching closely to see what options open up for home growers who want to operate above board. The goal has never been to get rich, it's to sustain what's already happening and maybe expand capacity so we can help more people.
 
 The blog will keep growing alongside the plants. More strain reports, more troubleshooting posts, more transparent documentation of what actually happens when you try to grow quality cannabis at home. If that's useful to other growers or interesting to people considering the gifting model, great. If not, it's still worth documenting.
 

@@ -2,15 +2,16 @@
 title: 'Winter 2025 Indoor Garden: Week Six - SCROG and Final Adjustments'
 date: 2026-01-13 14:00:00 -05:00
 categories:
-  - winter-2025
-  - grow-journal
+- winter-2025
+- grow-journal
 tags:
-  - week-6
-  - SCROG
-  - training
-  - flowering
-featured_image: /uploads/Indoor_Winter_2025_Week_6_Hero.webp
-excerpt: "Week six brought SCROG installation, maximum light intensity, and the Papaya Bomb x Banjo is showing serious personality."
+- week-6
+- SCROG
+- training
+- flowering
+featured_image: "/uploads/Indoor_Winter_2025_Week_6_Hero.webp"
+excerpt: Week six brought SCROG installation, maximum light intensity, and the Papaya
+  Bomb x Banjo is showing serious personality.
 ---
 
 Week six is in the books, and the plants are officially transitioning into early flower.

@@ -24,13 +24,13 @@ This was a big week for structural changes. The canopy needed management, light 
 
 ## Light Intensity Maxed Out
 
-DLI got bumped to 45 this week. That's as high as I'm comfortable pushing it without supplementing CO2. The plants are handling it well - no signs of light stress, no bleaching, just steady growth and tight internodal spacing.
+[DLI got bumped to 45 this week](https://amzn.to/4qR61yT). That's as high as I'm comfortable pushing it without supplementing CO2. The plants are handling it well - no signs of light stress, no bleaching, just steady growth and tight internodal spacing.
 
 Without CO2 supplementation, there's a ceiling to how much light a plant can effectively use. Push it too hard and you risk diminishing returns or outright stress. At 45 DLI, we're right at that optimal zone for air exchange only.
 
 ## Installing the SCROG Net
 
-The three shorter plants - Head Zeppelin, SlamBerry, and Chocolate Thai - got SCROGged this week. SCROG stands for Screen of Green, and it's exactly what it sounds like: a horizontal trellis net that the plants grow through.
+The three shorter plants - Head Zeppelin, SlamBerry, and Chocolate Thai - got SCROGged this week. SCROG stands for Screen of Green, and it's exactly what it sounds like: a [horizontal trellis net](https://amzn.to/4sUPgVs) that the plants grow through.
 
 The benefits are straightforward. First, it flattens the canopy for even light distribution across all the tops. Second, it spreads out the branches to expose more bud sites to direct light instead of letting them stack vertically. Third, it provides structural support once buds start getting heavy and branches need help carrying the weight.
 
@@ -46,7 +46,7 @@ Within 48 hours, you could see the plants responding. Branches that were growing
 
 Speaking of the Papaya Bomb x Banjo, she's really developing her own personality in the tent.
 
-From the start, she's been leggy and tall - the sativa side of her genetics on full display while her sisters show their indica heritage. But it's more than just structure. Touching her stalk releases this great smell, and brushing against her sugar leaves leaves a resinous tack on my gloves that the other plants aren't producing yet.
+From the start, she's been leggy and tall - the sativa side of her genetics on full display while her sisters show their indica heritage. But it's more than just structure. Touching her stalk releases this great smell, and brushing against her sugar leaves leaves a resinous tack on [my gloves](https://amzn.to/4qpcWQ2) that the other plants aren't producing yet.
 
 She's got presence. Not just height, but character. You can tell this one's going to be different.
 
@@ -58,7 +58,7 @@ I pulled a couple leaves off her this week because they were shading some great 
 
 ## Reservoir and What's Next
 
-Added 8 gallons to the autopot reservoir this week, bringing the total water consumption since the start to 30 gallons. Water uptake continues to increase as the plants grow and transpiration ramps up heading into flower.
+Added 8 gallons to the [autopot reservoir](https://amzn.to/4qnERQp) this week, bringing the total water consumption since the start to 30 gallons. Water uptake continues to increase as the plants grow and transpiration ramps up heading into flower.
 
 The final tweak I'll be adding this coming week is under-canopy lighting. I'll talk more about that in the next update, but the goal is to get some photon penetration to the lower bud sites that the main light can't reach through the canopy. Should help with overall yield and prevent the dreaded larf at the bottom of the plant.
 

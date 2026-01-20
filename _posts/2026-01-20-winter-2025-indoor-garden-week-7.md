@@ -1,16 +1,18 @@
 ---
-title: 'Winter 2025 Indoor Garden: Week Seven - Under Canopy Lighting and Strategic Defoliation'
+title: 'Winter 2025 Indoor Garden: Week Seven - Under Canopy Lighting and Strategic
+  Defoliation'
 date: 2026-01-20 14:00:00 -05:00
 categories:
-  - winter-2025
-  - grow-journal
+- winter-2025
+- grow-journal
 tags:
-  - week-7
-  - defoliation
-  - lighting
-  - flowering
-featured_image: /uploads/Indoor_Winter_2025_Week_7_Hero.webp
-excerpt: "Week seven brought under canopy lighting, another round of defoliation, and the SlamBerry caught up in height. This is going to be a bumper crop."
+- week-7
+- defoliation
+- lighting
+- flowering
+featured_image: "/uploads/Indoor_Winter_2025_Week_7_Hero.webp"
+excerpt: Week seven brought under canopy lighting, another round of defoliation, and
+  the SlamBerry caught up in height. This is going to be a bumper crop.
 ---
 
 Week seven is wrapped, and the tent is absolutely packed.

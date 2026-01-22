@@ -15,7 +15,7 @@ excerpt: Week seven brought under canopy lighting, another round of defoliation,
   the SlamBerry caught up in height. This is going to be a bumper crop.
 ---
 
-Week seven is wrapped, and the tent is absolutely packed.
+Week seven is wrapped, and the [tent](https://amzn.to/3NrEeqx) is absolutely packed.
 
 The plants are beautiful, healthy, and filling every available inch of space. At this rate, we're looking at a serious harvest. Everything that's been dialed in over the past six weeks is paying off now that flower is in full swing.
 
@@ -25,17 +25,17 @@ The plants are beautiful, healthy, and filling every available inch of space. At
 
 ## Under Canopy Lighting
 
-Last week I mentioned adding under canopy lighting, and this week it finally got installed. The goal is simple: get photons to the lower bud sites that the main overhead light can't reach through the dense upper canopy.
+Last week I mentioned adding [under canopy lighting](https://amzn.to/45XUzcF), and this week it finally got installed. The goal is simple: get photons to the lower bud sites that the main overhead light can't reach through the dense upper canopy.
 
 Without supplemental lighting below, you risk developing larf - those small, airy buds at the bottom of the plant that don't get enough light to properly develop. Under canopy lighting helps prevent that by ensuring even the lower nodes get quality light exposure.
 
-The setup is straightforward. LED bars positioned below the SCROG net, angled to hit the sides and undersides of the plants. Not as intense as the overhead light, but enough to make a real difference in lower bud development.
+The setup is straightforward. [LED bars](https://amzn.to/45XUzcF) positioned below the [SCROG net](https://amzn.to/4ravQtT), angled to hit the sides and undersides of the plants. Not as intense as the overhead light, but enough to make a real difference in lower bud development.
 
 Results won't be visible for a few weeks, but the goal is to maximize usable flower across the entire plant instead of just harvesting quality tops and throwing away the bottom third.
 
 ## Defoliation Round Two
 
-By mid-week, the canopy was so dense you couldn't see through it. Literally. The SCROG net was doing its job spreading things out horizontally, but the sheer volume of leaves was blocking light penetration and restricting airflow.
+By mid-week, the canopy was so dense you couldn't see through it. Literally. The [SCROG net](https://amzn.to/4ravQtT) was doing its job spreading things out horizontally, but the sheer volume of leaves was blocking light penetration and restricting airflow.
 
 **Photo:** Before defoliation - canopy too dense for light or air to penetrate.
 
@@ -61,9 +61,9 @@ All four plants are healthy and green. No deficiencies, no toxicities, no signs 
 
 ## Environment and Water
 
-DLI remains at 45. No reason to change it - the plants are handling the light intensity perfectly, and without CO2 supplementation there's no benefit to pushing higher.
+[DLI remains at 45](https://amzn.to/4jRBZIV). No reason to change it - the plants are handling the light intensity perfectly, and without CO2 supplementation there's no benefit to pushing higher.
 
-Added 12 gallons to the reservoir this week, bringing total water consumption to 42 gallons since the grow started. Water uptake continues to increase as the plants get bigger and transpiration ramps up in flower. The autopot system is keeping up without issue.
+Added 12 gallons to the [reservoir](https://amzn.to/3Nx8pfS) this week, bringing total water consumption to 42 gallons since the grow started. Water uptake continues to increase as the plants get bigger and transpiration ramps up in flower. The autopot system is keeping up without issue.
 
 VPD is staying in the late veg / early flower range. Humidity and temperature are both dialed in, and the plants are transpiring efficiently. No environmental stress, no surprises, just steady growth.
 

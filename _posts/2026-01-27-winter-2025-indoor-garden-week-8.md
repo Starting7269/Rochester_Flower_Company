@@ -2,14 +2,15 @@
 title: 'Winter 2025 Indoor Garden: Week Eight - Day 56 and Approaching Harvest'
 date: 2026-01-27 14:00:00 -05:00
 categories:
-  - winter-2025
-  - grow-journal
+- winter-2025
+- grow-journal
 tags:
-  - week-8
-  - flowering
-  - harvest-prep
-featured_image: /uploads/Indoor_Winter_2025_Week_8_Hero.webp
-excerpt: "Day 56 from sprout. Buds are swelling, trichomes are building, and harvest is about 2-3 weeks out. Here's where each plant stands."
+- week-8
+- flowering
+- harvest-prep
+featured_image: "/uploads/Indoor_Winter_2025_Week_8_Hero.webp"
+excerpt: Day 56 from sprout. Buds are swelling, trichomes are building, and harvest
+  is about 2-3 weeks out. Here's where each plant stands.
 ---
 
 Week eight is done. Day 56 from sprout.

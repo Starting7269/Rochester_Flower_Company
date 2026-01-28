@@ -45,7 +45,7 @@ Steady progress toward finish.
 
 The Head Zeppelin is doing its thing. Healthy, happy, right on schedule. No drama, no issues, just consistent development. This plant has been low-maintenance from start to finish, and it's showing.
 
-The Chocolate Thai is plugging along, but this one's a little different. This plant is so close to landrace origin that I almost didn't grow it indoors. I should have gone with my instinct. The Chocolate Thai would have been happier in soil and sun rather than coco and LEDs.
+The Chocolate Thai is plugging along, but this one's a little different. This plant is so close to landrace origin that I almost didn't grow it indoors. I should have gone with my instinct. The Chocolate Thai would have been happier in soil and sun rather than [coco](https://amzn.to/4pXX4mp) and [LEDs](https://amzn.to/3Z6TkEl).
 
 **Photo:** Head Zeppelin (left) and Chocolate Thai (right) - overhead view.
 
@@ -59,7 +59,7 @@ It'll still produce great flower when it's finished, but I can tell this plant w
 
 <img src="/uploads/Indoor_Winter_2025_Week_8_Side_View.webp" alt="Side view of grow tent showing under canopy lighting and plant structure" width="1200" height="900" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
-I cleaned out the reservoir this week to prevent biofilm buildup. I use Hypochlorous Acid in the water to help with sterilization, but the reservoir still needs to be flushed and sanitized every 2-3 weeks. It's not complicated - just drain it, scrub it down, rinse, and refill. Keeps the system clean and prevents any issues with root health or nutrient uptake.
+I cleaned out the [reservoir](https://amzn.to/49KKh21) this week to prevent biofilm buildup. I use [Hypochlorous Acid](https://amzn.to/4qNbKGo) in the water to help with sterilization, but the reservoir still needs to be flushed and sanitized every 2-3 weeks. It's not complicated - just drain it, scrub it down, rinse, and refill. Keeps the system clean and prevents any issues with root health or nutrient uptake.
 
 Added 8 gallons this week, bringing total water consumption to 50 gallons since sprout. That's just shy of a full gallon per day if we average it out. With four plants, that's around a quarter gallon per plant per day. Water uptake should plateau soon as the plants shift focus from growth to ripening.
 

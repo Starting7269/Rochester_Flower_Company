@@ -39,7 +39,7 @@ The SlamBerry is looking great. Buds are starting to thicken noticeably, and the
 
 <img src="/uploads/Indoor_Winter_2025_Week_8_SlamBerry_Closeup.webp" alt="Closeup of SlamBerry showing dense bud structure and trichome development" width="800" height="1067" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
 
-The SlamBerry's trichome production is solid, and it's developing that heavy, resinous feel when you touch the sugar leaves. No signs of stress, no issues, just steady progress toward finish.
+Steady progress toward finish.
 
 ## Head Zeppelin and Chocolate Thai - Different Timelines
 
@@ -63,7 +63,7 @@ I cleaned out the reservoir this week to prevent biofilm buildup. I use Hypochlo
 
 Added 8 gallons this week, bringing total water consumption to 50 gallons since sprout. That's just shy of a full gallon per day if we average it out. With four plants, that's around a quarter gallon per plant per day. Water uptake should plateau soon as the plants shift focus from growth to ripening.
 
-DLI is staying at 45, and relative humidity is holding at 50%. Environmental conditions are dialed in for late flower. Not much longer now - probably 2-3 weeks until harvest, depending on how the trichomes develop. We'll be watching them closely from here on out.
+DLI is staying at 45, and relative humidity is holding at 50%. Environmental conditions are dialed in for late flower. Not much longer now, probably 2-3 weeks until harvest, depending on how the trichomes develop. We'll be watching them closely from here on out.
 
 The next update will likely show significant changes as the plants move through the final ripening phase. That's when buds really pack on weight and terpenes finalize. Almost there.
 

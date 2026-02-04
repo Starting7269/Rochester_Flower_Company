@@ -18,10 +18,6 @@ Week nine is in the books. We're getting very close now.
 
 The plants are deep into late flower, buds are dense and heavy with trichomes, and harvest prep is underway. Each cultivar is showing its final form, and the differences between them are stark. Here's where each one stands as we head into the final stretch.
 
-**Photo:** Winter 2025 Indoor Week 9 - overhead view showing late flower development.
-
-<img src="/uploads/Indoor_Winter_2025_Week_9_Hero.webp" alt="Overhead view of four cannabis plants in week 9 nearing harvest" width="1200" height="647" loading="lazy" style="max-width:800px; width:100%; display:block; margin:2rem auto;">
-
 ## Papaya Bomb x Banjo
 
 The Papaya Bomb x Banjo is leading the pack toward finish. The fade is progressing naturally, trichome coverage is exceptional, and the fruity scent profile is holding strong. This one's going to be ready first.

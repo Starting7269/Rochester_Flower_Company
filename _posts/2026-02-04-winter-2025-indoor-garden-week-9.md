@@ -2,15 +2,16 @@
 title: 'Winter 2025 Indoor Garden: Week Nine - Final Push and Harvest Prep'
 date: 2026-02-04 14:00:00 -05:00
 categories:
-  - winter-2025
-  - grow-journal
+- winter-2025
+- grow-journal
 tags:
-  - week-9
-  - flowering
-  - harvest-prep
-  - bud-development
-featured_image: /uploads/Indoor_Winter_2025_Week_9_Hero.webp
-excerpt: "Week nine is done and these plants are getting close. Here's a look at each cultivar as they approach harvest."
+- week-9
+- flowering
+- harvest-prep
+- bud-development
+featured_image: "/uploads/Indoor_Winter_2025_Week_9_Hero.webp"
+excerpt: Week nine is done and these plants are getting close. Here's a look at each
+  cultivar as they approach harvest.
 ---
 
 Week nine is in the books. We're getting very close now.

@@ -1,15 +1,16 @@
 ---
-title: 'Why Genetics Matter (And Why You Should Buy Direct from Breeders)'
+title: Why Genetics Matter (And Why You Should Buy Direct from Breeders)
 date: 2026-02-05 14:00:00 -05:00
 categories:
-  - growing-tips
-  - genetics
+- growing-tips
+- genetics
 tags:
-  - genetics
-  - breeders
-  - night-owl-seeds
-featured_image: /uploads/Night_Owl_Holiday_Card_Front.webp
-excerpt: "Genetics are non-negotiable. Here's why they matter and why buying direct from breeders is worth it."
+- genetics
+- breeders
+- night-owl-seeds
+featured_image: "/uploads/Night_Owl_Holiday_Card_Front.webp"
+excerpt: Genetics are non-negotiable. Here's why they matter and why buying direct
+  from breeders is worth it.
 ---
 
 You can skimp on a lot of things when you're growing cannabis. You don't need the fanciest tent, the most expensive nutrients, or every gadget that promises to boost yields by 30%. But there's one area where you absolutely should not cut corners: genetics.

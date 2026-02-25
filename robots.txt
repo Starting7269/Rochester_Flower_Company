@@ -19,6 +19,11 @@ Disallow: /_posts/
 Disallow: /_uploads/
 Disallow: /.well-known/
 
+# Plants blog offline - remove these lines to restore
+Disallow: /plants/
+Disallow: /blog/
+Disallow: /plants-filter.js
+
 # Block private/development files if they exist
 Disallow: /test/
 Disallow: /dev/

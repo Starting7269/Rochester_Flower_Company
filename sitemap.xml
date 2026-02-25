@@ -11,7 +11,7 @@ layout:
     <priority>1.0</priority>
   </url>
   {% for page in site.html_pages %}
-  {% if page.url != '/404.html' and page.url != '/age-gate.html' %}
+  {% if page.url != '/404.html' and page.url != '/age-gate.html' and page.url != '/plants/' %}
   <url>
     <loc>{{ site.url }}{{ page.url }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
@@ -20,6 +20,7 @@ layout:
   </url>
   {% endif %}
   {% endfor %}
+  <!-- Blog posts hidden while blog is offline - uncomment to restore
   {% for post in site.posts %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
@@ -28,4 +29,5 @@ layout:
     <priority>0.7</priority>
   </url>
   {% endfor %}
+  -->
 </urlset>

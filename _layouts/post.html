@@ -3,7 +3,7 @@ layout: default
 ---
 
 <style>
-    /* ENHANCEMENT 2C: Breadcrumb Navigation */
+    /* Breadcrumb Navigation */
     .breadcrumb {
         margin-bottom: 2rem;
         padding: 0.75rem 0;
@@ -99,7 +99,7 @@ layout: default
         transform: translateY(-2px);
     }
 
-    /* ENHANCEMENT 2B: Featured image with lazy loading */
+    /* Featured image */
     .post-featured-image {
         width: 100%;
         max-height: 500px;
@@ -225,7 +225,6 @@ layout: default
     }
 </style>
 
-<!-- ENHANCEMENT 2C: Breadcrumb Navigation -->
 <nav aria-label="Breadcrumb" class="breadcrumb">
     <ol>
         <li><a href="/index.html">Home</a></li>
@@ -256,7 +255,6 @@ layout: default
         </div>
     </header>
 
-    <!-- ENHANCEMENT 2B: Lazy loading on featured image -->
     {% if page.featured_image %}
     <img src="{{ page.featured_image }}" 
          alt="{{ page.title }}" 

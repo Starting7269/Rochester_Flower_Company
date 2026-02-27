@@ -26,14 +26,6 @@ include:
 plugins:
 - jekyll-paginate
 - jekyll-seo-tag
-- jekyll-feed
-keep_files:
-- index.html
-- about.html
-- craft.html
-- contact.html
-- support.html
-- assets
 category_names:
   grow-tips: Grow Tips
   winter-2025: Winter 2025

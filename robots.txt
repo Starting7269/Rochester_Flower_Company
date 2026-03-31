@@ -1,5 +1,4 @@
 # Rochester Flower Company - robots.txt
-# Updated: December 27, 2025
 
 # =============================================================================
 # DEFAULT POLICY - Allow legitimate search engines with restrictions
@@ -15,14 +14,7 @@ Disallow: /404.html
 Disallow: /privacy.html
 Disallow: /_includes/
 Disallow: /_layouts/
-Disallow: /_posts/
-Disallow: /_uploads/
 Disallow: /.well-known/
-
-# Plants blog offline - remove these lines to restore
-Disallow: /plants/
-Disallow: /blog/
-Disallow: /plants-filter.js
 
 # Block private/development files if they exist
 Disallow: /test/
@@ -133,7 +125,7 @@ Sitemap: https://rochesterflowercompany.com/sitemap.xml
 
 # This robots.txt aggressively blocks AI training scrapers while allowing
 # legitimate search engines (Google, Bing, DuckDuckGo, etc.) to index the site.
-# 
+#
 # Cannabis industry considerations:
 # - Privacy page blocked from indexing (contains business practices)
 # - Age verification page blocked (should not be directly accessible via search)

@@ -50,55 +50,7 @@ const SMOOTH_SCROLL_DELAY_MS = 300;
   });
 })();
 
-// Age gate verification - optimized loading
-// Only loads age-gate.js if user hasn't verified yet
-(function ensureAgeGate() {
-  'use strict';
-  
-  // Don't run on the age gate page itself
-  if (window.location.pathname.endsWith('age-gate.html') || 
-      window.location.pathname.endsWith('age-gate')) {
-    return;
-  }
-  
-  // OPTIMIZATION: Check if already verified before loading script
-  // This saves a network request for verified users
-  try {
-    const verified = sessionStorage.getItem('ageVerified');
-    const timestamp = sessionStorage.getItem('ageTimestamp');
-    const checksum = sessionStorage.getItem('ageChecksum');
-    
-    // If we have verification data, age-gate.js will validate it
-    // If missing or invalid, age-gate.js will redirect
-    // Either way, we need to load it (but only once)
-    if (typeof window.ageGateLoaded === 'undefined') {
-      // Mark as loaded to prevent double-loading
-      window.ageGateLoaded = true;
-      
-      // Load age-gate.js
-      // Note: This is still dynamic, but we check localStorage first
-      // In Phase 2B, we'll load it statically with defer
-      var script = document.createElement('script');
-      script.src = '/age-gate.js';
-      script.async = false; // Load synchronously to ensure verification runs
-      script.onerror = function() {
-        console.error('Failed to load age-gate.js - redirecting to age gate');
-        window.location.href = '/age-gate.html';
-      };
-      document.head.appendChild(script);
-    }
-  } catch (error) {
-    // If sessionStorage access fails, load age-gate anyway
-    console.error('SessionStorage access failed:', error);
-    if (typeof window.ageGateLoaded === 'undefined') {
-      window.ageGateLoaded = true;
-      var script = document.createElement('script');
-      script.src = '/age-gate.js';
-      script.async = false;
-      document.head.appendChild(script);
-    }
-  }
-})();
+// Age gate verification is handled by age-gate.js loaded via head-common.html
 
 // Security: Prevent common attacks
 (function securityMeasures() {

@@ -12,6 +12,7 @@ Crawl-delay: 2
 Disallow: /age-gate.html
 Disallow: /404.html
 Disallow: /privacy.html
+Disallow: /support.html
 Disallow: /_includes/
 Disallow: /_layouts/
 Disallow: /.well-known/
